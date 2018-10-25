@@ -1,6 +1,10 @@
 const app = angular.module('SpecuLook', []);
 
 app.controller('MainController', ['$http', function($http){
+
+  //Define controller
+  const controller = this;
+
   //Create Function
   this.createUser = function(){
     $http({
@@ -16,4 +20,41 @@ app.controller('MainController', ['$http', function($http){
     });
   };
 
-}])
+  //Get Function
+  this.getUsers = function(){
+    $http({
+      method: 'GET',
+      url: '/users',
+    }).then(response=>{
+      controller.user = response.data
+      console.log(controller.user)
+    });
+  };
+
+  //Update Function
+  this.editUser = function(user){
+    $http({
+      method: 'PUT',
+      url: '/users/' + user._id,
+      data: {
+        username: this.updateUsername,
+        password: this.updatedPassword,
+        admin: this.updatedAdmin
+      }
+    }).then(function(response){
+      controller.getUsers();
+    });
+  };
+
+  //Delete Function
+  this.deleteUser = function(user){
+    $http({
+      method: 'DELETE',
+      url: '/users/' + user._id
+    }).then(response=>{
+      controller.getUsers();
+    })
+  }
+
+  this.getUsers();
+}]);

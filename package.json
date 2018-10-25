@@ -1,0 +1,25 @@
+{
+  "name": "speculook",
+  "version": "1.0.0",
+  "description": "testing hello from Laura",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emfoxily/speculook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emfoxily/speculook/issues"
+  },
+  "homepage": "https://github.com/emfoxily/speculook#readme"
+}

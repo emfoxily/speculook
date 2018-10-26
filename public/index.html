@@ -9,25 +9,30 @@
 
   </head>
   <body ng-controller="MainController as ctrl">
-    <nav ng-repeat="user in ctrl.users">
-      <span ng-if="!foundUser">
-        Welcome, {{ user.name }}
+    <nav>
+      <span ng-if="ctrl.loginSuccess">
+        Welcome, {{ ctrl.loginSuccess }}
       </span>
       <!-- open login modal -->
       <button
-        ng-click="loginModal()"
-        ng-if="foundUser">
+        ng-if="!ctrl.loginSuccess">
           log in
       </button>
       <!-- open register modal -->
       <button
-        ng-click="registerModal()"
-        ng-if="foundUser">
+        ng-if="!ctrl.loginSuccess">
           sign up
       </button>
       <button
-        ng-click="session.delete()"
-        ng-if="!foundUser">
+        ng-click="ctrl.loggedIn()">
+          take me to the site
+      </button>
+      <div ng-if="ctrl.loginSuccess">
+        Welcome, {{loginSuccess}}
+      </div>
+      <button
+        ng-click="session.destroy()"
+        ng-if="ctrl.loginSuccess">
           logout
       </button>
     </nav>

@@ -79,7 +79,7 @@ app.controller('MainController', ['$http', function($http){
   this.loggedIn = () => {
     $http({
       method: 'GET',
-      url: '/',
+      url: '/speculook',
     }).then((response) => {
       console.log(response.data);
       controller.loginSuccess = response.data.username
@@ -88,21 +88,16 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  this.logout = () => {
+    $http({
+      method: 'DELETE',
+      url: '/sessions'
+    }).then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    })
+  }
 
 
 

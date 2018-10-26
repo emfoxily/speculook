@@ -7,9 +7,8 @@
     <script src="./js/app.js" charset="utf-8"></script>
   </head>
   <body ng-controller="MainController as ctrl">
-    <div ng-repeat="user in ctrl.user">
-      {{user}}
+    <div ng-repeat="user in ctrl.users">
+      <img src="{{ user.image }}" alt="{{ user.name }}" title="{{ user.name }}"/>
     </div>
-    {{ctrl.me}}
   </body>
 </html>

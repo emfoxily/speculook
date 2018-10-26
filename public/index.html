@@ -57,8 +57,8 @@
       <h1>Message Board</h1>
         <!--Submit message form-->
         <form ng-submit="ctrl.postMessage(); ctrl.current = ctrl.username">
-          <input type="text" placeholder="Your Message Here" />
-          <input type="text" placeholder="Your Signature" />
+          <input type="text" value="message" placeholder="Your Message Here" />
+          <input type="text" value="signature" placeholder="Your Signature" />
           <input type="submit" value="Post Your Message" />
         </form>
         <!--Display posted messages-->

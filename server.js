@@ -26,7 +26,7 @@ app.use(express.static('public'));
 const usersController = require('./controllers/users.js');
 const sessionsController = require('./controllers/sessions.js')
 
-const messagesController = require('/.controllers/messages.js');
+const messagesController = require('./controllers/messages.js');
 
 //Call Controller
 app.use('/users', usersController);

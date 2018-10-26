@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Messages = require('..models/messages.js');
+const Messages = require('../models/messages.js');
 
 router.get('/', (req, res)=> {
   Messages.find({}, (err, foundMessages)=> {

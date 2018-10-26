@@ -12,12 +12,12 @@ const Users = require('./models/users.js');
 const seed = require('./models/userSeed.js');
 
 // session secret
-// const secret = process.env.SECRET
-// app.use(session({
-//   secret: secret,
-//   resave: false,
-//   saveUninitialized: false
-// }))
+const secret = process.env.SECRET
+app.use(session({
+  secret: 'luna',
+  resave: false,
+  saveUninitialized: false
+}))
 
 //Express
 app.use(express.json());
@@ -28,6 +28,7 @@ const sessionsController = require('./controllers/sessions.js')
 
 //Call Controller
 app.use('/users', usersController);
+app.use('/sessions', sessionsController)
 
 //Mongoose Middleware
 mongoose.connect('mongodb://localhost:27017/speculook', { useNewUrlParser: true });

@@ -4,6 +4,10 @@ const Schema = mongoose.Schema
 
 // user schema
 const users = Schema({
+  name: {
+    type: String,
+    required: true
+  },
   username: {
     type: String,
     required: true,

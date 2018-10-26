@@ -27,7 +27,7 @@ app.controller('MainController', ['$http', function($http){
       url: '/users',
     }).then(response=>{
       controller.users = response.data
-      console.log(controller.user)
+      console.log(controller.users)
     });
   };
 

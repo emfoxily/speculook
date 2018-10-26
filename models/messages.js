@@ -5,7 +5,7 @@ const messages = Schema({
   message: {
     type: String,
     required: true
-  }
+  },
   signature: String
 });
 

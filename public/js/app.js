@@ -125,19 +125,19 @@ app.controller('MainController', ['$http', function($http){
 
 // ====================126-165 Alyssa===============================
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  this.postMessage = function(){
+    $http({
+      method: 'POST',
+      url: '/communityBoard',
+      data: {
+        yourMessage: this.yourMessage,
+      }
+    }).then(function(response){
+      console.log(response);
+    }, function(){
+      console.log('An error has occured');
+    });
+  };
 
 
 

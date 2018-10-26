@@ -56,6 +56,20 @@ mongoose.connection.once('open', ()=>{
 //   console.log('added users');
 // })
 
+app.get('/seedAdmins', (req, res) => {
+  // encrypts the passwords
+  seed.forEach((user) => {
+    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10));
+  });
+  // creates users using the provided seed
+  Users.create(seed, (err, createdAdmins) => {
+    // logs the admins
+    console.log(createdAdmins);
+    // redirects
+    res.redirect('/');
+  });
+});
+
 //Listener
 app.listen(3000, ()=>{
   console.log('Listening..');

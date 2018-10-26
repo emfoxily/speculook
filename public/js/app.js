@@ -4,7 +4,7 @@ app.controller('MainController', ['$http', function($http){
 
   //Define controller
   const controller = this;
-
+  this.me = 'awesome';
   //Create Function
   this.createUser = function(){
     $http({
@@ -26,7 +26,7 @@ app.controller('MainController', ['$http', function($http){
       method: 'GET',
       url: '/users',
     }).then(response=>{
-      controller.user = response.data
+      controller.users = response.data
       console.log(controller.user)
     });
   };

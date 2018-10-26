@@ -12,7 +12,6 @@ session.delete('/', (req, res) => {
     res.status(200).json({
       status: 200,
       message: 'successfully logged out',
-      currentUser: req.session.currentUser
     })
   })
 })

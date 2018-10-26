@@ -76,32 +76,28 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
+  this.loggedIn = () => {
+    $http({
+      method: 'GET',
+      url: '/speculook',
+    }).then((response) => {
+      console.log(response.data);
+      controller.loginSuccess = response.data.username
+    }, (error) => {
+      console.log(error);
+    })
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  this.logout = () => {
+    $http({
+      method: 'DELETE',
+      url: '/sessions'
+    }).then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    })
+  }
 
 
 
@@ -180,7 +176,7 @@ app.controller('MainController', ['$http', function($http){
         signature: this.signature
       }
     }).then(response=>{
-      console.log(response.data);
+      controller.getMessage();
     });
   };
 

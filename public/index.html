@@ -24,14 +24,7 @@
           sign up
       </button>
       <button
-        ng-click="ctrl.loggedIn()">
-          take me to the site
-      </button>
-      <div ng-if="ctrl.loginSuccess">
-        Welcome, {{loginSuccess}}
-      </div>
-      <button
-        ng-click="session.destroy()"
+        ng-click=""
         ng-if="ctrl.loginSuccess">
           logout
       </button>
@@ -56,7 +49,7 @@
       </form>
     </div>
     <div class="login">
-      <form ng-submit="ctrl.logIn()">
+      <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
         <input
           type="text"
           ng-model="ctrl.username"
@@ -74,19 +67,19 @@
     <div>
       <h1>Message Board</h1>
         <!--Submit message form-->
-        <form ng-submit="ctrl.postMessage(); ctrl.current = ctrl.username">
-          <input type="text" value="message" placeholder="Your Message Here" />
-          <input type="text" value="signature" placeholder="Your Signature" />
+        <form ng-submit="ctrl.postMessage()">
+          <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
+          <input type="text" ng-model="ctrl.signature" placeholder="Your Signature" />
           <input type="submit" value="Post Your Message" />
         </form>
         <!--Display posted messages-->
-        <div ng-repeat="user in ctrl.users">
-          {{ ctrl.current }}
-        <div>
         <div ng-repeat="message in ctrl.messages">
           {{ message.message }}
           {{ message.signature }}
         </div>
+        <div>
+          {{ ctrl.loginSuccess }}
+        <div>
     </div>
 
     <!-- <nav ng-include="'partials/nav.html'"></nav>

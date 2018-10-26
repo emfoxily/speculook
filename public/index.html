@@ -9,14 +9,46 @@
 
   </head>
   <body ng-controller="MainController as ctrl">
-    <nav ng-include="'partials/nav.html'"></nav>
+    <div class="register">
+      <form ng-submit="ctrl.createUser()">
+        <input
+          type="text"
+          ng-model="ctrl.name"
+          placeholder="full name"/>
+        <input
+          type="text"
+          ng-model="ctrl.username"
+          placeholder="username"/>
+        <input
+          type="password"
+          ng-model="ctrl.password"
+          placeholder="password"/>
+        <input
+          type="submit"
+          value="register"/>
+      </form>
+    </div>
+    <div class="login">
+      <form ng-submit="ctrl.logIn()">
+        <input
+          type="text"
+          ng-model="ctrl.username"/>
+        <input
+          type="password"
+          ng-model="ctrl.password"/>
+        <input
+          type="submit"
+          value="log in"/>
+      </form>
+    </div>
+    <!-- <nav ng-include="'partials/nav.html'"></nav>
 
     <div ng-include="'partials/members.html'"></div>
     <div ng-include="'partials/profiles.html'"></div>
     <div ng-include="'partials/messageBoard.html'"></div>
     <div ng-include="'partials/footer.html'"></div>
     <div ng-include="'partials/login.html'"></div>
-    <div ng-include="'partials/register.html'"></div>
+    <div ng-include="'partials/register.html'"></div> -->
   </body>
 </html>
 

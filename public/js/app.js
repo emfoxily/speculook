@@ -11,8 +11,10 @@ app.controller('MainController', ['$http', function($http){
       method: 'POST',
       url: '/users',
       data: {
+        name: this.name,
         username: this.username,
         password: this.password,
+        image: this.image,
         admin: this.admin
       }
     }).then(response=>{
@@ -58,6 +60,21 @@ app.controller('MainController', ['$http', function($http){
 
 
 // =============60-90===Emily===================================
+  // log in
+  this.logIn = () => {
+    $http({
+      method: 'POST',
+      url: '/sessions',
+      data: {
+        username: this.username,
+        password: this.password
+      }
+    }).then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    })
+  }
 
 
 
@@ -70,24 +87,7 @@ app.controller('MainController', ['$http', function($http){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 // =================91-125 Laura==================================
 
 

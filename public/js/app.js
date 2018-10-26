@@ -83,6 +83,7 @@ app.controller('MainController', ['$http', function($http){
     }).then((response) => {
       console.log(response.data);
       controller.loginSuccess = response.data.username
+      console.log(controller.loginSuccess);
     }, (error) => {
       console.log(error);
     })
@@ -173,9 +174,11 @@ app.controller('MainController', ['$http', function($http){
       url: '/messages',
       data: {
         message: this.message,
-        signature: this.signature
+        signature: this.signature,
+        userWhoPosted: this.username
       }
     }).then(response=>{
+      console.log(controller.userWhoPosted);
       controller.getMessage();
     });
   };

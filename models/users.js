@@ -4,6 +4,10 @@ const Schema = mongoose.Schema
 
 // user schema
 const users = Schema({
+  name: {
+    type: String,
+    required: true
+  },
   username: {
     type: String,
     required: true,
@@ -16,6 +20,10 @@ const users = Schema({
   admin: {
     type: Boolean,
     default: false
+  },
+  image: {
+    type: String,
+    default: '../images/speculoos.png'
   }
 })
 

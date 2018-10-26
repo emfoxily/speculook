@@ -58,7 +58,7 @@ app.controller('MainController', ['$http', function($http){
 
 
 // =============60-74===Emily===================================
-
+hehehehehehehhehehehehehhehehehehehheewwoooo
 
 
 
@@ -73,21 +73,21 @@ app.controller('MainController', ['$http', function($http){
 
 
 // =================75-90 Laura==================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
+v
 // ====================91-110 Alyssa===============================
 //A
 //L

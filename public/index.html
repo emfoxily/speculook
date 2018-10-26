@@ -24,10 +24,12 @@
           sign up
       </button>
       <button
-        ng-click="ctrl.loggedIn()"
-        ng-if="ctrl.loginSuccess">
+        ng-click="ctrl.loggedIn()">
           take me to the site
       </button>
+      <div ng-if="ctrl.loginSuccess">
+        Welcome, {{loginSuccess}}
+      </div>
       <button
         ng-click="session.destroy()"
         ng-if="ctrl.loginSuccess">

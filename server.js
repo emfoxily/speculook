@@ -8,12 +8,12 @@ const bcrypt = require('bcrypt');
 //Require Schema
 const Users = require('./models/users.js');
 const seed = require('./models/userSeed.js');
-//Require Controller
-const usersController = require('./controllers/users.js');
-
 //Express
 app.use(express.json());
 app.use(express.static('public'));
+//Require Controller
+const usersController = require('./controllers/users.js');
+
 //Call Controller
 app.use('/users', usersController);
 

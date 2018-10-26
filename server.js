@@ -10,11 +10,21 @@ const bcrypt = require('bcrypt');
 //Require Schema
 const Users = require('./models/users.js');
 const seed = require('./models/userSeed.js');
+
+// session secret
+// const secret = process.env.SECRET
+// app.use(session({
+//   secret: secret,
+//   resave: false,
+//   saveUninitialized: false
+// }))
+
 //Express
 app.use(express.json());
 app.use(express.static('public'));
 //Require Controller
 const usersController = require('./controllers/users.js');
+const sessionsController = require('./controllers/sessions.js')
 
 //Call Controller
 app.use('/users', usersController);

@@ -16,6 +16,10 @@ const users = Schema({
   admin: {
     type: Boolean,
     default: false
+  },
+  image: {
+    type: String,
+    default: '../images/speculoos.png'
   }
 })
 

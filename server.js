@@ -1,6 +1,8 @@
 //Require Express
 const express = require('express');
 const app = express();
+//Require Express session
+const session = require('express-session')
 //Require Mongoose
 const mongoose = require('mongoose');
 //Require bcrypt

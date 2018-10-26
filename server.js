@@ -26,9 +26,11 @@ app.use(express.static('public'));
 const usersController = require('./controllers/users.js');
 const sessionsController = require('./controllers/sessions.js')
 
+const messagesController = require('/.controllers/messages.js');
+
 //Call Controller
 app.use('/users', usersController);
-
+app.use('/messages', messagesController);
 //Mongoose Middleware
 mongoose.connect('mongodb://localhost:27017/speculook', { useNewUrlParser: true });
 mongoose.connection.once('open', ()=>{

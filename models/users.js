@@ -24,6 +24,22 @@ const users = Schema({
   image: {
     type: String,
     default: '../images/speculoos.png'
+  },
+  location: String,
+  email: String,
+  linkedIn: String,
+  github: String,
+  facebook: String,
+  interests: String,
+  iCanHelp: {
+    css: Boolean,
+    html: Boolean,
+    js: Boolean,
+    jQ: Boolean,
+    ang: Boolean,
+    cli: Boolean,
+    react: Boolean,
+    ruby: Boolean
   }
 })
 

@@ -9,14 +9,32 @@
 
   </head>
   <body ng-controller="MainController as ctrl">
-    <nav ng-include="'partials/nav.html'"></nav>
+    <div>
+      <h1>Message Board</h1>
+        <!--Submit message form-->
+        <form ng-submit="ctrl.postMessage()">
+          <input type="text" placeholder="Your Message Here" />
+          <input type="text" placeholder="Your Signature" />
+          <input type="submit" value="Post Your Message" />
+        </form>
+        <!--Display posted messages-->
+        <div ng-repeat="user in ctrl.users">
+          {{ user.username }}
+        <div>
+        <div ng-repeat="message in ctrl.messages">
+          {{ message.message }}
+          {{ message.signature }}
+        </div>
+    </div>
+
+    <!-- <nav ng-include="'partials/nav.html'"></nav>
 
     <div ng-include="'partials/members.html'"></div>
     <div ng-include="'partials/profiles.html'"></div>
     <div ng-include="'partials/messageBoard.html'"></div>
     <div ng-include="'partials/footer.html'"></div>
     <div ng-include="'partials/login.html'"></div>
-    <div ng-include="'partials/register.html'"></div>
+    <div ng-include="'partials/register.html'"></div> -->
   </body>
 </html>
 

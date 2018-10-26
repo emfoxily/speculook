@@ -130,7 +130,8 @@ app.controller('MainController', ['$http', function($http){
       method: 'POST',
       url: '/communityBoard',
       data: {
-        yourMessage: this.yourMessage,
+        message: this.message,
+        signature: this.signature
       }
     }).then(function(response){
       console.log(response);

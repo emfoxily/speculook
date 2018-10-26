@@ -125,44 +125,58 @@ app.controller('MainController', ['$http', function($http){
 
 // ====================126-165 Alyssa===============================
 
-  this.postMessage = function(){
+  const messages = [];
+
+  this.getMessage = function(){
     $http({
-      method: 'POST',
-      url: '/communityBoard',
+      method: 'GET',
+      url: '/messages',
       data: {
         message: this.message,
         signature: this.signature
       }
     }).then(function(response){
-      console.log(response);
+      controller.messages = response.data
+      console.log(controller.messages);
+    });
+  };
+
+  this.postMessage = function(){
+    $http({
+      method: 'POST',
+      url: '/messages',
+      data: {
+        message: this.message,
+        signature: this.signature
+      }
+    }).then(function(response){
+      console.log(response.data);
     }, function(){
       console.log('An error has occured');
     });
   };
 
+  this.deleteMessage = function(){
+    $http({
+      method: 'DELETE',
+      url: '/messages/' + message._id
+    }).then(response=>{
+      controller.getMessage();
+    });
+  };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  this.editMessage = function(message){
+    $http({
+      method: 'PUT',
+      url: '/messages/' + message._id,
+      data: {
+        message: this.message,
+        signature: this.signature
+      }
+    }).then(function(response){
+      controller.getMessage();
+    });
+  };
 
 // ===================================================
 

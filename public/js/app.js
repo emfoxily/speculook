@@ -96,7 +96,7 @@ app.controller('MainController', ['$http', function($http){
       method: 'DELETE',
       url: '/sessions'
     }).then((response) => {
-      console.log(response);
+      console.log(response.data)
     }, (error) => {
       console.log(error);
     })

@@ -1,13 +1,13 @@
 // require express
 const express = require('express')
 // require session
-const session = express.Router()
+const sessions = express.Router()
 // require users model
 const User = require('../models/users.js')
 // require bcrypt
 const bcrypt = require('bcrypt')
 
-session.delete('/', (req, res) => {
+sessions.delete('/', (req, res) => {
   req.session.destroy(() => {
     res.status(200).json({
       status: 200,
@@ -16,7 +16,7 @@ session.delete('/', (req, res) => {
   })
 })
 
-session.post('/', (req, res) => {
+sessions.post('/', (req, res) => {
   User.findOne({ username: req.body.username }, (err, foundUser) => {
     if ( bcrypt.compareSync(req.body.password, foundUser.password) ){
       req.session.currentUser = foundUser
@@ -33,4 +33,4 @@ session.post('/', (req, res) => {
   })
 })
 
-module.exports = session
+module.exports = sessions

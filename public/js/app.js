@@ -76,16 +76,16 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
-
-
-
-
-
-
-
-
-
-
+  this.loggedIn = () => {
+    $http({
+      method: 'GET',
+      url: '/',
+    }).then((response) => {
+      this.loginSuccess = response.data.username
+    }, (error) => {
+      console.log(error);
+    })
+  }
 
 
 

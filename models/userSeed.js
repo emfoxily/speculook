@@ -2,19 +2,16 @@ module.exports = [
   {
     username: 'emily',
     password: 'luna',
-    admin: true,
-    image: '../images/speculoos.png'
+    admin: true
   },
   {
     username: 'laura',
     password: 'felix',
-    admin: true,
-    image: '../images/speculoos.png'
+    admin: true
   },
   {
     username: 'alyssa',
     password: 'ote',
-    admin: true,
-    image: '../images/speculoos.png'
+    admin: true
   }
 ]

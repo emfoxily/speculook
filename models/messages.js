@@ -6,7 +6,8 @@ const messages = Schema({
     type: String,
     required: true
   },
-  signature: String
+  signature: String,
+  userWhoPosted: String
 });
 
 const Message = mongoose.model('Message', messages);

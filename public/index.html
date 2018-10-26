@@ -29,6 +29,145 @@
           logout
       </button>
     </nav>
+    <!-- =================Laura line 32========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ============End Laura line 100============== -->
+<!-- ============Alyssa line 101================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========end Alyssa line 170========== -->
     <div class="register">
       <form ng-submit="ctrl.createUser()">
         <input
@@ -67,7 +206,7 @@
     <div>
       <h1>Message Board</h1>
         <!--Submit message form-->
-        <form ng-submit="ctrl.postMessage()">
+        <form ng-submit="ctrl.postMessage(); ctrl.loginSuccess = ctrl.userWhoPosted">
           <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
           <input type="text" ng-model="ctrl.signature" placeholder="Your Signature" />
           <input type="submit" value="Post Your Message" />
@@ -76,9 +215,10 @@
         <div ng-repeat="message in ctrl.messages">
           {{ message.message }}
           {{ message.signature }}
+          {{message.userWhoPosted}}
         </div>
         <div>
-          {{ ctrl.loginSuccess }}
+          <!-- {{ ctrl.loginSuccess }} -->
         <div>
     </div>
 

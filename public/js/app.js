@@ -81,7 +81,8 @@ app.controller('MainController', ['$http', function($http){
       method: 'GET',
       url: '/',
     }).then((response) => {
-      this.loginSuccess = response.data.username
+      console.log(response.data);
+      controller.loginSuccess = response.data.username
     }, (error) => {
       console.log(error);
     })

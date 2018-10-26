@@ -38,7 +38,7 @@ mongoose.connect('mongodb://localhost:27017/speculook', { useNewUrlParser: true 
 mongoose.connection.once('open', ()=>{
   console.log('Connected to Mongoose');
 });
-
+// 
 // Users.create(seed, (err, data) => {
 //   if (err) console.log(err.message)
 //   console.log('added users');

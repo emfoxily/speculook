@@ -211,4 +211,5 @@ app.controller('MainController', ['$http', function($http){
 // ===================================================
 
   this.getUsers();
+  this.getMessage();
 }]);

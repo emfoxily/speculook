@@ -11,7 +11,7 @@
   <body ng-controller="MainController as ctrl">
     <nav>
       <span ng-if="ctrl.loginSuccess">
-        Welcome, {{ ctrl.loginSuccess }}
+        Welcome, {{ ctrl.username }}
       </span>
       <!-- open login modal -->
       <button
@@ -23,11 +23,9 @@
         ng-if="!ctrl.loginSuccess">
           sign up
       </button>
-      <button
-        ng-click=""
-        ng-if="ctrl.loginSuccess">
-          logout
-      </button>
+      <form ng-submit="ctrl.logout()" ng-if="ctrl.loginSuccess">
+        <input type="submit" value="logout">
+      </form>
     </nav>
     <!-- =================Laura line 32========== -->
 
@@ -217,9 +215,6 @@
           {{ message.signature }}
           {{message.userWhoPosted}}
         </div>
-        <div>
-          <!-- {{ ctrl.loginSuccess }} -->
-        <div>
     </div>
 
     <!-- <nav ng-include="'partials/nav.html'"></nav>

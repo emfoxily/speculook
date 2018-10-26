@@ -7,7 +7,10 @@ const messages = Schema({
     required: true
   },
   signature: String,
-  userWhoPosted: String
+  userWhoPosted: {
+    type: String,
+    required: true
+  }
 });
 
 const Message = mongoose.model('Message', messages);

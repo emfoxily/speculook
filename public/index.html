@@ -10,13 +10,26 @@
   </head>
   <body ng-controller="MainController as ctrl">
     <nav ng-repeat="user in ctrl.users">
-      <span>
+      <span ng-if="!foundUser">
         Welcome, {{ user.name }}
       </span>
       <!-- open login modal -->
-      <button ng-click="loginModal()" ng-if="foundUser">log in</button>
+      <button
+        ng-click="loginModal()"
+        ng-if="foundUser">
+          log in
+      </button>
       <!-- open register modal -->
-      <button ng-click="registerModal()">sign up</button>
+      <button
+        ng-click="registerModal()"
+        ng-if="foundUser">
+          sign up
+      </button>
+      <button
+        ng-click="session.delete()"
+        ng-if="!foundUser">
+          logout
+      </button>
     </nav>
     <div class="register">
       <form ng-submit="ctrl.createUser()">

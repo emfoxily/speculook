@@ -9,6 +9,15 @@
 
   </head>
   <body ng-controller="MainController as ctrl">
+    <nav ng-repeat="user in ctrl.users">
+      <span>
+        Welcome, {{ user.name }}
+      </span>
+      <!-- open login modal -->
+      <button ng-click="loginModal()" ng-if="foundUser">log in</button>
+      <!-- open register modal -->
+      <button ng-click="registerModal()">sign up</button>
+    </nav>
     <div class="register">
       <form ng-submit="ctrl.createUser()">
         <input
@@ -32,10 +41,12 @@
       <form ng-submit="ctrl.logIn()">
         <input
           type="text"
-          ng-model="ctrl.username"/>
+          ng-model="ctrl.username"
+          placeholder="username"/>
         <input
           type="password"
-          ng-model="ctrl.password"/>
+          ng-model="ctrl.password"
+          placeholder="password"/>
         <input
           type="submit"
           value="log in"/>

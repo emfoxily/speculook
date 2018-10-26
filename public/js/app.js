@@ -161,9 +161,9 @@ app.controller('MainController', ['$http', function($http){
         message: this.message,
         signature: this.signature
       }
-    }).then(function(response){
+    }).then(response=>{
       controller.messages = response.data
-      console.log(controller.messages);
+      console.log(response.data);
     });
   };
 
@@ -175,12 +175,11 @@ app.controller('MainController', ['$http', function($http){
         message: this.message,
         signature: this.signature
       }
-    }).then(function(response){
-      console.log(response.data);
-    }, function(){
-      console.log('An error has occured');
+    }).then(response=>{
+      controller.getMessage();
     });
   };
+
 
   this.deleteMessage = function(){
     $http({
@@ -207,4 +206,5 @@ app.controller('MainController', ['$http', function($http){
 // ===================================================
 
   this.getUsers();
+  this.getMessage();
 }]);

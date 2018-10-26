@@ -1,3 +1,2 @@
 # speculook
-testing
-hello from Laura
+### by Emily Reno, Laura Levenhagen & Alyssa Kieffer

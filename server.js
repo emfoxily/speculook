@@ -26,8 +26,11 @@ app.use(express.static('public'));
 const usersController = require('./controllers/users.js');
 const sessionsController = require('./controllers/sessions.js')
 
+const messagesController = require('/.controllers/messages.js');
+
 //Call Controller
 app.use('/users', usersController);
+app.use('/messages', messagesController);
 app.use('/sessions', sessionsController)
 
 //Mongoose Middleware

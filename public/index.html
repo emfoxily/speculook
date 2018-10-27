@@ -23,10 +23,10 @@
     <div class="loginRegister" ng-if="!ctrl.currentUser">
       <img src="../images/whitespecubanner.png"/>
         <br/>
-      <button ng-click="ctrl.toggleShowLogin()" ng-if="!ctrl.currentUser">
+      <button ng-hide="ctrl.hideLogin" ng-click="ctrl.toggleShowLogin(); ctrl.hideLogin = true; ctrl.hideRegister = true; ctrl.showNeedToSignUp = true" ng-if="!ctrl.currentUser">
         log in
       </button>
-      <button ng-click="ctrl.toggleShowRegister()" ng-if="!ctrl.currentUser">
+      <button ng-hide="ctrl.hideRegister" ng-click="ctrl.toggleShowRegister(); ctrl.hideRegister = true; ctrl.hideLogin = true" ng-if="!ctrl.currentUser">
         sign up
       </button>
       <!-- ===REGISTER FORM ===-->
@@ -38,9 +38,10 @@
               <br/>
             <input type="password" ng-model="ctrl.password" placeholder="password" />
               <br/>
-            <input type="submit" value="register" />
+            <input type="submit" value="Create Account" />
           </form>
         </div>
+        <button ng-click="ctrl.toggleShowLogin(); ctrl.toggleShowRegister(); ctrl.hideRegister = true; ctrl.showNeedToSignUp = false; ctrl.showNeedToSignUp = true" ng-if="ctrl.showRegister === true">Remember To Log In!</button>
         <br/>
         <!-- ===LOGIN FORM=== -->
         <div ng-if="ctrl.showLogin" ng-show="!ctrl.currentUser;">
@@ -52,6 +53,7 @@
             <input type="submit" value="log in" />
           </form>
         </div>
+        <button ng-click="ctrl.toggleShowLogin(); ctrl.toggleShowRegister(); ctrl.showNeedToSignUp = false" ng-if="ctrl.hideLogin === true && ctrl.showNeedToSignUp === true">Don't have an account? Sign up here!</button>
     </div>
     <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
       <input type="submit" value="logout">

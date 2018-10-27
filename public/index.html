@@ -13,11 +13,25 @@
 
 <body ng-controller="MainController as ctrl">
   <nav>
-    <!-- ==CurrentUser image (link to profile)== -->
-      <img ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile(); ctrl.IdofCurrentUser = ctrl.currentUser._id" />
     <!-- ===CHECK FOR CURRENT USER=== -->
     <span ng-if="ctrl.currentUser">
+      <!-- ==CurrentUser image (link to profile)== -->
+      <img
+        style=
+          "width: 5%;
+          border-radius: 5vw;
+          border: 5px solid #498096;"
+        ng-if=
+          "ctrl.currentUser"
+        src=
+          "{{ctrl.currentUser.image}}"
+        alt="your image"
+        ng-click=
+          "ctrl.showHideProfile();
+          ctrl.IdofCurrentUser = ctrl.currentUser._id" />
+
       Welcome, {{ ctrl.currentUser.name }}
+
     </span>
 
     <div class="loginRegister" ng-if="!ctrl.currentUser">

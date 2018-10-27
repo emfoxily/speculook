@@ -23,7 +23,7 @@
     <div class="loginRegister" ng-if="!ctrl.currentUser">
       <img src="../images/whitespecubanner.png"/>
         <br/>
-      <button ng-click="ctrl.toggleShowLogin()" ng-if="!ctrl.currentUser">
+      <button ng-hide="ctrl.hideLogin" ng-click="ctrl.toggleShowLogin(); ctrl.hideLogin" ng-if="!ctrl.currentUser">
         log in
       </button>
       <button ng-click="ctrl.toggleShowRegister()" ng-if="!ctrl.currentUser">

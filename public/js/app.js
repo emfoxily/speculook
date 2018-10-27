@@ -119,11 +119,13 @@ app.controller('MainController', ['$http', function($http){
 
 this.toggleShowLogin = function() {
   controller.showLogin = !controller.showLogin;
+  controller.showRegister = false;
   console.log(controller.showLogin);
 }
 
 this.toggleShowRegister = function() {
   controller.showRegister = !controller.showRegister;
+  controller.showLogin = false;
   console.log(controller.showRegister);
 }
 

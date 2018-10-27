@@ -38,22 +38,48 @@
               <br/>
             <input type="password" ng-model="ctrl.password" placeholder="password" />
               <br/>
-            <input type="submit" value="Create Account" />
+            <input type="submit" value="Create Account" style="cursor: pointer; font-weight: 600;" />
           </form>
         </div>
-        <button ng-click="ctrl.toggleShowLogin(); ctrl.toggleShowRegister(); ctrl.hideRegister = true; ctrl.showNeedToSignUp = false; ctrl.showNeedToSignUp = true" ng-if="ctrl.showRegister === true">Remember To Log In!</button>
+        <button
+          style=
+            "width: 50vw;
+            background: transparent;
+            border: none;
+            color: white"
+          ng-click=
+            "ctrl.toggleShowLogin();
+            ctrl.hideRegister = true;
+            ctrl.showNeedToSignUp = false;
+            ctrl.showNeedToSignUp = true"
+          ng-if=
+            "ctrl.showRegister === true">
+              Remember To Log In!
+        </button>
         <br/>
-        <!-- ===LOGIN    FORM=== -->
+        <!-- ===LOGIN FORM=== -->
         <div ng-if="ctrl.showLogin" ng-show="!ctrl.currentUser;">
           <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
             <input type="text" ng-model="ctrl.username" placeholder="username" />
               <br/>
             <input type="password" ng-model="ctrl.password" placeholder="password" />
               <br/>
-            <input type="submit" value="log in" />
+            <input type="submit" value="log in" style="cursor: pointer; font-weight: 600"/>
           </form>
         </div>
-        <button ng-click="ctrl.toggleShowLogin(); ctrl.toggleShowRegister(); ctrl.showNeedToSignUp = false" ng-if="ctrl.hideLogin === true && ctrl.showNeedToSignUp === true">Don't have an account? Sign up here!</button>
+        <button
+          style=
+            "width: 50vw;
+            background: transparent;
+            border: none;
+            color: white"
+          ng-click=
+            "ctrl.toggleShowRegister();
+            ctrl.showNeedToSignUp = false"
+          ng-if=
+            "ctrl.hideLogin === true && ctrl.showNeedToSignUp === true">
+              Don't have an account? Sign up here!
+        </button>
     </div>
     <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
       <input type="submit" value="logout">

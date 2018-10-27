@@ -208,6 +208,10 @@ app.controller('MainController', ['$http', function($http){
     });
   };
 
+  this.showProfile = function(){
+    controller.userProfile = !controller.userProfile
+  };
+
 // ===================================================
 
   this.getUsers();

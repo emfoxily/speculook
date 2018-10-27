@@ -32,14 +32,14 @@ const users = Schema({
   facebook: String,
   interests: String,
   iCanHelp: {
-    css: Boolean,
-    html: Boolean,
-    js: Boolean,
-    jQ: Boolean,
-    ang: Boolean,
-    cli: Boolean,
-    react: Boolean,
-    ruby: Boolean
+    CSS: Boolean,
+    HTML: Boolean,
+    JavaScript: Boolean,
+    jQuery: Boolean,
+    Angular: Boolean,
+    CLI: Boolean,
+    React: Boolean,
+    Ruby: Boolean
   }
 })
 

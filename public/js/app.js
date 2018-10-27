@@ -82,10 +82,7 @@ app.controller('MainController', ['$http', function($http){
       url: '/speculook',
     }).then((response) => {
       console.log(response.data);
-      controller.currentUser = response.data.username;
-      controller.currentUserLocation = response.data.location;
-      controller.currentUserInterests = response.data.interests;
-      console.log(controller.loginSuccess);
+      controller.currentUser = response.data;
     }, (error) => {
       console.log(error);
     })
@@ -119,15 +116,68 @@ app.controller('MainController', ['$http', function($http){
 
 // ================121-155 Laura==================================
 
+this.toggleShowLogin = function() {
+  controller.showLogin = !controller.showLogin;
+  console.log(controller.showLogin);
+}
 
+this.toggleShowRegister = function() {
+  controller.showRegister = !controller.showRegister;
+  console.log(controller.showRegister);
+}
 
+this.consoleLog = function(logThis){
+  console.log(logThis);
+}
 
-
-
-
-
-
-
+this.editProfile = function(user){
+  $http({
+    method: 'PUT',
+    url: '/users/' + user._id,
+    data: {
+      name: this.updatedName,
+      username: this.updatedUsername,
+      password: this.updatedPassword,
+      image: this.updatedImage,
+      location: this.updatedLocation,
+      email: this.updatedEmail,
+      linkedIn: this.updatedLinkedIn,
+      github: this.updatedGithub,
+      facebook: this.updatedFacebook,
+      interests: this.updatedInterests,
+      iCanHelp: {
+        CSS: this.updatedCss,
+        HTML: this.updatedHtml,
+        JavaScript: this.updatedJs,
+        jQuery: this.updatedJq,
+        Angular: this.updatedAng,
+        CLI: this.updatedCli,
+        React: this.updatedReact,
+        Ruby: this.updatedRuby
+      }
+    }
+  }).then(function(response){
+    controller.getUsers();
+  })
+}
+this.showEditUserForm = (user, index) => {
+  console.log(index);
+  this.editData = user;
+  this.editIndex = index;
+}
+this.editUser = (id) => {
+  $http({
+    method: 'PUT',
+    url: '/users/'+ id,
+    data: this.editData
+  }).then((res)=> {
+    this.getUsers();
+    // hide edit form
+    this.editIndex = null;
+  }, (err)=> {
+    console.log(err);
+  })
+}
 
 
 
@@ -208,7 +258,7 @@ app.controller('MainController', ['$http', function($http){
     });
   };
 
-  this.showProfile = function(){
+  this.showHideProfile = function(){
     controller.userProfile = !controller.userProfile
   };
 

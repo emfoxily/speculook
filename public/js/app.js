@@ -4,6 +4,7 @@ app.controller('MainController', ['$http', function($http){
 
   //Define controller
   const controller = this;
+  const userImage = this.image; 
   this.me = 'awesome';
   //Create Function
   this.createUser = function(){

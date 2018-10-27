@@ -1,104 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="SpecuLook">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
-    <script src="./js/app.js" charset="utf-8"></script>
-
-  </head>
-  <body ng-controller="MainController as ctrl">
-    <nav>
-      <span ng-if="ctrl.currentUser">
-        Welcome, {{ ctrl.currentUser }}
-      </span>
-      <!-- open login modal -->
-      <button
-        ng-if="!ctrl.currentUser">
-          log in
-      </button>
-      <!-- open register modal -->
-      <button
-        ng-if="!ctrl.currentUser">
-          sign up
-      </button>
-      <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
-        <input type="submit" value="logout">
-      </form>
-    </nav>
-
-    <!-- =================Laura line 32========== -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ============End Laura line 100============== -->
-<!-- ============Alyssa line 101================= -->
+<head>
+      <!-- styling just for reference, can be changed -->
+  <style>
+    img {
+    height: 60px;
+  }
+  a {
+    color: red;
+  }
+  </style>
+  <meta charset="utf-8">
+  <title></title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+  <script src="./js/app.js" charset="utf-8"></script>
+
+</head>
+
+<body ng-controller="MainController as ctrl">
+  <nav>
+    <!-- ===CHECK FOR CURRENT USER=== -->
+    <span ng-if="ctrl.currentUser">
+      Welcome, {{ ctrl.currentUser.name }}
+    </span>
+    <!-- open login modal -->
+    <button ng-click="ctrl.toggleShowLogin()" ng-if="!ctrl.currentUser">
+      log in
+    </button>
+    <!-- open register modal -->
+    <button ng-click="ctrl.toggleShowRegister()" ng-if="!ctrl.currentUser">
+      sign up
+    </button>
+    <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
+      <input type="submit" value="logout">
+    </form>
+  <!-- ==CurrentUser image (link to profile)== -->
+    <img ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile(); ctrl.IdofCurrentUser = ctrl.currentUser._id" />
+    </div>
+  </nav>
+<!-- ============Community=========== -->
   <h1>Community Members</h1>
+<<<<<<< HEAD
 
   <div>
     <ul ng-repeat="user in ctrl.users">
@@ -124,16 +68,112 @@
         <li>{{ user.facebook }}</li>
       </ul>
       <h1>Interests & Skills</h1>
+=======
+  <div ng-repeat="user in ctrl.users | orderBy: 'name'">
+    <div>
+>>>>>>> ed4ac1c67f88c0b6fbe75fa8f3dec2d19ba9ff23
       <ul>
-        <li>{{ user.interests }}</li>
-        <li>{{ user.iCanHelp }}</li>
+        <!--Show members names-->
+        <li>{{ user.username }}</li>
+        <!--Show members photos -->
+        <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index"></li>
       </ul>
-    </section>
-    <section>
-      <h1>Mailbox</h1>
-      <!-- Incoming mail -->
-    </section>
-    <button type="button" name="close" ng-click="ctrl.showProfile()">X</button>
+    </div>
+    <div class="communityModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser || ctrl.IdofCurrentUser === user._id">
+      <img src="{{ user.image }}" alt="image of {{ user.username }}">
+      <section>
+        <h1>{{ user.name }}</h1>
+        <h4>Location: {{ user.location }}</h4>
+        <h4>Email: {{ user.email }}</h4>
+        <!-- Member blurb -->
+      </section>
+      <section>
+        <h1>Social Media</h1>
+        <ul>
+          <li><a href="{{ user.linkedIn }}">LinkedIn</a></li>
+          <li><a href="{{ user.github }}">Github</a></li>
+          <li><a href="{{ user.facebook }}">Facebook</a></li>
+        </ul>
+        <h1>Interests</h1>
+        <ul>
+          <li>{{ user.interests }}</li>
+        </ul>
+
+        <h1>I can help with:</h`>
+          <ul ng-repeat="(key,value) in user.iCanHelp">
+            <li>{{key}}</li>
+        </ul>
+      </section>
+      <section>
+        <h1>Mailbox</h1>
+        <!-- Incoming mail -->
+      </section>
+      <button ng-click="ctrl.showEditUserForm(user, $index)" ng-show"ctrl.currentUser===user">Edit Profile</button>
+      <button type="button" name="close" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = null; ctrl.IdofCurrentUser = null">X</button>
+    </div>
+    <!-- ====== EDIT USER MODAL===== -->
+    <div class="user-edit-form" ng-if="ctrl.editIndex === $index">
+      <form ng-submit="ctrl.editUser(user._id)">
+        <input type="text" placeholder="Name" ng-model="ctrl.editData.name">
+        <input type="text" placeholder="Username" ng-model="ctrl.editData.username">
+        <input type="text" placeholder="Password" ng-model="ctrl.editData.password">
+        <input type="text" placeholder="Image URL" ng-model="ctrl.editData.image">
+        <input type="text" placeholder="Location" ng-model="ctrl.editData.location">
+        <input type="text" placeholder="Email" ng-model="ctrl.editData.email">
+        <input type="text" placeholder="LinkedIn" ng-model="ctrl.editData.linkedIn">
+        <input type="text" placeholder="Github" ng-model="ctrl.editData.github">
+        <input type="text" placeholder="Facebook" ng-model="ctrl.editData.facebook">
+        <input type="text" placeholder="Interests" ng-model="ctrl.editData.interests">
+
+        <h5> I can help with:</h5>
+        <input type="checkbox" name="CSS" ng-model="ctrl.editData.iCanHelp.CSS"><span>CSS</span><br />
+        <input type="checkbox" name="HTML" ng-model="ctrl.editData.iCanHelp.HTML"><span>HTML</span><br />
+        <input type="checkbox" name="JavaScript" ng-model="ctrl.editData.iCanHelp.JavaScript"><span>JavaScript</span><br />
+        <input type="checkbox" name="jQuery" ng-model="ctrl.editData.iCanHelp.jQuery"><span>jQuery</span><br />
+        <input type="checkbox" name="AngularJS" ng-model="ctrl.editData.iCanHelp.Angular"><span>AngularJS</span><br />
+        <input type="checkbox" name="Command Line Interface" ng-model="ctrl.editData.iCanHelp.CLI"><span>Command Line Interface</span><br />
+        <input type="checkbox" name="React" ng-model="ctrl.editData.iCanHelp.React"><span>React</span><br />
+        <input type="checkbox" name="Ruby" ng-model="ctrl.editData.iCanHelp.Ruby"><span>Ruby</span><br />
+        <input type="submit" name="" value="Submit Changes">
+      </form>
+    </div>
+  </div>
+
+
+
+  <!-- ===REGISTER FORM ===-->
+  <div ng-if="ctrl.showRegister" class="register">
+    <form ng-submit="ctrl.createUser()">
+      <input type="text" ng-model="ctrl.name" placeholder="full name" />
+      <input type="text" ng-model="ctrl.username" placeholder="username" />
+      <input type="password" ng-model="ctrl.password" placeholder="password" />
+      <input type="submit" value="register" />
+    </form>
+  </div>
+
+  <!-- ===LOGIN FORM=== -->
+  <div ng-if="ctrl.showLogin" class="login">
+    <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
+      <input type="text" ng-model="ctrl.username" placeholder="username" />
+      <input type="password" ng-model="ctrl.password" placeholder="password" />
+      <input type="submit" value="log in" />
+    </form>
+  </div>
+
+  <div>
+    <h1>Message Board</h1>
+    <!--Submit message form-->
+    <form ng-submit="ctrl.postMessage()">
+      <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
+      <input type="text" ng-model="ctrl.signature" placeholder="Your Signature" />
+      <input type="submit" value="Post Your Message" />
+    </form>
+    <!--Display posted messages-->
+    <div ng-repeat="message in ctrl.messages">
+      {{ message.message }}</br>
+      {{ message.signature }}
+      {{message.userWhoPosted}}
+    </div>
   </div>
 
 
@@ -145,115 +185,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ========end Alyssa line 170========== -->
-    <div class="register">
-      <form ng-submit="ctrl.createUser()">
-        <input
-          type="text"
-          ng-model="ctrl.name"
-          placeholder="full name"/>
-        <input
-          type="text"
-          ng-model="ctrl.username"
-          placeholder="username"/>
-        <input
-          type="password"
-          ng-model="ctrl.password"
-          placeholder="password"/>
-        <input
-          type="submit"
-          value="register"/>
-      </form>
-    </div>
-    <div class="login">
-      <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
-        <input
-          type="text"
-          ng-model="ctrl.username"
-          placeholder="username"/>
-        <input
-          type="password"
-          ng-model="ctrl.password"
-          placeholder="password"/>
-        <input
-          type="submit"
-          value="log in"/>
-      </form>
-    </div>
-
-    <div>
-      <h1>Message Board</h1>
-        <!--Submit message form-->
-        <form ng-submit="ctrl.postMessage(); ctrl.loginSuccess = ctrl.userWhoPosted">
-          <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
-          <input type="text" ng-model="ctrl.signature" placeholder="Your Signature" />
-          <input type="submit" value="Post Your Message" />
-        </form>
-        <!--Display posted messages-->
-        <div ng-repeat="message in ctrl.messages">
-          {{ message.message }}</br>
-          {{ message.signature }}
-          {{message.userWhoPosted}}
-        </div>
-    </div>
-
-    <!-- <nav ng-include="'partials/nav.html'"></nav>
+  <!-- <nav ng-include="'partials/nav.html'"></nav>
 
     <div ng-include="'partials/members.html'"></div>
     <div ng-include="'partials/profiles.html'"></div>
@@ -261,7 +193,8 @@
     <div ng-include="'partials/footer.html'"></div>
     <div ng-include="'partials/login.html'"></div>
     <div ng-include="'partials/register.html'"></div> -->
-  </body>
+</body>
+
 </html>
 
 <!-- nav -->

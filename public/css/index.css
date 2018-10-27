@@ -26,22 +26,38 @@ body {
 
 .loginRegister input {
   margin: 0 0 .5em 0;
-  width: 25vw;
+  width: 35vw;
     padding: 2%;
   font-size: 2vw;
     text-transform: uppercase;
   border: 5px solid #f5f5f5;
+    border-radius: 1vw;
+    outline: none;
+  font-weight: 600;
+    color: #508CA4;
+  transition: .5s
 }
 
 .loginRegister button {
   background: white;
   border: 5px solid #f5f5f5;
     border-radius: 1vw;
-  width: 20vw;
+    outline: none;
+  width: 35vw;
     padding: 2%;
   font-size: 2vw;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #508CA4;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #508CA4;
   cursor: pointer;
+  transition: .5s;
+}
+
+.loginRegister button:hover, input:hover {
+  background: #508CA4;
+  border: 5px solid #498096;
+    border-radius: 1vw;
+    outline: none;
+  color: white;
+  transition: .5s;
 }

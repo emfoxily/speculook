@@ -157,8 +157,6 @@ this.consoleLog = function(){
 
 
 
-
-
 // ====================156-210 Alyssa===============================
 
   const messages = [];

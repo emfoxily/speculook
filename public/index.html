@@ -6,6 +6,9 @@
     img {
     height: 60px;
   }
+  a {
+    color: red;
+  }
   </style>
   <meta charset="utf-8">
   <title></title>
@@ -32,7 +35,7 @@
       <input type="submit" value="logout">
     </form>
     <button ng-click="ctrl.consoleLog(ctrl.currentUser._id)">console log</button>
-    <img src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile(); ctrl.IdofCurrentUser = ctrl.currentUser._id" />
+    <img ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile(); ctrl.IdofCurrentUser = ctrl.currentUser._id" />
     </div>
   </nav>
 
@@ -64,16 +67,16 @@
       <img src="{{ user.image }}" alt="image of {{ user.username }}">
       <section>
         <h1>{{ user.name }}</h1>
-        <h4>{{ user.location }}</h4>
-        <h4>{{ user.email }}</h4>
+        <h4>Location: {{ user.location }}</h4>
+        <h4>Email: {{ user.email }}</h4>
         <!-- Member blurb -->
       </section>
       <section>
         <h1>Social Media</h1>
         <ul>
-          <li>{{ user.linkedIn }}</li>
-          <li>{{ user.github }}</li>
-          <li>{{ user.facebook }}</li>
+          <li><a href="{{ user.linkedIn }}">LinkedIn</a></li>
+          <li><a href="{{ user.github }}">Github</a></li>
+          <li><a href="{{ user.facebook }}">Facebook</a></li>
         </ul>
         <h1>Interests & Skills</h1>
         <ul>
@@ -102,15 +105,15 @@
         <input type="text" placeholder="Facebook" ng-model="ctrl.editData.facebook">
         <input type="text" placeholder="Interests" ng-model="ctrl.editData.interests">
         <input type="text" placeholder="Name" ng-model="ctrl.editData.name">
-        <p> I can help with:</p>
-        <input type="checkbox" name="CSS" ng-model="ctrl.editData.iCanHelp.css">
-        <input type="checkbox" name="HTML" ng-model="ctrl.editData.iCanHelp.html">
-        <input type="checkbox" name="JavaScript" ng-model="ctrl.editData.iCanHelp.js">
-        <input type="checkbox" name="jQuery" ng-model="ctrl.editData.iCanHelp.jQ">
-        <input type="checkbox" name="AngularJS" ng-model="ctrl.editData.iCanHelp.ang">
-        <input type="checkbox" name="Command Line Interface" ng-model="ctrl.editData.iCanHelp.cli">
-        <input type="checkbox" name="React" ng-model="ctrl.editData.iCanHelp.react">
-        <input type="checkbox" name="Ruby" ng-model="ctrl.editData.iCanHelp.ruby">
+        <h5> I can help with:</h5>
+        <input type="checkbox" name="CSS" ng-model="ctrl.editData.iCanHelp.css"><span>CSS</span><br/>
+        <input type="checkbox" name="HTML" ng-model="ctrl.editData.iCanHelp.html"><span>HTML</span><br/>
+        <input type="checkbox" name="JavaScript" ng-model="ctrl.editData.iCanHelp.js"><span>JavaScript</span><br/>
+        <input type="checkbox" name="jQuery" ng-model="ctrl.editData.iCanHelp.jQ"><span>jQuery</span><br/>
+        <input type="checkbox" name="AngularJS" ng-model="ctrl.editData.iCanHelp.ang"><span>AngularJS</span><br/>
+        <input type="checkbox" name="Command Line Interface" ng-model="ctrl.editData.iCanHelp.cli"><span>Command Line Interface</span><br/>
+        <input type="checkbox" name="React" ng-model="ctrl.editData.iCanHelp.react"><span>React</span><br/>
+        <input type="checkbox" name="Ruby" ng-model="ctrl.editData.iCanHelp.ruby"><span>Ruby</span><br/>
         <input type="submit" name="" value="Submit Changes">
       </form>
     </div>

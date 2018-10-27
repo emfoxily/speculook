@@ -50,11 +50,10 @@
         <!--Show members names-->
         <li>{{ user.username }}</li>
         <!--Show members photos -->
-        <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showProfile()"></li>
+        <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showProfile(); ctrl.indexOfClickedUser = $index"></li>
       </ul>
     </div>
-    <div class="communityModal" ng-show="ctrl.userProfile">
-      <button ng-click="ctrl.consoleLog()">console log</button>
+    <div class="communityModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser">
       <img src="{{ user.image }}" alt="image of {{ user.username }}">
       <section>
         <h1>{{ user.name }}</h1>

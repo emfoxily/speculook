@@ -3,7 +3,7 @@
 
 <head>
   <style>
-  img {
+    img {
     height: 60px;
   }
   </style>
@@ -32,7 +32,7 @@
       <input type="submit" value="logout">
     </form>
     <button ng-click="ctrl.consoleLog(ctrl.currentUser._id)">console log</button>
-      <img src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile(); ctrl.IdofCurrentUser = ctrl.currentUser._id"/>
+    <img src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile(); ctrl.IdofCurrentUser = ctrl.currentUser._id" />
     </div>
   </nav>
 
@@ -81,22 +81,40 @@
           <li>{{ user.iCanHelp }}</li>
         </ul>
       </section>
-      <button ng-show"ctrl.currentUser === user">Edit Profile</button>
+      <section>
+        <h1>Mailbox</h1>
+        <!-- Incoming mail -->
+      </section>
+      <button ng-click="ctrl.showEditUserForm(user, $index)" ng-show"ctrl.currentUser===user">Edit Profile</button>
       <button type="button" name="close" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = null; ctrl.IdofCurrentUser = null">X</button>
     </div>
+    <!-- ====== EDIT USER MODAL -->
+    <div class="user-edit-form" ng-if="ctrl.editIndex === $index">
+      <form ng-submit="ctrl.editUser(user._id)">
+        <input type="text" placeholder="Name" ng-model="ctrl.editData.name">
+        <input type="text" placeholder="Username" ng-model="ctrl.editData.username">
+        <input type="text" placeholder="Password" ng-model="ctrl.editData.password">
+        <input type="text" placeholder="Image URL" ng-model="ctrl.editData.image">
+        <input type="text" placeholder="Location" ng-model="ctrl.editData.location">
+        <input type="text" placeholder="Email" ng-model="ctrl.editData.email">
+        <input type="text" placeholder="LinkedIn" ng-model="ctrl.editData.linkedIn">
+        <input type="text" placeholder="Github" ng-model="ctrl.editData.github">
+        <input type="text" placeholder="Facebook" ng-model="ctrl.editData.facebook">
+        <input type="text" placeholder="Interests" ng-model="ctrl.editData.interests">
+        <input type="text" placeholder="Name" ng-model="ctrl.editData.name">
+        <p> I can help with:</p>
+        <input type="checkbox" name="CSS" ng-model="ctrl.editData.iCanHelp.css">
+        <input type="checkbox" name="HTML" ng-model="ctrl.editData.iCanHelp.html">
+        <input type="checkbox" name="JavaScript" ng-model="ctrl.editData.iCanHelp.js">
+        <input type="checkbox" name="jQuery" ng-model="ctrl.editData.iCanHelp.jQ">
+        <input type="checkbox" name="AngularJS" ng-model="ctrl.editData.iCanHelp.ang">
+        <input type="checkbox" name="Command Line Interface" ng-model="ctrl.editData.iCanHelp.cli">
+        <input type="checkbox" name="React" ng-model="ctrl.editData.iCanHelp.react">
+        <input type="checkbox" name="Ruby" ng-model="ctrl.editData.iCanHelp.ruby">
+        <input type="submit" name="" value="Submit Changes">
+      </form>
+    </div>
   </div>
-  <section>
-    <h1>Mailbox</h1>
-    <!-- Incoming mail -->
-  </section>
-  </div>
-
-
-
-
-
-
-
 
 
 
@@ -132,6 +150,15 @@
       {{message.userWhoPosted}}
     </div>
   </div>
+
+
+
+
+
+
+
+
+
 
   <!-- <nav ng-include="'partials/nav.html'"></nav>
 

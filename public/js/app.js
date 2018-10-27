@@ -160,8 +160,24 @@ this.editProfile = function(user){
     controller.getUsers();
   })
 }
-
-
+this.showEditUserForm = (user, index) => {
+  console.log(index);
+  this.editData = user;
+  this.editIndex = index;
+}
+this.editUser = (id) => {
+  $http({
+    method: 'PUT',
+    url: '/users/'+ id,
+    data: this.editData
+  }).then((res)=> {
+    this.getUsers();
+    // hide edit form
+    this.editIndex = null;
+  }, (err)=> {
+    console.log(err);
+  })
+}
 
 
 

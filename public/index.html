@@ -11,7 +11,7 @@
   <body ng-controller="MainController as ctrl">
     <nav>
       <span ng-if="ctrl.currentUser">
-        Welcome, {{ ctrl.currentUser }}
+        Welcome, {{ ctrl.currentUser.name }}
       </span>
       <!-- open login modal -->
       <button ng-click="ctrl.toggleShowLogin()"
@@ -26,6 +26,7 @@
       <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
         <input type="submit" value="logout">
       </form>
+      <img src="{{ctrl.currentUser.image}}"/>
     </nav>
 
     <!-- =================Laura line 32========== -->

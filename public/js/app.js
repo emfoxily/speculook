@@ -82,7 +82,7 @@ app.controller('MainController', ['$http', function($http){
       url: '/speculook',
     }).then((response) => {
       console.log(response.data);
-      controller.currentUser = response.data.username;
+      controller.currentUser = response.data;
       controller.currentUserLocation = response.data.location;
       controller.currentUserInterests = response.data.interests;
       console.log(controller.loginSuccess);

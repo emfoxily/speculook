@@ -2,20 +2,12 @@
 <html lang="en" dir="ltr" ng-app="SpecuLook">
 
 <head>
-      <!-- styling just for reference, can be changed -->
-  <style>
-    img {
-    height: 60px;
-  }
-  a {
-    color: red;
-  }
-  </style>
   <meta charset="utf-8">
   <title></title>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
   <script src="./js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="./css/index.css">
 
 </head>
 
@@ -27,14 +19,40 @@
     <span ng-if="ctrl.currentUser">
       Welcome, {{ ctrl.currentUser.name }}
     </span>
-    <!-- open login modal -->
-    <button ng-click="ctrl.toggleShowLogin()" ng-if="!ctrl.currentUser">
-      log in
-    </button>
-    <!-- open register modal -->
-    <button ng-click="ctrl.toggleShowRegister()" ng-if="!ctrl.currentUser">
-      sign up
-    </button>
+
+    <div class="loginRegister" ng-if="!ctrl.currentUser">
+      <img src="../images/whitespecubanner.png"/>
+        <br/>
+      <button ng-click="ctrl.toggleShowLogin()" ng-if="!ctrl.currentUser">
+        log in
+      </button>
+      <button ng-click="ctrl.toggleShowRegister()" ng-if="!ctrl.currentUser">
+        sign up
+      </button>
+      <!-- ===REGISTER FORM ===-->
+        <div ng-if="ctrl.showRegister" ng-show="!ctrl.currentUser">
+          <form ng-submit="ctrl.createUser()">
+            <input type="text" ng-model="ctrl.name" placeholder="full name" />
+              <br/>
+            <input type="text" ng-model="ctrl.username" placeholder="username" />
+              <br/>
+            <input type="password" ng-model="ctrl.password" placeholder="password" />
+              <br/>
+            <input type="submit" value="register" />
+          </form>
+        </div>
+        <br/>
+        <!-- ===LOGIN FORM=== -->
+        <div ng-if="ctrl.showLogin" ng-show="!ctrl.currentUser;">
+          <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
+            <input type="text" ng-model="ctrl.username" placeholder="username" />
+              <br/>
+            <input type="password" ng-model="ctrl.password" placeholder="password" />
+              <br/>
+            <input type="submit" value="log in" />
+          </form>
+        </div>
+    </div>
     <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
       <input type="submit" value="logout">
     </form>
@@ -113,28 +131,6 @@
       </form>
     </div>
   </div>
-
-
-
-  <!-- ===REGISTER FORM ===-->
-  <div ng-if="ctrl.showRegister" class="register" ng-show="!ctrl.currentUser">
-    <form ng-submit="ctrl.createUser()">
-      <input type="text" ng-model="ctrl.name" placeholder="full name" />
-      <input type="text" ng-model="ctrl.username" placeholder="username" />
-      <input type="password" ng-model="ctrl.password" placeholder="password" />
-      <input type="submit" value="register" />
-    </form>
-  </div>
-
-  <!-- ===LOGIN FORM=== -->
-  <div ng-if="ctrl.showLogin" class="login" ng-show="!ctrl.currentUser">
-    <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
-      <input type="text" ng-model="ctrl.username" placeholder="username" />
-      <input type="password" ng-model="ctrl.password" placeholder="password" />
-      <input type="submit" value="log in" />
-    </form>
-  </div>
-
 
 
 

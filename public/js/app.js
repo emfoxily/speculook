@@ -4,7 +4,7 @@ app.controller('MainController', ['$http', function($http){
 
   //Define controller
   const controller = this;
-  const userImage = this.image; 
+  const userImage = this.image;
   this.me = 'awesome';
   //Create Function
   this.createUser = function(){
@@ -228,7 +228,8 @@ this.editUser = (id) => {
       data: {
         message: this.message,
         signature: this.signature,
-        userWhoPosted: this.username
+        userWhoPosted: this.username,
+        userWhoPostedId: this.username._id
       }
     }).then(response=>{
       console.log(controller.userWhoPosted);
@@ -237,7 +238,7 @@ this.editUser = (id) => {
   };
 
 
-  this.deleteMessage = function(){
+  this.deleteMessage = function(message){
     $http({
       method: 'DELETE',
       url: '/messages/' + message._id

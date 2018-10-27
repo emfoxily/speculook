@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="SpecuLook">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
-    <script src="./js/app.js" charset="utf-8"></script>
+<head>
+  <meta charset="utf-8">
+  <title></title>
 
-  </head>
-  <body ng-controller="MainController as ctrl">
-    <nav>
-      <span ng-if="ctrl.currentUser">
-        Welcome, {{ ctrl.currentUser.name }}
-      </span>
-      <!-- open login modal -->
-      <button ng-click="ctrl.toggleShowLogin()"
-        ng-if="!ctrl.currentUser">
-          log in
-      </button>
-      <!-- open register modal -->
-      <button ng-click="ctrl.toggleShowRegister()"
-        ng-if="!ctrl.currentUser">
-          sign up
-      </button>
-      <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
-        <input type="submit" value="logout">
-      </form>
-      <img src="{{ctrl.currentUser.image}}"/>
-    </nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+  <script src="./js/app.js" charset="utf-8"></script>
 
-    <!-- =================Laura line 32========== -->
+</head>
 
+<body ng-controller="MainController as ctrl">
+  <nav>
+    <span ng-if="ctrl.currentUser">
+      Welcome, {{ ctrl.currentUser.name }}
+    </span>
+    <!-- open login modal -->
+    <button ng-click="ctrl.toggleShowLogin()" ng-if="!ctrl.currentUser">
+      log in
+    </button>
+    <!-- open register modal -->
+    <button ng-click="ctrl.toggleShowRegister()" ng-if="!ctrl.currentUser">
+      sign up
+    </button>
+    <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
+      <input type="submit" value="logout">
+    </form>
+    <!-- <button ng-click="ctrl.consoleLog()">console log</button>
+      <img src="../images/speculoos.png"/> -->
+  </nav>
 
+  <!-- =================Laura line 32========== -->
 
 
 
@@ -42,219 +41,92 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ============End Laura line 100============== -->
-<!-- ============Alyssa line 101================= -->
+  <!-- ============End Laura line 100============== -->
+  <!-- ============Alyssa line 101================= -->
   <h1>Community Members</h1>
+  <div ng-repeat="user in ctrl.users">
+    <div>
+      <ul>
+        <!--Show members names-->
+        <li>{{ user.username }}</li>
+        <!--Show members photos -->
+        <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showProfile()"></li>
+      </ul>
+    </div>
+    <div class="communityModal" ng-show="ctrl.userProfile">
+      <button ng-click="ctrl.consoleLog()">console log</button>
+      <img src="{{ user.image }}" alt="image of {{ user.username }}">
+      <section>
+        <h1>{{ user.name }}</h1>
+        <h4>{{ user.location }}</h4>
+        <h4>{{ user.email }}</h4>
+        <!-- Member blurb -->
+      </section>
+      <section>
+        <h1>Social Media</h1>
+        <ul>
+          <li>{{ user.linkedIn }}</li>
+          <li>{{ user.github }}</li>
+          <li>{{ user.facebook }}</li>
+        </ul>
+        <h1>Interests & Skills</h1>
+        <ul>
+          <li>{{ user.interests }}</li>
+          <li>{{ user.iCanHelp }}</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <section>
+    <h1>Mailbox</h1>
+    <!-- Incoming mail -->
+  </section>
+  <button type="button" name="close" ng-click="ctrl.showProfile()">X</button>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!-- ========end Alyssa line 170========== -->
+  <div ng-if="ctrl.showRegister" class="register">
+    <form ng-submit="ctrl.createUser()">
+      <input type="text" ng-model="ctrl.name" placeholder="full name" />
+      <input type="text" ng-model="ctrl.username" placeholder="username" />
+      <input type="password" ng-model="ctrl.password" placeholder="password" />
+      <input type="submit" value="register" />
+    </form>
+  </div>
+  <div ng-if="ctrl.showLogin" class="login">
+    <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
+      <input type="text" ng-model="ctrl.username" placeholder="username" />
+      <input type="password" ng-model="ctrl.password" placeholder="password" />
+      <input type="submit" value="log in" />
+    </form>
+  </div>
 
   <div>
-    <ul ng-repeat="user in ctrl.users">
-    <!--Show members names-->
-    <li>{{ user.username }}</li>
-    <!--Show members photos -->
-    <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showProfile()"></li>
-    </ul>
-  </div>
-  <div class="communityModal" ng-show="ctrl.userProfile">
-    <img src="{{ user.image }}" alt="image of {{ user.username }}">
-    <section>
-      <h1>{{ user.name }}</h1>
-      <h4>{{ user.location }}</h4>
-      <h4>{{ user.email }}</h4>
-      <!-- Member blurb -->
-    </section>
-    <section>
-      <h1>Social Media</h1>
-      <ul>
-        <li>{{ user.linkedIn }}</li>
-        <li>{{ user.github }}</li>
-        <li>{{ user.facebook }}</li>
-      </ul>
-      <h1>Interests & Skills</h1>
-      <ul>
-        <li>{{ user.interests }}</li>
-        <li>{{ user.iCanHelp }}</li>
-      </ul>
-    </section>
-    <section>
-      <h1>Mailbox</h1>
-      <!-- Incoming mail -->
-    </section>
-    <button type="button" name="close" ng-click="ctrl.showProfile()">X</button>
+    <h1>Message Board</h1>
+    <!--Submit message form-->
+    <form ng-submit="ctrl.postMessage(); ctrl.loginSuccess = ctrl.userWhoPosted">
+      <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
+      <input type="text" ng-model="ctrl.signature" placeholder="Your Signature" />
+      <input type="submit" value="Post Your Message" />
+    </form>
+    <!--Display posted messages-->
+    <div ng-repeat="message in ctrl.messages">
+      {{ message.message }}</br>
+      {{ message.signature }}
+      {{message.userWhoPosted}}
+    </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ========end Alyssa line 170========== -->
-    <div ng-if="ctrl.showRegister" class="register">
-      <form ng-submit="ctrl.createUser()">
-        <input
-          type="text"
-          ng-model="ctrl.name"
-          placeholder="full name"/>
-        <input
-          type="text"
-          ng-model="ctrl.username"
-          placeholder="username"/>
-        <input
-          type="password"
-          ng-model="ctrl.password"
-          placeholder="password"/>
-        <input
-          type="submit"
-          value="register"/>
-      </form>
-    </div>
-    <div ng-if="ctrl.showLogin" class="login">
-      <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
-        <input
-          type="text"
-          ng-model="ctrl.username"
-          placeholder="username"/>
-        <input
-          type="password"
-          ng-model="ctrl.password"
-          placeholder="password"/>
-        <input
-          type="submit"
-          value="log in"/>
-      </form>
-    </div>
-
-    <div>
-      <h1>Message Board</h1>
-        <!--Submit message form-->
-        <form ng-submit="ctrl.postMessage(); ctrl.loginSuccess = ctrl.userWhoPosted">
-          <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
-          <input type="text" ng-model="ctrl.signature" placeholder="Your Signature" />
-          <input type="submit" value="Post Your Message" />
-        </form>
-        <!--Display posted messages-->
-        <div ng-repeat="message in ctrl.messages">
-          {{ message.message }}</br>
-          {{ message.signature }}
-          {{message.userWhoPosted}}
-        </div>
-    </div>
-
-    <!-- <nav ng-include="'partials/nav.html'"></nav>
+  <!-- <nav ng-include="'partials/nav.html'"></nav>
 
     <div ng-include="'partials/members.html'"></div>
     <div ng-include="'partials/profiles.html'"></div>
@@ -262,7 +134,8 @@
     <div ng-include="'partials/footer.html'"></div>
     <div ng-include="'partials/login.html'"></div>
     <div ng-include="'partials/register.html'"></div> -->
-  </body>
+</body>
+
 </html>
 
 <!-- nav -->

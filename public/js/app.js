@@ -83,9 +83,6 @@ app.controller('MainController', ['$http', function($http){
     }).then((response) => {
       console.log(response.data);
       controller.currentUser = response.data;
-      controller.currentUserLocation = response.data.location;
-      controller.currentUserInterests = response.data.interests;
-      console.log(controller.loginSuccess);
     }, (error) => {
       console.log(error);
     })
@@ -129,6 +126,9 @@ this.toggleShowRegister = function() {
   console.log(controller.showRegister);
 }
 
+this.consoleLog = function(){
+  console.log(controller.user.image);
+}
 
 
 

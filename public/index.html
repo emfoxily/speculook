@@ -24,7 +24,7 @@
           sign up
       </button>
       <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
-          <input type="submit" value="logout">
+        <input type="submit" value="logout">
       </form>
     </nav>
 
@@ -105,10 +105,36 @@
     <!--Show members names-->
     <li>{{ user.username }}</li>
     <!--Show members photos -->
-    <li><img src="{{ user.image }}" alt="image of {{ user.name }}"></li>
+    <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showProfile()"></li>
     </ul>
-  <div>
-
+  </div>
+  <div class="communityModal" ng-show="ctrl.userProfile">
+    <img src="{{ user.image }}" alt="image of {{ user.username }}">
+    <section>
+      <h1>{{ user.name }}</h1>
+      <h4>{{ user.location }}</h4>
+      <h4>{{ user.email }}</h4>
+      <!-- Member blurb -->
+    </section>
+    <section>
+      <h1>Social Media</h1>
+      <ul>
+        <li>{{ user.linkedIn }}</li>
+        <li>{{ user.github }}</li>
+        <li>{{ user.facebook }}</li>
+      </ul>
+      <h1>Interests & Skills</h1>
+      <ul>
+        <li>{{ user.interests }}</li>
+        <li>{{ user.iCanHelp }}</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Mailbox</h1>
+      <!-- Incoming mail -->
+    </section>
+    <button type="button" name="close" ng-click="ctrl.showProfile()">X</button>
+  </div>
 
 
 

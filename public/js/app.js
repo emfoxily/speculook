@@ -119,8 +119,15 @@ app.controller('MainController', ['$http', function($http){
 
 // ================121-155 Laura==================================
 
+this.toggleShowLogin = function() {
+  controller.showLogin = !controller.showLogin;
+  console.log(controller.showLogin);
+}
 
-
+this.toggleShowRegister = function() {
+  controller.showRegister = !controller.showRegister;
+  console.log(controller.showRegister);
+}
 
 
 

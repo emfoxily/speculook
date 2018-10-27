@@ -14,12 +14,12 @@
         Welcome, {{ ctrl.currentUser }}
       </span>
       <!-- open login modal -->
-      <button
+      <button ng-click="ctrl.toggleShowLogin()"
         ng-if="!ctrl.currentUser">
           log in
       </button>
       <!-- open register modal -->
-      <button
+      <button ng-click="ctrl.toggleShowRegister()"
         ng-if="!ctrl.currentUser">
           sign up
       </button>
@@ -202,7 +202,7 @@
 
 
 <!-- ========end Alyssa line 170========== -->
-    <div class="register">
+    <div ng-if="ctrl.showRegister" class="register">
       <form ng-submit="ctrl.createUser()">
         <input
           type="text"
@@ -221,7 +221,7 @@
           value="register"/>
       </form>
     </div>
-    <div class="login">
+    <div ng-if="ctrl.showLogin" class="login">
       <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
         <input
           type="text"

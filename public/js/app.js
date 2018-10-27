@@ -146,14 +146,14 @@ this.editProfile = function(user){
       facebook: this.updatedFacebook,
       interests: this.updatedInterests,
       iCanHelp: {
-        css: this.updatedCss,
-        html: this.updatedHtml,
-        js: this.updatedJs,
-        jQ: this.updatedJq,
-        ang: this.updatedAng,
-        cli: this.updatedCli,
-        react: this.updatedReact,
-        ruby: this.updatedRuby
+        CSS: this.updatedCss,
+        HTML: this.updatedHtml,
+        JavaScript: this.updatedJs,
+        jQuery: this.updatedJq,
+        Angular: this.updatedAng,
+        CLI: this.updatedCli,
+        React: this.updatedReact,
+        Ruby: this.updatedRuby
       }
     }
   }).then(function(response){

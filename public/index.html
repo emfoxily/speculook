@@ -18,7 +18,7 @@
       <!-- ==CurrentUser image (link to profile)== -->
       <img
         style=
-          "width: 5%;
+          "width: 4vw;
           border-radius: 5vw;
           border: 5px solid #498096;"
         ng-if=
@@ -96,9 +96,15 @@
         </button>
     </div>
     <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
-      <input type="submit" value="logout">
+      <div class="logout">
+        <input type="submit" value="logout">
+      </div>
     </form>
   </nav>
+
+  <header>
+    <img src="../images/specubanner.png" alt="speculook"/>
+  </header>
 
 
 <!-- ============Community=========== -->

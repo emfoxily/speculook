@@ -43,7 +43,7 @@
         </div>
         <button ng-click="ctrl.toggleShowLogin(); ctrl.toggleShowRegister(); ctrl.hideRegister = true; ctrl.showNeedToSignUp = false; ctrl.showNeedToSignUp = true" ng-if="ctrl.showRegister === true">Remember To Log In!</button>
         <br/>
-        <!-- ===LOGIN FORM=== -->
+        <!-- ===LOGIN    FORM=== -->
         <div ng-if="ctrl.showLogin" ng-show="!ctrl.currentUser;">
           <form ng-submit="ctrl.logIn(); ctrl.loggedIn()">
             <input type="text" ng-model="ctrl.username" placeholder="username" />

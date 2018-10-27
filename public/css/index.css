@@ -65,6 +65,7 @@ body {
 nav {
   background: #508CA4;
   display: inline-flex;
+  justify-content: space-between;
   width: 100%;
     padding: .5%;
     margin-top: -8px;
@@ -74,14 +75,38 @@ nav {
     color: white;
 }
 
-nav span li {
-  display: inline-block;
+nav span {
+  display: flex;
+    align-items: center;
   width: 800px;
-  vertical-align: middle;
+  font-weight: 600;
 }
 
-nav span img {
-  width: 5%;
-  border-radius: 5vw;
+.logout {
+  display: flex;
+    align-items: center;
+}
+
+.logout input {
+  background: #498096;
   border: 5px solid #498096;
+    border-radius: 1vw;
+    outline: none;
+  width: 10vw;
+    padding: 5%;
+  margin-top: .2vw;
+  font-size: 2vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+  cursor: pointer;
+  transition: .5s;
+}
+
+header {
+  text-align: center;
+}
+
+header img {
+  width: 90%;
 }

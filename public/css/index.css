@@ -61,3 +61,27 @@ body {
   color: white;
   transition: .5s;
 }
+
+nav {
+  background: #508CA4;
+  display: inline-flex;
+  width: 100%;
+    padding: .5%;
+    margin-top: -8px;
+    margin-left: -3px;
+  font-size: 2vw;
+    text-transform: uppercase;
+    color: white;
+}
+
+nav span li {
+  display: inline-block;
+  width: 800px;
+  vertical-align: middle;
+}
+
+nav span img {
+  width: 5%;
+  border-radius: 5vw;
+  border: 5px solid #498096;
+}

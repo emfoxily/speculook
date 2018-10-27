@@ -126,11 +126,40 @@ this.toggleShowRegister = function() {
   console.log(controller.showRegister);
 }
 
-this.consoleLog = function(){
-  console.log(controller.user.image);
+this.consoleLog = function(logThis){
+  console.log(logThis);
 }
 
-
+this.editProfile = function(user){
+  $http({
+    method: 'PUT',
+    url: '/users/' + user._id,
+    data: {
+      name: this.updatedName,
+      username: this.updatedUsername,
+      password: this.updatedPassword,
+      image: this.updatedImage,
+      location: this.updatedLocation,
+      email: this.updatedEmail,
+      linkedIn: this.updatedLinkedIn,
+      github: this.updatedGithub,
+      facebook: this.updatedFacebook,
+      interests: this.updatedInterests,
+      iCanHelp: {
+        css: this.updatedCss,
+        html: this.updatedHtml,
+        js: this.updatedJs,
+        jQ: this.updatedJq,
+        ang: this.updatedAng,
+        cli: this.updatedCli,
+        react: this.updatedReact,
+        ruby: this.updatedRuby
+      }
+    }
+  }).then(function(response){
+    controller.getUsers();
+  })
+}
 
 
 
@@ -213,7 +242,7 @@ this.consoleLog = function(){
     });
   };
 
-  this.showProfile = function(){
+  this.showHideProfile = function(){
     controller.userProfile = !controller.userProfile
   };
 

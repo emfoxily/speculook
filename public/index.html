@@ -2,6 +2,11 @@
 <html lang="en" dir="ltr" ng-app="SpecuLook">
 
 <head>
+  <style>
+  img {
+    height: 60px;
+  }
+  </style>
   <meta charset="utf-8">
   <title></title>
 
@@ -26,9 +31,11 @@
     <form action="/" ng-submit="ctrl.logout()" ng-if="ctrl.currentUser">
       <input type="submit" value="logout">
     </form>
-    <!-- <button ng-click="ctrl.consoleLog()">console log</button>
-      <img src="../images/speculoos.png"/> -->
+    <button ng-click="ctrl.consoleLog(ctrl.currentUser._id)">console log</button>
+      <img src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile(); ctrl.IdofCurrentUser = ctrl.currentUser._id"/>
+    </div>
   </nav>
+
 
   <!-- =================Laura line 32========== -->
 
@@ -44,16 +51,16 @@
   <!-- ============End Laura line 100============== -->
   <!-- ============Alyssa line 101================= -->
   <h1>Community Members</h1>
-  <div ng-repeat="user in ctrl.users">
+  <div ng-repeat="user in ctrl.users | orderBy: 'name'">
     <div>
       <ul>
         <!--Show members names-->
         <li>{{ user.username }}</li>
         <!--Show members photos -->
-        <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showProfile(); ctrl.indexOfClickedUser = $index"></li>
+        <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index"></li>
       </ul>
     </div>
-    <div class="communityModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser">
+    <div class="communityModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser || ctrl.IdofCurrentUser === user._id">
       <img src="{{ user.image }}" alt="image of {{ user.username }}">
       <section>
         <h1>{{ user.name }}</h1>
@@ -74,7 +81,8 @@
           <li>{{ user.iCanHelp }}</li>
         </ul>
       </section>
-        <button type="button" name="close" ng-click="ctrl.showProfile(); ctrl.indexOfClickedUser = null">X</button>
+      <button ng-show"ctrl.currentUser === user">Edit Profile</button>
+      <button type="button" name="close" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = null; ctrl.IdofCurrentUser = null">X</button>
     </div>
   </div>
   <section>

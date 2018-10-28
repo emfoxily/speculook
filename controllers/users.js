@@ -27,10 +27,26 @@ router.post('/', (req, res) => {
 })
 // PUT ROUTE
 router.put('/:id', (req, res)=> {
-  Users.findByIdAndUpdate(req.params.id, req.body,
-  {new:true}, (err, updatedUser) => {
+  Users.findByIdAndUpdate(req.params.id,
+    {
+      $push: {"mailbox":
+      [
+        {"mail": req.body.mailbox.mail}
+      ]}
+
+    },
+  {new:true, safe:true, upsert:true}, (err, updatedUser) => {
     res.json(updatedUser)
   })
 })
+
+
+// router.put('/:id', (req, res)=> {
+//   Users.findByIdAndUpdate(req.params.id, req.body,
+//   {new:true}, (err, updatedUser) => {
+//     res.json(updatedUser)
+//   })
+// })
+
 
 module.exports = router;

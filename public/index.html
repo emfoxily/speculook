@@ -111,19 +111,17 @@
 
 
 <!-- ============Community=========== -->
-  <!-- Community Members Display  -->
   <h1 ng-show="ctrl.currentUser">Community Members</h1>
-  <div ng-repeat="user in ctrl.users | orderBy: 'name' | filter: !ctrl.currentUser" ng-show="ctrl.currentUser">
+  <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
     <div>
       <ul>
         <!--Show members names-->
         <li>{{ user.username }}</li>
         <!--Show members photos -->
-        <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index"></li>
+        <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id"></li>
       </ul>
     </div>
-    <!-- Community Modal Display -->
-    <div class="communityModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser || ctrl.idOfCurrentUser === user._id">
+    <div class="communityModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser || ctrl.IdofCurrentUser === user._id">
       <img src="{{ user.image }}" alt="image of {{ user.username }}">
       <section>
         <h1>{{ user.name }}</h1>

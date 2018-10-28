@@ -133,11 +133,11 @@ this.toggleShowRegister = function() {
 this.consoleLog = function(logThis){
   console.log(logThis);
 }
-
-// this.editProfile = function(user){
+// 
+// this.editProfile = function(id){
 //   $http({
 //     method: 'PUT',
-//     url: '/users/' + user._id,
+//     url: '/users/' + id,
 //     data: {
 //       name: this.updatedName,
 //       username: this.updatedUsername,

@@ -145,8 +145,8 @@
               <li>{{mail.mail}}</li>
               <li>{{mail.sender}}</li>
             </ul>
-            <form ng-submit="ctrl.postMail(user._id, ctrl.currentUser)">
-              <input type="text" placeholder="Youre Message Here" ng-model="ctrl.mail">
+            <form ng-submit="ctrl.editUser(user._id)">
+              <input type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail">
               <input type="submit" name="" value="Post Message">
             </form>
             <!-- Incoming mail -->

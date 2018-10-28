@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tamma|Poppins');
+
 body {
   background: whitesmoke;
-  font-family: arial;
+  font-family: 'Poppins';
+}
+
+h1 {
+  font-family: 'Baloo Tamma'
 }
 
 /* =====================LOGIN REGISTER MODAL =========================*/

@@ -199,13 +199,8 @@
 
 
   <!-- ============= MESSAGE BOARD ============ -->
-  <div ng-show="ctrl.currentUser" class="messageBoard">
+  <div ng-show="ctrl.currentUser" class="messageBoard" id="messageBoard">
     <h1>Message Board</h1>
-    <!--Submit message form-->
-    <form ng-submit="ctrl.postMessage()">
-      <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
-      <input type="submit" style="cursor: pointer" value="Post Your Message" class="post"/>
-    </form>
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
@@ -215,6 +210,11 @@
         <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" >Delete</button>
       </li>
     </ul>
+    <!--Submit message form-->
+    <form ng-submit="ctrl.postMessage()">
+      <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
+      <input type="submit" style="cursor: pointer" value="Post Your Message" class="post"/>
+    </form>
   </div>
   <footer>
     <p>

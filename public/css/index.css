@@ -137,7 +137,6 @@ header img {
   text-align: center;
   display: block;
 }
-
 .closeProfileButton {
   text-align: center;
   margin-top: 3vw;
@@ -145,7 +144,6 @@ header img {
   margin-left: 70vw;
   font-size: 1vw;
 }
-
 .profileContainer {
   margin: auto;
   display: block;
@@ -156,7 +154,6 @@ header img {
   border: 2px solid #6e1818;
   border-radius: .2vw;
 }
-
 .profileContainerTop {
   padding-left: 2vw;
   width: 100%;
@@ -165,7 +162,6 @@ header img {
   align-items: center;
   justify-content: space-around;
 }
-
 .profileContainerBottom {
   /* padding-bottom: 2vw; */
   display: inline-flex;
@@ -175,7 +171,6 @@ header img {
   justify-content: space-between;
   padding-left: 2vw;
 }
-
 .profileContainerTop img[class="userImage"] {
   display: block;
   width: 15vw;
@@ -184,9 +179,7 @@ header img {
   border: .2px solid #34383f;
   box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
   border-radius: 100%;
-
 }
-
 .interestsAndSkills {
   width: 50%;
   height: 100%;
@@ -195,12 +188,10 @@ header img {
   background-repeat: no-repeat;
   background-size: contain;
 }
-
 .interestsAndSkills h1 {
   background: ghostwhite;
   font-family: 'Baloo Tamma';
 }
-
 .basicInfo ul {
   list-style: none;
   text-align: center;
@@ -210,31 +201,25 @@ header img {
     text-align: left;
     list-style: circle;
 }
-
 .basicInfoAndIcanHelp a {
   color: #b82727;
 }
-
 .basicInfoAndIcanHelp {
   width: 40%;
   height: 90%;
   vertical-align: center;
 }
-
 .basicInfo {
   margin-bottom: 3.5vw;
 }
-
 .interests {
   list-style: none;
 }
-
 .aboutMe {
   height: 50%;
   width: 100%;
   margin-right: -.9vw;
 }
-
 .iCanHelpWith {
   height: 50%;
 }
@@ -272,7 +257,6 @@ header img {
   width: 120%;
   margin-left: -2vw;
 }
-
 .profileContainer h1 {
   background: #3198C1;
   color: #f5f5f5;
@@ -280,12 +264,10 @@ header img {
   line-height: 120%;
   font-size: 2vw;
 }
-
 .basicInfo h1 {
   background: #b82727;
   width: 120%;
   margin-left: -2vw;
-
 }
 .editProfileDiv {
   background: #b82727;
@@ -306,16 +288,23 @@ header img {
   font-size: 34px;
 }
 
-.communityBoard ul {
+.communityBoard {
+  display: inline-flex;
+  flex-flow: row wrap;
+  width: 75%;
+}
+
+.communityBoard ul[class = "memberDisplay"] {
   list-style-type: none;
   text-align: center;
 }
 
-.communityBoard li {
+.communityBoard li[class = "memberDisplay"]{
   font-size: 20px;
+  display: inline-block;
 }
 
-.communityBoard img {
+.memberDisplay img {
     width: 20%;
     padding: 2.5%;
     border: .2px solid #34383f;
@@ -334,7 +323,8 @@ header img {
 }
 
 .messageBoardPosts li {
-  border: 2px solid #b82727;
+  border: 5px solid #b82727;
+  border-radius: 1vw;
   padding: 12px;
   list-style-type: none;
   background-color: #508ca4;
@@ -350,12 +340,24 @@ header img {
   border-radius: 25%;
 }
 
-.messageBoardPosts img {
-  display: flex;
-  justify-content: space-between;
-  width: 20%;
-  padding: 2.5%;
-  border: .2px solid #34383f;
-  box-shadow: 3px -1px 56px 2px rgba(0, 0, 0, 0.54);
-  border-radius: 100%;
+.messageBoard input {
+  margin: 0 0 .5em 0;
+  width: 35vw;
+  padding: 2%;
+  font-size: 2vw;
+  border: 5px solid #34383f;
+  border-radius: 1vw;
+  outline: none;
+  font-weight: 600;
+  color: #34383f;
+  transition: .5s
+}
+
+.messageBoard input:hover {
+  background: #b82727;
+  border: 5px solid ghostwhite;
+  border-radius: 1vw;
+  outline: none;
+  color: ghostwhite;
+  transition: .5s;
 }

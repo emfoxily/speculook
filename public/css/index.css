@@ -288,24 +288,26 @@ header img {
   font-size: 34px;
 }
 
-.communityBoard {
-  display: inline-flex;
-  flex-flow: row wrap;
-  width: 75%;
+#communityContainer {
+  display: flex;
+  flow-flow: row wrap;
+  width: 100vw;
+  margin: auto;
 }
 
-.communityBoard ul[class = "memberDisplay"] {
+.communityBoard {
+  text-align: center;
+}
+
+.memberDisplay h4 {
+  font-size: 20px;
+  display: inline-block;
   list-style-type: none;
   text-align: center;
 }
 
-.communityBoard li[class = "memberDisplay"]{
-  font-size: 20px;
-  display: inline-block;
-}
-
 .memberDisplay img {
-    width: 20%;
+    width: 30%;
     padding: 2.5%;
     border: .2px solid #34383f;
     box-shadow: 3px -1px 56px 2px rgba(0, 0, 0, 0.54);
@@ -318,8 +320,13 @@ header img {
   font-size: 34px;
 }
 
+.messageBoard {
+  align-items: center;
+  justify-content: center;
+}
+
 .messageBoardPosts ul {
-  text-align: center;
+
 }
 
 .messageBoardPosts li {
@@ -342,7 +349,7 @@ header img {
 
 .messageBoard input {
   margin: 0 0 .5em 0;
-  width: 35vw;
+  width: 30vw;
   padding: 2%;
   font-size: 2vw;
   border: 5px solid #34383f;

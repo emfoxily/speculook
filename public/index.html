@@ -95,14 +95,14 @@
   <div class="communityHeader">
     <h1 ng-show="ctrl.currentUser">Community Members</h1>
   </div>
+  <container id="communityContainer">
   <div class="communityBoard" ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
-      <ul class="memberDisplay">
         <!--Show members names-->
-        <li class="memberDisplay">{{ user.username }}</li>
+        <h4 class="memberDisplay">{{ user.username }}</h4>
         <!--Show members photos -->
-        <li class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id"></li>
-      </ul>
+        <h4 class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id"></h4>
   </div>
+  </container>
     <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
       <div class="profileModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser || ctrl.IdofCurrentUser === user._id">
         <button class="closeProfileButton" type="button" name="close" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = null; ctrl.IdofCurrentUser = null">X</button>
@@ -151,13 +151,13 @@
             <section class="writeMessage">
             <form ng-submit="ctrl.editUser(user._id)">
               <input type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail">
-              <input type="submit" name="" value="Post Message">
+              <input type="submit" name="" style="cursor: pointer" value="Post Mail">
             </form>
           </section>
             </section>
           </div>
           <div class="editProfileDiv">
-            <button class="editProfileButton" ng-click="ctrl.showEditUserForm(user, $index); ctrl.consoleLog(ctrl.idOfCurrentUser)" ng-show="ctrl.idOfCurrentUser === user._id"
+            <button class="editProfileButton" ng-click="ctrl.showEditUserForm(user, $index); ctrl.consoleLog(ctrl.idOfCurrentUser)" ng-show="ctrl.idOfCurrentUser === user._id" style="cursor: pointer"
 
             >Edit Profile</button>
           </div>
@@ -204,7 +204,7 @@
     <!--Submit message form-->
     <form ng-submit="ctrl.postMessage()">
       <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
-      <input type="submit" value="Post Your Message" class="post"/>
+      <input type="submit" style="cursor: pointer" value="Post Your Message" class="post"/>
     </form>
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
@@ -212,7 +212,7 @@
         <span>{{ message.initials }}</span>
         {{ message.message }}</br>
         Posted by: {{ message.userWhoPosted }}</br>
-        <button type="button" ng-click="ctrl.deleteMessage(message)">Delete</button>
+        <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" >Delete</button>
       </li>
     </ul>
   </div>

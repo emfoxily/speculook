@@ -40,6 +40,13 @@ router.put('/:id', (req, res)=> {
   })
 })
 
+router.put('/:id', (req, res)=> {
+  Users.findByIdAndUpdate(req.params.id, req.body,
+  {new:true}, (err, updatedUser) => {
+    res.json(updatedUser)
+  })
+})
+
 
 // router.put('/:id', (req, res)=> {
 //   Users.findByIdAndUpdate(req.params.id, req.body,
@@ -47,6 +54,5 @@ router.put('/:id', (req, res)=> {
 //     res.json(updatedUser)
 //   })
 // })
-
 
 module.exports = router;

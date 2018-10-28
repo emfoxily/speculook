@@ -179,7 +179,6 @@ this.editUser = (id) => {
     this.getUsers();
     // hide edit form
     this.editIndex = null;
-    this.
   }, (err)=> {
     console.log(err);
   })

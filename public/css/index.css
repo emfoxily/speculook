@@ -137,7 +137,6 @@ header img {
   text-align: center;
   display: block;
 }
-
 .closeProfileButton {
   text-align: center;
   margin-top: 3vw;
@@ -145,7 +144,6 @@ header img {
   margin-left: 70vw;
   font-size: 1vw;
 }
-
 .profileContainer {
   margin: auto;
   display: block;
@@ -156,7 +154,6 @@ header img {
   border: 2px solid #6e1818;
   border-radius: .2vw;
 }
-
 .profileContainerTop {
   padding-left: 2vw;
   width: 100%;
@@ -165,9 +162,8 @@ header img {
   align-items: center;
   justify-content: space-around;
 }
-
 .profileContainerBottom {
-  padding-bottom: 2vw;
+  /* padding-bottom: 2vw; */
   display: inline-flex;
   width: 100%;
   height: 65%;
@@ -175,7 +171,6 @@ header img {
   justify-content: space-between;
   padding-left: 2vw;
 }
-
 .profileContainerTop img[class="userImage"] {
   display: block;
   width: 15vw;
@@ -184,9 +179,7 @@ header img {
   border: .2px solid #34383f;
   box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
   border-radius: 100%;
-
 }
-
 .interestsAndSkills {
   width: 50%;
   height: 100%;
@@ -195,12 +188,10 @@ header img {
   background-repeat: no-repeat;
   background-size: contain;
 }
-
 .interestsAndSkills h1 {
   background: ghostwhite;
   font-family: 'Baloo Tamma';
 }
-
 .basicInfo ul {
   list-style: none;
   text-align: center;
@@ -210,48 +201,62 @@ header img {
     text-align: left;
     list-style: circle;
 }
-
 .basicInfoAndIcanHelp a {
   color: #b82727;
 }
-
 .basicInfoAndIcanHelp {
   width: 40%;
   height: 90%;
   vertical-align: center;
 }
-
 .basicInfo {
   margin-bottom: 3.5vw;
 }
-
 .interests {
   list-style: none;
 }
-
 .aboutMe {
   height: 50%;
   width: 100%;
   margin-right: -.9vw;
 }
-
 .iCanHelpWith {
   height: 50%;
 }
 .profileMailbox {
-  width: 50%;
+  width: 40%;
   height: 90%;
   padding-right: 2.5vw;
 }
+.mail {
+  height: 90%;
+  width: 100%;
+  margin-left: -2vw;
+  margin-top: -.4vw;
+  overflow: auto;
+}
 .profileMailbox h1 {
   margin-right: -.55vw;
+}
+.profileMailbox li {
+  border: 1px solid #34383f;
+  border-radius: .2vw;
+}
+.profileMailbox ul {
+  margin-left: -2vw;
+}
+.writeMessage {
+  margin-top: 2vw;
+  margin-left: -4vw;
+}
+.writeMessage input {
+  font-size: 2vw;
 }
 .iCanHelpWith h1 {
   background: #b82727;
   width: 120%;
   margin-left: -2vw;
 }
-
 .profileContainer h1 {
   background: #3198C1;
   color: #f5f5f5;
@@ -259,14 +264,24 @@ header img {
   line-height: 120%;
   font-size: 2vw;
 }
-
 .basicInfo h1 {
   background: #b82727;
   width: 120%;
   margin-left: -2vw;
-
 }
-
+.editProfileDiv {
+  background: #b82727;
+  margin-top: 0;
+  border: 2px solid #6e1818;
+  width: 99.8%;
+  margin-left: -.1vw;
+}
+.editProfileDiv button {
+  background: #b82727;
+  border: #b82727;
+  color: #f5f5f5;
+  font-size: 2vw;
+}
 /* ================= Main Community Board ===================== */
 .communityHeader h1 {
   text-align: center;
@@ -279,12 +294,12 @@ header img {
   width: 75%;
 }
 
-.memberDisplay ul {
+.communityBoard ul[class = "memberDisplay"] {
   list-style-type: none;
   text-align: center;
 }
 
-.memberDisplay li {
+.communityBoard li[class = "memberDisplay"]{
   font-size: 20px;
   display: inline-block;
 }

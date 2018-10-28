@@ -19,7 +19,7 @@
       <img style="width: 4vw;
           border-radius: 5vw;
           border: 5px solid #498096;" ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile();
-          ctrl.IdofCurrentUser = ctrl.currentUser._id; ctrl.idOfCurrentUser = ctrl.currentUser._id" />
+          ctrl.IdofCurrentUser = ctrl.currentUser._id" />
 
       Welcome, {{ ctrl.currentUser.name }}
 
@@ -104,6 +104,7 @@
         <li><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id"></li>
       </ul>
     </div>
+  </div>
     <div class="profileModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser || ctrl.IdofCurrentUser === user._id">
       <button class="closeProfileButton" type="button" name="close" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = null; ctrl.IdofCurrentUser = null">X</button>
       <div class="profileContainer">
@@ -140,28 +141,21 @@
             </div>
           </section>
           <section class="profileMailbox">
-            <section class="mail">
             <h1>Mailbox</h1>
             <ul ng-repeat="mail in user.mailbox">
               <li>{{mail.mail}}</li>
               <li>{{mail.sender}}</li>
             </ul>
-          </section>
+            <form ng-submit="ctrl.editUser(user._id)">
+              <input type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail">
+              <input type="submit" name="" value="Post Message">
+            </form>
             <!-- Incoming mail -->
-          <section class="writeMessage">
-          <form ng-submit="ctrl.editUser(user._id)">
-            <input type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail">
-            <input type="submit" name="" value="Post Message">
-          </form>
-        </section>
           </section>
-        </div>
-        <div class="editProfileDiv">
           <button class="editProfileButton" ng-click="ctrl.showEditUserForm(user, $index); ctrl.consoleLog(ctrl.idOfCurrentUser)" ng-show="ctrl.idOfCurrentUser === user._id"
 
           >Edit Profile</button>
         </div>
-
 
 
         <!-- ====== EDIT USER MODAL===== -->
@@ -193,7 +187,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 
 
 
@@ -208,7 +202,7 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
-        <img ng-src="./images/speculoos.png" alt="image of {{ message.userWhoPosted }}">
+        <img ng-src="{{ }}" alt="image of {{ message.userWhoPosted }}">
         <span>{{ message.initials }}</span>
         {{ message.message }}</br>
         Posted by: {{ message.userWhoPosted }}</br>

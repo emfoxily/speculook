@@ -210,8 +210,7 @@ this.editUser = (id) => {
       method: 'GET',
       url: '/messages',
       data: {
-        message: this.message,
-        userImage: this.image
+        message: this.message
       }
     }).then(response=>{
       controller.messages = response.data

@@ -306,6 +306,11 @@ header img {
   font-size: 34px;
 }
 
+.communityBoard {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .communityBoard ul {
   list-style-type: none;
   text-align: center;

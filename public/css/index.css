@@ -258,3 +258,29 @@ header img {
   margin-left: -2vw;
 
 }
+
+/* ================= Main Community Board ===================== */
+
+.communityBoard h1 {
+  text-align: center;
+}
+
+.communityBoard ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.communityBoard li {
+
+}
+
+.communityBoard img {
+  height: 75px;
+  width: auto;
+}
+
+/* ======================= Main Message Board ============ */
+
+.messageBoard h1 {
+  text-align: center;
+}

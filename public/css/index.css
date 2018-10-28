@@ -273,16 +273,23 @@ header img {
   font-size: 34px;
 }
 
-.communityBoard ul {
+.communityBoard {
+  display: inline-flex;
+  flex-flow: row wrap;
+  width: 75%;
+}
+
+.memberDisplay ul {
   list-style-type: none;
   text-align: center;
 }
 
-.communityBoard li {
+.memberDisplay li {
   font-size: 20px;
+  display: inline-block;
 }
 
-.communityBoard img {
+.memberDisplay img {
     width: 20%;
     padding: 2.5%;
     border: .2px solid #34383f;
@@ -301,7 +308,8 @@ header img {
 }
 
 .messageBoardPosts li {
-  border: 2px solid #b82727;
+  border: 5px solid #b82727;
+  border-radius: 1vw;
   padding: 12px;
   list-style-type: none;
   background-color: #508ca4;
@@ -317,12 +325,24 @@ header img {
   border-radius: 25%;
 }
 
-.messageBoardPosts img {
-  display: flex;
-  justify-content: space-between;
-  width: 20%;
-  padding: 2.5%;
-  border: .2px solid #34383f;
-  box-shadow: 3px -1px 56px 2px rgba(0, 0, 0, 0.54);
-  border-radius: 100%;
+.messageBoard input {
+  margin: 0 0 .5em 0;
+  width: 35vw;
+  padding: 2%;
+  font-size: 2vw;
+  border: 5px solid #34383f;
+  border-radius: 1vw;
+  outline: none;
+  font-weight: 600;
+  color: #34383f;
+  transition: .5s
+}
+
+.messageBoard input:hover {
+  background: #b82727;
+  border: 5px solid ghostwhite;
+  border-radius: 1vw;
+  outline: none;
+  color: ghostwhite;
+  transition: .5s;
 }

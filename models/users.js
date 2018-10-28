@@ -17,15 +17,7 @@ const users = Schema({
     type: String,
     required: true
   },
-  emilyAdmin: {
-    type: Boolean,
-    default: false
-  },
-  lauraAdmin: {
-    type: Boolean,
-    default: false
-  },
-  alyssaAdmin: {
+  admin: {
     type: Boolean,
     default: false
   },

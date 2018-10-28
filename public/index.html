@@ -139,6 +139,14 @@
           </section>
           <section class="profileMailbox">
             <h1>Mailbox</h1>
+            <ul ng-repeat="mail in user.mailbox">
+              <li>{{mail.mail}}</li>
+              <li>{{mail.sender}}</li>
+            </ul>
+            <form ng-submit="ctrl.postMail(user._id, ctrl.currentUser)">
+              <input type="text" placeholder="Youre Message Here" ng-model="ctrl.mail">
+              <input type="submit" name="" value="Post Message">
+            </form>
             <!-- Incoming mail -->
           </section>
           <button class="editProfileButton" ng-click="ctrl.showEditUserForm(user, $index); ctrl.consoleLog(ctrl.idOfCurrentUser)" ng-show="ctrl.idOfCurrentUser === user._id">Edit Profile</button>

@@ -302,10 +302,27 @@ header img {
 
 .messageBoardPosts li {
   border: 2px solid #b82727;
-  padding: 4px;
+  padding: 12px;
   list-style-type: none;
   background-color: #508ca4;
   color: ghostwhite;
-  width: 75%;
+  width: 450px;
   text-align: right;
+}
+
+.messageBoardPosts button {
+  background-color: #34383f;
+  color: ghostwhite;
+  font-family: 'Poppins';
+  border-radius: 25%;
+}
+
+.messageBoardPosts img {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  padding: 2.5%;
+  border: .2px solid #34383f;
+  box-shadow: 3px -1px 56px 2px rgba(0, 0, 0, 0.54);
+  border-radius: 100%;
 }

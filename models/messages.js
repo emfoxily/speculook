@@ -10,8 +10,8 @@ const messages = Schema({
     type: String,
     required: true
   },
-  userImage: {
-    type: String,
+  initials: {
+    type: String
   }
 });
 

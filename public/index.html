@@ -92,9 +92,9 @@
 
 
   <!-- ============Community=========== -->
-  <h1 ng-show="ctrl.currentUser">Community Members</h1>
-  <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
-    <div>
+  <h1 class="communityBoard" ng-show="ctrl.currentUser">Community Members</h1>
+  <div class="communityBoard" ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
+    <div class="communityBoard" >
       <ul>
         <!--Show members names-->
         <li>{{ user.username }}</li>
@@ -186,7 +186,7 @@
 
 
   <!-- ============= MESSAGE BOARD ============ -->
-  <div ng-show="ctrl.currentUser">
+  <div ng-show="ctrl.currentUser" class="messageBoard">
     <h1>Message Board</h1>
     <!--Submit message form-->
     <form ng-submit="ctrl.postMessage()">
@@ -204,7 +204,8 @@
   </div>
   <footer>
     <p>
-      &copy 2108 Alyssa Kieffer, Emily Reno, Laura Levenhagen
+      &copy 2018 Alyssa Kieffer, Emily Reno, Laura Levenhagen
+    </p>
   </footer>
 
 

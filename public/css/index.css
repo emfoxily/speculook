@@ -3,6 +3,7 @@ body {
   font-family: arial;
 }
 
+/* =====================LOGIN REGISTER MODAL =========================*/
 .loginRegister {
   position: absolute;
   background: #b82727;
@@ -21,34 +22,34 @@ body {
 .loginRegister form {
   margin: auto;
   width: 100vw;
-    padding: 2% 0;
+  padding: 2% 0;
 }
 
 .loginRegister input {
   margin: 0 0 .5em 0;
   width: 35vw;
-    padding: 2%;
+  padding: 2%;
   font-size: 2vw;
-    text-transform: uppercase;
+  text-transform: uppercase;
   border: 5px solid #f5f5f5;
-    border-radius: 1vw;
-    outline: none;
+  border-radius: 1vw;
+  outline: none;
   font-weight: 600;
-    color: #508CA4;
+  color: #508CA4;
   transition: .5s
 }
 
 .loginRegister button {
   background: white;
   border: 5px solid #f5f5f5;
-    border-radius: 1vw;
-    outline: none;
+  border-radius: 1vw;
+  outline: none;
   width: 35vw;
-    padding: 2%;
+  padding: 2%;
   font-size: 2vw;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #508CA4;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #508CA4;
   cursor: pointer;
   transition: .5s;
 }
@@ -56,12 +57,13 @@ body {
 .loginRegister button:hover, input:hover {
   background: #508CA4;
   border: 5px solid #498096;
-    border-radius: 1vw;
-    outline: none;
+  border-radius: 1vw;
+  outline: none;
   color: white;
   transition: .5s;
 }
 
+/* =========================== MAIN PAGE NAV ==================== */
 p {
   width: 75vw;
   margin: 10vw auto;
@@ -73,38 +75,38 @@ nav {
   display: inline-flex;
   justify-content: space-between;
   width: 100%;
-    padding: .5%;
-    margin-top: -8px;
-    margin-left: -5px;
+  padding: .5%;
+  margin-top: -8px;
+  margin-left: -5px;
   font-size: 2vw;
-    text-transform: uppercase;
-    color: white;
+  text-transform: uppercase;
+  color: white;
 }
 
 nav span {
   display: flex;
-    align-items: center;
+  align-items: center;
   width: 800px;
   font-weight: 600;
 }
 
 .logout {
   display: flex;
-    align-items: center;
+  align-items: center;
 }
 
 .logout input {
   background: #498096;
   border: 5px solid #498096;
-    border-radius: 1vw;
-    outline: none;
+  border-radius: 1vw;
+  outline: none;
   width: 10vw;
-    padding: 5%;
+  padding: 5%;
   margin-top: .2vw;
   font-size: 2vw;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
   cursor: pointer;
   transition: .5s;
 }
@@ -115,4 +117,144 @@ header {
 
 header img {
   width: 90%;
+}
+
+/* ======================== PROFILE MODAL ============================ */
+.profileModal {
+  position: absolute;
+  background: rgb(80, 140, 164, .9);
+  width: 100%;
+  height: 200%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: block;
+}
+
+.closeProfileButton {
+  text-align: center;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+  margin-left: 70vw;
+  font-size: 1vw;
+}
+
+.profileContainer {
+  margin: auto;
+  display: block;
+  height: 65vw;
+  width: 60vw;
+  background: #f5f5f5;
+  color: #34383f;
+  border: 2px solid #6e1818;
+  border-radius: .2vw;
+}
+
+.profileContainerTop {
+  padding-left: 2vw;
+  width: 100%;
+  height: 35%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profileContainerBottom {
+  padding-bottom: 2vw;
+  display: inline-flex;
+  width: 100%;
+  height: 65%;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-left: 2vw;
+}
+
+.profileContainerTop img[class="userImage"] {
+  width: 20%;
+  padding: 2.5%;
+  border: .2px solid #34383f;
+  box-shadow: 3px -1px 56px 2px rgba(0, 0, 0, 0.54);
+  border-radius: 100%;
+
+}
+
+.interestsAndSkills {
+  width: 50%;
+  height: 100%;
+  margin-top: 3vw;
+
+  background-image: url('../images/speech_bubble2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.interestsAndSkills h1 {
+  background: ghostwhite;
+}
+
+.basicInfo ul {
+  list-style: none;
+  text-align: center;
+  line-height: 150%;
+}
+.iCanHelpWith ul{
+    text-align: left;
+    list-style: circle;
+}
+
+.basicInfoAndIcanHelp a {
+  color: #b82727;
+}
+
+.basicInfoAndIcanHelp {
+  width: 40%;
+  height: 90%;
+  vertical-align: center;
+}
+
+.basicInfo {
+  margin-bottom: 3.5vw;
+}
+
+.interests {
+  list-style: none;
+}
+
+.aboutMe {
+  height: 50%;
+  width: 100%;
+  margin-right: -.9vw;
+}
+
+.iCanHelpWith {
+  height: 50%;
+}
+.profileMailbox {
+  width: 50%;
+  height: 90%;
+  padding-right: 2.5vw;
+}
+.profileMailbox h1 {
+  margin-right: -.55vw;
+}
+.iCanHelpWith h1 {
+  background: #b82727;
+  width: 120%;
+  margin-left: -2vw;
+}
+
+.profileContainer h1 {
+  background: #3198C1;
+  color: #f5f5f5;
+  border-radius: .2vw;
+  line-height: 120%;
+  font-size: 2vw;
+}
+
+.basicInfo h1 {
+  background: #b82727;
+  width: 120%;
+  margin-left: -2vw;
+
 }

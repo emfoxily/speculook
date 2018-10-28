@@ -204,6 +204,7 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
+        <img ng-model="image" ng-src="{{ message.userImage }}" alt="">
         <span>{{ message.initials }}</span>
         {{ message.message }}</br>
         Posted by: {{ message.userWhoPosted }}</br>

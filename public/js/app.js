@@ -4,7 +4,6 @@ app.controller('MainController', ['$http', function($http){
 
   //Define controller
   const controller = this;
-  const userImage = this.image;
   this.me = 'awesome';
   //Create Function
   this.createUser = function(){
@@ -226,7 +225,8 @@ this.editUser = (id) => {
       data: {
         message: this.message,
         userWhoPosted: this.username,
-        initials: this.initials
+        initials: this.initials,
+        userImage: this.image
       }
     }).then(response=>{
       controller.getMessage();

@@ -62,6 +62,12 @@ body {
   transition: .5s;
 }
 
+p {
+  width: 75vw;
+  margin: 10vw auto;
+  text-transform: none;
+}
+
 nav {
   background: #508CA4;
   display: inline-flex;
@@ -69,7 +75,7 @@ nav {
   width: 100%;
     padding: .5%;
     margin-top: -8px;
-    margin-left: -3px;
+    margin-left: -5px;
   font-size: 2vw;
     text-transform: uppercase;
     color: white;

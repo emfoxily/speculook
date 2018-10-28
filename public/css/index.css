@@ -36,7 +36,7 @@ h1, h2 {
   width: 35vw;
   padding: 2%;
   font-size: 2vw;
-  text-transform: uppercase;
+  text-transform: none;
   border: 5px solid #f5f5f5;
   border-radius: 1vw;
   outline: none;

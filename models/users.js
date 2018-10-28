@@ -27,7 +27,7 @@ const users = Schema({
   },
   image: {
     type: String,
-    default: '../images/speculoos.png'
+    default: './images/speculoos.png'
   },
   location: String,
   email: String,

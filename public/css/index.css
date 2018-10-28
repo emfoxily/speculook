@@ -6,7 +6,9 @@ body {
 }
 
 h1 {
-  font-family: 'Baloo Tamma'
+  font-family: 'Baloo Tamma';
+  text-align: center;
+  font-size: 34px;
 }
 
 /* =====================LOGIN REGISTER MODAL =========================*/
@@ -267,26 +269,35 @@ header img {
 
 /* ================= Main Community Board ===================== */
 
-.communityBoard h1 {
-  text-align: center;
-}
-
 .communityBoard ul {
   list-style-type: none;
   text-align: center;
 }
 
 .communityBoard li {
-
+  font-size: 20px;
 }
 
 .communityBoard img {
-  height: 75px;
-  width: auto;
+    width: 20%;
+    padding: 2.5%;
+    border: .2px solid #34383f;
+    box-shadow: 3px -1px 56px 2px rgba(0, 0, 0, 0.54);
+    border-radius: 100%;
 }
 
 /* ======================= Main Message Board ============ */
 
-.messageBoard h1 {
+.messageBoardPosts ul {
   text-align: center;
+}
+
+.messageBoardPosts li {
+  border: 2px solid #b82727;
+  padding: 4px;
+  list-style-type: none;
+  background-color: #508ca4;
+  color: ghostwhite;
+  width: 75%;
+  text-align: right;
 }

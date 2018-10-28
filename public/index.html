@@ -191,16 +191,17 @@
     <!--Submit message form-->
     <form ng-submit="ctrl.postMessage()">
       <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
-      <input type="text" ng-model="ctrl.signature" placeholder="Your Signature" />
       <input type="submit" value="Post Your Message" />
     </form>
     <!--Display posted messages-->
-    <div ng-repeat="message in ctrl.messages">
-      {{ message.message }}</br>
-      {{ message.signature }}
-      {{ message.userWhoPosted }}
-      <button type="button" ng-click="ctrl.deleteMessage(message)" ng-show="ctrl.currentUser._id === ctrl.userWhoPostedId">Delete</button>
-    </div>
+    <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
+      <li class="messageBoardPosts">
+        <img src="{{ message.userWhoPostedImg }}" alt=" image of {{ message.userWhoPosted }}" >
+        {{ message.message }}</br>
+        Posted by: {{ message.userWhoPosted }}
+        <button type="button" ng-click="ctrl.deleteMessage(message)" ng-show="ctrl.currentUser._id === ctrl.userWhoPostedId">Delete</button>
+      </li>
+    </ul>
   </div>
   <footer>
     <p>

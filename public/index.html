@@ -92,9 +92,11 @@
 
 
   <!-- ============Community=========== -->
-  <h1 class="communityBoard" ng-show="ctrl.currentUser">Community Members</h1>
+  <div class="communityHeader">
+    <h1 ng-show="ctrl.currentUser">Community Members</h1>
+  </div>
   <div class="communityBoard" ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
-    <div class="communityBoard" >
+    <div class="communityBoard">
       <ul>
         <!--Show members names-->
         <li>{{ user.username }}</li>
@@ -196,7 +198,7 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
-        <img src="{{ message.userWhoPostedImg }}" alt=" image of {{ message.userWhoPosted }}" >
+        <img src="{{ message.userWhoPosted.image }}" alt=" image of {{ message.userWhoPosted }}" >
         {{ message.message }}</br>
         Posted by: {{ message.userWhoPosted }}
         <button type="button" ng-click="ctrl.deleteMessage(message)" ng-show="ctrl.currentUser._id === ctrl.userWhoPostedId">Delete</button>

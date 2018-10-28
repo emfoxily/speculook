@@ -5,10 +5,8 @@ body {
   font-family: 'Poppins';
 }
 
-h1 {
-  font-family: 'Baloo Tamma';
-  text-align: center;
-  font-size: 34px;
+h1, h2 {
+  font-family: 'Baloo Tamma'
 }
 
 /* =====================LOGIN REGISTER MODAL =========================*/
@@ -179,10 +177,12 @@ header img {
 }
 
 .profileContainerTop img[class="userImage"] {
-  width: 20%;
+  display: block;
+  width: 15vw;
+  height: 15vw;
   padding: 2.5%;
   border: .2px solid #34383f;
-  box-shadow: 3px -1px 56px 2px rgba(0, 0, 0, 0.54);
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
   border-radius: 100%;
 
 }
@@ -191,14 +191,14 @@ header img {
   width: 50%;
   height: 100%;
   margin-top: 3vw;
-
-  background-image: url('../images/speech_bubble2.png');
+  background-image: url('../images/speechbubble.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .interestsAndSkills h1 {
   background: ghostwhite;
+  font-family: 'Baloo Tamma';
 }
 
 .basicInfo ul {
@@ -268,6 +268,10 @@ header img {
 }
 
 /* ================= Main Community Board ===================== */
+.communityHeader h1 {
+  text-align: center;
+  font-size: 34px;
+}
 
 .communityBoard ul {
   list-style-type: none;
@@ -287,6 +291,10 @@ header img {
 }
 
 /* ======================= Main Message Board ============ */
+.messageBoard h1 {
+  text-align: center;
+  font-size: 34px;
+}
 
 .messageBoardPosts ul {
   text-align: center;

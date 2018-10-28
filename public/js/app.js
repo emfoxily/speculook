@@ -229,13 +229,10 @@ this.editUser = (id) => {
       url: '/messages',
       data: {
         message: this.message,
-        signature: this.signature,
         userWhoPosted: this.username,
         userWhoPostedId: this.username._id,
-        userWhoPostedImg: this.image
       }
     }).then(response=>{
-      console.log(controller.userWhoPosted);
       controller.getMessage();
     });
   };

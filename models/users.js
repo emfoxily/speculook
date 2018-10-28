@@ -40,7 +40,13 @@ const users = Schema({
     CLI: Boolean,
     React: Boolean,
     Ruby: Boolean
-  }
+  },
+  mailbox: [
+    {
+      mail: String,
+      sender: String
+    }
+  ]
 })
 
 const User = mongoose.model('User', users)

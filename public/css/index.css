@@ -260,6 +260,13 @@ header img {
 .profileMailbox ul {
   margin-left: -2vw;
 }
+.writeMessage {
+  margin-top: 2vw;
+  margin-left: -4vw;
+}
+.writeMessage input {
+  font-size: 2vw;
+}
 .iCanHelpWith h1 {
   background: #b82727;
   width: 120%;

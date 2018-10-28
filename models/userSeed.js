@@ -3,18 +3,18 @@ module.exports = [
     name: 'Emily Reno',
     username: 'emily',
     password: 'luna',
-    admin: true
+    emilyAdmin: true
   },
   {
     name: 'Laura Levenhagen',
     username: 'laura',
     password: 'felix',
-    admin: true
+    lauraAdmin: true
   },
   {
     name: 'Alyssa Kieffer',
     username: 'alyssa',
     password: 'ote',
-    admin: true
+    alyssaAdmin: true
   }
 ]

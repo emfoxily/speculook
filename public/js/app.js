@@ -6,7 +6,6 @@ app.controller('MainController', ['$http', function($http){
   const controller = this;
   const userImage = this.image;
   this.me = 'awesome';
-  
   //Create Function
   this.createUser = function(){
     $http({
@@ -84,7 +83,7 @@ app.controller('MainController', ['$http', function($http){
       url: '/speculook',
     }).then((response) => {
       console.log(response.data);
-      controller.currentUser = response.data._id;
+      controller.currentUser = response.data;
     }, (error) => {
       console.log(error);
     })
@@ -207,6 +206,8 @@ this.editUser = (id) => {
 
 
 // ====================156-210 Alyssa===============================
+
+  const messages = [];
 
   this.getMessage = function(){
     $http({

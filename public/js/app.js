@@ -170,7 +170,7 @@ this.showEditUserForm = (user, index) => {
 }
 this.editUser = (id) => {
   $http({
-    method: 'POST',
+    method: 'PUT',
     url: '/users/'+ id,
     data: this.editData
   }).then((res)=> {
@@ -182,33 +182,11 @@ this.editUser = (id) => {
   })
 }
 
-// =============== MAILBOX ROUTES ==============
 
-this.postMail = function(id, sender){
-  $http({
-    method: 'PUT',
-    url: '/users/' + id,
-    data: {
-      mailbox: [
-        {
-          mail: this.mail,
-          sender: sender
-        }
-      ]
-    }
-  }).then(response=>{
-    console.log(response.data);
-    controller.getUsers();
-  });
-};
-//
-// this.postMail = function (id, sender){
-//   $http({
-//     method: 'POST',
-//     url: '/users/' + id,
-//     data:
-//   })
-// }
+
+
+
+
 
 
 
@@ -251,12 +229,10 @@ this.postMail = function(id, sender){
       url: '/messages',
       data: {
         message: this.message,
-        signature: this.signature,
         userWhoPosted: this.username,
-        userWhoPostedId: this.username._id
+        userWhoPostedId: this.username._id,
       }
     }).then(response=>{
-      console.log(controller.userWhoPosted);
       controller.getMessage();
     });
   };

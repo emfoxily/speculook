@@ -161,6 +161,7 @@
             <input type="text" placeholder="Name" ng-model="ctrl.editData.name">
             <input type="text" placeholder="Username" ng-model="ctrl.editData.username">
             <input type="text" placeholder="Password" ng-model="ctrl.editData.password">
+            <input type="text" placeholder="Initials" ng-model="ctrl.editData.intials">
             <input type="text" placeholder="Image URL" ng-model="ctrl.editData.image">
             <input type="text" placeholder="Location" ng-model="ctrl.editData.location">
             <input type="text" placeholder="Email" ng-model="ctrl.editData.email">
@@ -198,10 +199,10 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
-        <img src="{{ message.userWhoPosted.image }}" alt=" image of {{ message.userWhoPosted }}" >
+        <span>{{ message.initials }}</span>
         {{ message.message }}</br>
-        Posted by: {{ message.userWhoPosted }}
-        <button type="button" ng-click="ctrl.deleteMessage(message)" ng-show="ctrl.currentUser._id === ctrl.userWhoPostedId">Delete</button>
+        Posted by: {{ message.userWhoPosted }}</br>
+        <button type="button" ng-click="ctrl.deleteMessage(message)">Delete</button>
       </li>
     </ul>
   </div>

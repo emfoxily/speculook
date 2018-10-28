@@ -15,6 +15,7 @@ app.controller('MainController', ['$http', function($http){
         name: this.name,
         username: this.username,
         password: this.password,
+        initials: this.initials,
         image: this.image,
         admin: this.admin
       }
@@ -68,7 +69,7 @@ app.controller('MainController', ['$http', function($http){
       url: '/sessions',
       data: {
         username: this.username,
-        password: this.password
+        password: this.password,
       }
     }).then((response) => {
       console.log(response);
@@ -141,6 +142,7 @@ this.editProfile = function(user){
       name: this.updatedName,
       username: this.updatedUsername,
       password: this.updatedPassword,
+      initials: this.updatedInitials,
       image: this.updatedImage,
       location: this.updatedLocation,
       email: this.updatedEmail,
@@ -207,15 +209,12 @@ this.editUser = (id) => {
 
 // ====================156-210 Alyssa===============================
 
-  const messages = [];
-
   this.getMessage = function(){
     $http({
       method: 'GET',
       url: '/messages',
       data: {
-        message: this.message,
-        signature: this.signature
+        message: this.message
       }
     }).then(response=>{
       controller.messages = response.data
@@ -230,7 +229,7 @@ this.editUser = (id) => {
       data: {
         message: this.message,
         userWhoPosted: this.username,
-        userWhoPostedId: this.username._id,
+        initials: this.initials
       }
     }).then(response=>{
       controller.getMessage();
@@ -252,8 +251,7 @@ this.editUser = (id) => {
       method: 'PUT',
       url: '/messages/' + message._id,
       data: {
-        message: this.message,
-        signature: this.signature
+        message: this.message
       }
     }).then(function(response){
       controller.getMessage();

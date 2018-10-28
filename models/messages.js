@@ -6,10 +6,12 @@ const messages = Schema({
     type: String,
     required: true
   },
-  signature: String,
   userWhoPosted: {
     type: String,
     required: true
+  },
+  initials: {
+    type: String
   }
 });
 

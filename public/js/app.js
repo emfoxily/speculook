@@ -230,9 +230,11 @@ this.editUser = (id) => {
       data: {
         message: this.message,
         userWhoPosted: this.username,
-        userWhoPostedId: this.username._id,
+        userImage: this.image,
       }
     }).then(response=>{
+      controller.image = this.image
+      console.log(controller.image);
       controller.getMessage();
     });
   };

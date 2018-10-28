@@ -198,7 +198,7 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
-        <img src="{{ message.userWhoPosted.image }}" alt=" image of {{ message.userWhoPosted }}" >
+        <img src="{{ message.userImage }}" alt=" image of {{ message.userWhoPosted }}" >
         {{ message.message }}</br>
         Posted by: {{ message.userWhoPosted }}
         <button type="button" ng-click="ctrl.deleteMessage(message)" ng-show="ctrl.currentUser._id === ctrl.userWhoPostedId">Delete</button>

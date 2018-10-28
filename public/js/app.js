@@ -134,37 +134,37 @@ this.consoleLog = function(logThis){
   console.log(logThis);
 }
 
-// this.editProfile = function(user){
-//   $http({
-//     method: 'PUT',
-//     url: '/users/' + user._id,
-//     data: {
-//       name: this.updatedName,
-//       username: this.updatedUsername,
-//       password: this.updatedPassword,
-//       initials: this.updatedInitials,
-//       image: this.updatedImage,
-//       location: this.updatedLocation,
-//       email: this.updatedEmail,
-//       linkedIn: this.updatedLinkedIn,
-//       github: this.updatedGithub,
-//       facebook: this.updatedFacebook,
-//       interests: this.updatedInterests,
-//       iCanHelp: {
-//         CSS: this.updatedCss,
-//         HTML: this.updatedHtml,
-//         JavaScript: this.updatedJs,
-//         jQuery: this.updatedJq,
-//         Angular: this.updatedAng,
-//         CLI: this.updatedCli,
-//         React: this.updatedReact,
-//         Ruby: this.updatedRuby
-//       }
-//     }
-//   }).then(function(response){
-//     controller.getUsers();
-//   })
-// }
+this.editProfile = function(user){
+  $http({
+    method: 'PUT',
+    url: '/users/' + user._id,
+    data: {
+      name: this.updatedName,
+      username: this.updatedUsername,
+      password: this.updatedPassword,
+      initials: this.updatedInitials,
+      image: this.updatedImage,
+      location: this.updatedLocation,
+      email: this.updatedEmail,
+      linkedIn: this.updatedLinkedIn,
+      github: this.updatedGithub,
+      facebook: this.updatedFacebook,
+      interests: this.updatedInterests,
+      iCanHelp: {
+        CSS: this.updatedCss,
+        HTML: this.updatedHtml,
+        JavaScript: this.updatedJs,
+        jQuery: this.updatedJq,
+        Angular: this.updatedAng,
+        CLI: this.updatedCli,
+        React: this.updatedReact,
+        Ruby: this.updatedRuby
+      }
+    }
+  }).then(function(response){
+    controller.getUsers();
+  })
+}
 this.showEditUserForm = (user, index) => {
   console.log(index);
   this.editData = user;
@@ -179,11 +179,13 @@ this.editUser = (id) => {
     this.getUsers();
     // hide edit form
     this.editIndex = null;
-    this.
   }, (err)=> {
     console.log(err);
   })
 }
+
+
+
 
 
 
@@ -230,8 +232,6 @@ this.editUser = (id) => {
         initials: this.initials
       }
     }).then(response=>{
-      controller.image = this.image
-      console.log(controller.image);
       controller.getMessage();
     });
   };

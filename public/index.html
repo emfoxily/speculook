@@ -43,7 +43,7 @@
           <br />
           <input type="password" ng-model="ctrl.password" placeholder="password" />
           <br />
-          <input type="submit" value="Create Account" style="cursor: pointer; font-weight: 600; text-transform: uppercase" />
+          <input type="submit" value="Create Account" style="cursor: pointer; font-weight: 600;" />
         </form>
       </div>
       <button style="width: 50vw;
@@ -64,7 +64,7 @@
           <br />
           <input type="password" ng-model="ctrl.password" placeholder="password" />
           <br />
-          <input type="submit" value="log in" style="cursor: pointer; font-weight: 600; text-transform: uppercase" />
+          <input type="submit" value="log in" style="cursor: pointer; font-weight: 600" />
         </form>
       </div>
       <button style="width: 50vw;
@@ -145,8 +145,8 @@
               <li>{{mail.mail}}</li>
               <li>{{mail.sender}}</li>
             </ul>
-            <form ng-submit="ctrl.editUser(user._id)">
-              <input type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail">
+            <form ng-submit="ctrl.postMail(user._id, ctrl.currentUser)">
+              <input type="text" placeholder="Youre Message Here" ng-model="ctrl.mail">
               <input type="submit" name="" value="Post Message">
             </form>
             <!-- Incoming mail -->
@@ -199,7 +199,8 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
-        <img src="{{ message.userImage }}" alt=" image of {{ message.userWhoPosted }}" >
+        <img src="{{ message.userImage }}" alt="">
+        <span>{{ message.initials }}</span>
         {{ message.message }}</br>
         Posted by: {{ message.userWhoPosted }}</br>
         <button type="button" ng-click="ctrl.deleteMessage(message)">Delete</button>

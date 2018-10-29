@@ -276,11 +276,10 @@ header img {
   background: #498096;
   color: white;
   border-radius: 0 0 .2vw .2vw;
-  text-align: right;
+  text-align: center;
+  font-size: 1vw;
 }
-#mail-sender li {
-  margin-right: 2vw;
-}
+
 .writeMessage {
   margin-top: 2vw;
   margin-left: -5.2vw;

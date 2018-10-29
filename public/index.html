@@ -100,12 +100,12 @@
         <!--Show members names-->
         <h4 class="memberDisplay">{{ user.username }}</h4>
         <!--Show members photos -->
-        <h4 class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id"></h4>
+        <h4 class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></h4>
   </div>
   </container>
     <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
       <div class="profileModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser || ctrl.IdofCurrentUser === user._id">
-        <button class="closeProfileButton" type="button" name="close" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = null; ctrl.IdofCurrentUser = null">X</button>
+        <button class="closeProfileButton" type="button" name="close" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = null; ctrl.IdofCurrentUser = null" style="cursor: pointer">X</button>
         <div class="profileContainer">
           <div class="profileContainerTop">
             <img class="userImage" src="{{ user.image }}" alt="image of {{ user.username }}" />
@@ -212,10 +212,10 @@
       </li>
     </ul>
     <!--Submit message form-->
-    <form ng-submit="ctrl.postMessage()">
-      <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
-      <input type="submit" style="cursor: pointer" value="Post Your Message" class="post"/>
-    </form>
+      <form ng-submit="ctrl.postMessage()">
+        <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
+        <input type="submit" style="cursor: pointer" value="Post Your Message" class="post"/>
+      </form>
   </div>
   <footer>
     <p>

@@ -1,0 +1,20 @@
+<!--<link rel="stylesheet" href="/app.css"-->
+
+
+<div>
+  <h1>Message Board</h1>
+    <!--Submit message form-->
+    <form ng-submit="ctrl.postMessage()">
+      <input type="text" placeholder="Your Message Here" />
+      <input type="text" placeholder="Your Signature" />
+      <input type="submit" value="Post Your Message" />
+    </form>
+    <!--Display posted messages-->
+    <div ng-repeat="user in ctrl.users">
+      {{ user.username }}
+    <div>
+    <div ng-repeat="message in ctrl.messages">
+      {{ message.message }}
+      {{ message.signature }}
+    </div>
+</div>

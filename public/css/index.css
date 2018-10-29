@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tamma|Poppins');
+
+body {
+  background: whitesmoke;
+  font-family: 'Poppins';
+}
+
+h1, h2 {
+  font-family: 'Baloo Tamma'
+}
+
+/* =====================LOGIN REGISTER MODAL =========================*/
+.loginRegister {
+  position: absolute;
+  background: #b82727;
+  width: 100%;
+  height: 200%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.loginRegister img {
+  width: 90%;
+}
+
+.loginRegister form {
+  margin: auto;
+  width: 100vw;
+  padding: 2% 0;
+}
+
+.loginRegister input {
+  margin: 0 0 .5em 0;
+  width: 35vw;
+  padding: 2%;
+  font-size: 2vw;
+  text-transform: none;
+  border: 5px solid #f5f5f5;
+  border-radius: 1vw;
+  outline: none;
+  font-weight: 600;
+  color: #508CA4;
+  transition: .5s
+}
+
+.loginRegister button {
+  background: white;
+  border: 5px solid #f5f5f5;
+  border-radius: 1vw;
+  outline: none;
+  width: 35vw;
+  padding: 2%;
+  font-size: 2vw;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #508CA4;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.loginRegister button:hover, input:hover {
+  background: #508CA4;
+  border: 5px solid #498096;
+  border-radius: 1vw;
+  outline: none;
+  color: white;
+  transition: .5s;
+}
+
+/* =========================== MAIN PAGE NAV ==================== */
+p {
+  width: 75vw;
+  margin: 10vw auto;
+  text-transform: none;
+}
+
+nav {
+  background: #508CA4;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: .5%;
+  margin-top: -8px;
+  margin-left: -5px;
+  font-size: 2vw;
+  text-transform: uppercase;
+  color: white;
+}
+
+nav span {
+  display: flex;
+  align-items: center;
+  width: 800px;
+  font-weight: 600;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+}
+
+.logout input {
+  background: #498096;
+  border: 5px solid #498096;
+  border-radius: 1vw;
+  outline: none;
+  width: 10vw;
+  padding: 5%;
+  margin-top: .2vw;
+  font-size: 2vw;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  transition: .5s;
+}
+
+header {
+  text-align: center;
+}
+
+header img {
+  width: 90%;
+}
+
+/* ======================== PROFILE MODAL ============================ */
+.profileModal {
+  position: absolute;
+  background: rgb(80, 140, 164, .9);
+  width: 100%;
+  height: 200%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: block;
+}
+.closeProfileButton {
+  text-align: center;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+  margin-left: 70vw;
+  font-size: 1vw;
+}
+.profileContainer {
+  margin: auto;
+  display: block;
+  height: 65vw;
+  width: 60vw;
+  background: #f5f5f5;
+  color: #34383f;
+  border: 2px solid #6e1818;
+  border-radius: .2vw;
+}
+.profileContainerTop {
+  padding-left: 2vw;
+  width: 100%;
+  height: 35%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.profileContainerBottom {
+  /* padding-bottom: 2vw; */
+  display: inline-flex;
+  width: 100%;
+  height: 65%;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-left: 2vw;
+}
+.profileContainerTop img[class="userImage"] {
+  display: block;
+  width: 15vw;
+  height: 15vw;
+  padding: 2.5%;
+  border: .2px solid #34383f;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+}
+.interestsAndSkills {
+  width: 50%;
+  height: 100%;
+  margin-top: 3vw;
+  background-image: url('../images/speechbubble.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.interestsAndSkills h1 {
+  background: ghostwhite;
+  font-family: 'Baloo Tamma';
+}
+.basicInfo ul {
+  list-style: none;
+  text-align: center;
+  line-height: 150%;
+}
+.iCanHelpWith ul{
+    text-align: left;
+    list-style: circle;
+}
+.basicInfoAndIcanHelp a {
+  color: #b82727;
+}
+.basicInfoAndIcanHelp {
+  width: 40%;
+  height: 90%;
+  vertical-align: center;
+}
+.basicInfo {
+  margin-bottom: 3.5vw;
+}
+.interests {
+  list-style: none;
+}
+.aboutMe {
+  height: 50%;
+  width: 100%;
+  margin-right: -.9vw;
+}
+.iCanHelpWith {
+  height: 50%;
+}
+.profileMailbox {
+  width: 40%;
+  height: 90%;
+  padding-right: 2.5vw;
+}
+.mail {
+  height: 90%;
+  width: 100%;
+  margin-left: -2vw;
+  margin-top: -.4vw;
+  overflow: auto;
+}
+.profileMailbox h1 {
+  margin-right: -.55vw;
+}
+.profileMailbox li {
+  border: 1px solid #34383f;
+  border-radius: .2vw;
+}
+.profileMailbox ul {
+  margin-left: -2vw;
+}
+.writeMessage {
+  margin-top: 2vw;
+  margin-left: -4vw;
+}
+.writeMessage input {
+  font-size: 2vw;
+}
+.iCanHelpWith h1 {
+  background: #b82727;
+  width: 120%;
+  margin-left: -2vw;
+}
+.profileContainer h1 {
+  background: #3198C1;
+  color: #f5f5f5;
+  border-radius: .2vw;
+  line-height: 120%;
+  font-size: 2vw;
+}
+.basicInfo h1 {
+  background: #b82727;
+  width: 120%;
+  margin-left: -2vw;
+}
+.editProfileDiv {
+  background: #b82727;
+  margin-top: 0;
+  border: 2px solid #6e1818;
+  width: 99.8%;
+  margin-left: -.1vw;
+}
+.editProfileDiv button {
+  background: #b82727;
+  border: #b82727;
+  color: #f5f5f5;
+  font-size: 2vw;
+}
+/* ================= Main Community Board ===================== */
+.communityHeader h1 {
+  text-align: center;
+  font-size: 34px;
+}
+
+#communityContainer {
+  display: flex;
+  flow-flow: row wrap;
+  width: 100vw;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.communityBoard {
+  text-align: center;
+}
+
+.memberDisplay h4 {
+  font-size: 20px;
+  display: inline-block;
+  list-style-type: none;
+  text-align: center;
+}
+
+.memberDisplay img {
+    width: 30%;
+    padding: 2.5%;
+    border: .2px solid #34383f;
+    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 100%;
+}
+
+/* ======================= Main Message Board ============ */
+.messageBoard h1 {
+  text-align: center;
+  font-size: 5vw;
+  color: ghostwhite;
+}
+
+.messageBoard {
+  align-items: center;
+  justify-content: center;
+}
+
+.messageBoardPosts li {
+  border: .5vw solid #508ca4;
+  border-radius: 1vw;
+  padding: 3vw;
+  margin-left: -3vw;
+  list-style-type: none;
+  background-color: #508ca4;
+  color: ghostwhite;
+  width: 80vw;
+  text-align: right;
+}
+
+.messageBoardPosts button {
+  background-color: #34383f;
+  display: block;
+  font-size: 3.5vw;
+  color: ghostwhite;
+  width: 5.3vw;
+  height: 5.3vw;
+  border-radius: 100%;
+  float: left;
+  padding: .75vw;
+  margin-top: -4vw;
+}
+
+.messageBoardPosts p {
+  border-bottom: .5vw solid whitesmoke;
+  width: 80vw;
+  margin: auto;
+  overflow-wrap: break-word;
+}
+
+.messageBoard input {
+  margin: 0 0 .5em 0;
+  width: 100%;
+  padding: 2%;
+  font-size: 2vw;
+  border: 5px solid #6e1818;
+  border-radius: 1vw;
+  outline: none;
+  font-weight: 600;
+  background-color: #b82727;
+  color: ghostwhite;
+  transition: .5s;
+}
+
+.messageBoard input::placeholder {
+  color: #6e1818;
+}
+
+.messageBoard input:hover {
+  background: #b82727;
+  border: 1vw solid ghostwhite;
+  border-radius: 1vw;
+  outline: none;
+  color: ghostwhite;
+  transition: .5s;
+}
+
+.messageBoard form {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#messageBoard {
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  margin: auto;
+  margin-left: 1vw;
+  background-color: #498096;
+  border: .5vw solid #498096;
+  border-radius: 1vw;
+}
+
+footer {
+  text-align: center;
+}

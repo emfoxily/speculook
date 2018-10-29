@@ -13,6 +13,10 @@ const users = Schema({
     required: true,
     unique: true
   },
+  initials: {
+    type: String,
+    require: true
+  },
   password: {
     type: String,
     required: true
@@ -23,8 +27,30 @@ const users = Schema({
   },
   image: {
     type: String,
-    default: '../images/speculoos.png'
-  }
+    default: './images/speculoos.png'
+  },
+  location: String,
+  email: String,
+  linkedIn: String,
+  github: String,
+  facebook: String,
+  interests: String,
+  iCanHelp: {
+    CSS: Boolean,
+    HTML: Boolean,
+    JavaScript: Boolean,
+    jQuery: Boolean,
+    Angular: Boolean,
+    CLI: Boolean,
+    React: Boolean,
+    Ruby: Boolean
+  },
+  mailbox: [
+    {
+      mail: String,
+      sender: String
+    }
+  ]
 })
 
 const User = mongoose.model('User', users)

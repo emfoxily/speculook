@@ -45,8 +45,13 @@ app.use('/users', usersController);
 app.use('/messages', messagesController);
 app.use('/speculook', sessionsController)
 
+const MONGODB_URI = 'mongodb://heroku_wpzg0fnz:h4k2urdrh6dqsfp9udg5790vt7@ds143573.mlab.com:43573/heroku_wpzg0fnz' || 'mongodb://localhost/' + 'speculook'
+
+const uri = 'mongodb://admins:lunafelixote5683@ds143573.mlab.com:43573/heroku_wpzg0fnz'
+
 //Mongoose Middleware
-mongoose.connect('mongodb://localhost:27017/speculook', { useNewUrlParser: true });
+mongoose.connect(uri, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.once('open', ()=>{
   console.log('Connected to Mongoose');
 });

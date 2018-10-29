@@ -30,7 +30,7 @@ app.controller('MainController', ['$http', function($http){
       url: '/users',
     }).then(response=>{
       controller.users = response.data
-      console.log(controller.users)
+      // console.log(controller.users)
     });
   };
 
@@ -132,7 +132,7 @@ this.toggleShowRegister = function() {
 this.consoleLog = function(logThis){
   console.log(logThis);
 }
-// 
+//
 // this.editProfile = function(id){
 //   $http({
 //     method: 'PUT',
@@ -169,12 +169,61 @@ this.showEditUserForm = (user, index) => {
   this.editData = user;
   this.editIndex = index;
 }
-this.editUser = (id) => {
+
+
+
+this.messageObject= {mail: ' ', sender: ' '};
+this.mailboxIds = [{id: ' ', mailboxMail: [ ]}];
+
+this.pushMessage = (message, userId) => {
+  console.log(controller.users.length);
+  let numOfUsers = controller.users.length;
+  this.mailboxIds = [{id: ' ', mailboxMail: [' ' ]}];
+  for (i=0; i<numOfUsers; i++) {
+    console.log(i);
+    this.mailboxIds[i] =
+      { id: controller.users[i]._id,
+        mailboxMail: []
+      }
+    ;
+    // console.log(userId, this.mailboxIds[i].id);
+    if (userId === this.mailboxIds[i].id) {
+      console.log( this.mailboxIds[i].id + 'is the id of the mailbox for id ' + userId);
+      this.mailboxIds[i].mailboxMail.unshift(  {
+          mail: message,
+          sender: 'need to add'
+        });
+      this.mailToSend = this.mailboxIds[i].mailboxMail;
+      console.log(this.mailToSend);
+      controller.editUser(userId, this.mailToSend);
+    }
+  }
+}
+
+
+this.editUser = (id, mailboxMail) => {
   $http({
     method: 'PUT',
     url: '/users/'+ id,
-    data: this.editData
-  }).then((res)=> {
+    data: {
+      mailbox: mailboxMail,
+      name: this.editData.name,
+      username: this.editData.username,
+      password: this.editData.password,
+      initials: this.editData.initials,
+      image: this.editData.image,
+      location: this.editData.location,
+      email: this.editData.email,
+      linkedIn: this.editData.linkedIn,
+      github: this.editData.github,
+      facebook: this.editData.facebook,
+      interests: this.editData.interests,
+      iCanHelp: this.editData.iCanHelp
+    }
+  })
+  .then((res)=> {
+    // console.log(mailboxMail);
+    // console.log(this.mail);
     this.getUsers();
     // hide edit form
     this.editIndex = null;

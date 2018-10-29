@@ -99,9 +99,9 @@
   <div id="communityContainer">
     <div class="communityBoard" ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
       <!--Show members names-->
-      <h4 class="memberDisplay">{{ user.name }}</h4>
+      <h4 class="memberDisplay" ng-if="ctrl.currentUser.name != user.name">{{ user.name }}</h4>
       <!--Show members photos -->
-      <div class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></div>
+      <div class="memberDisplay" ng-if="ctrl.currentUser.image != user.image"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></div>
     </div>
   </div>
   <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
@@ -146,8 +146,13 @@
             <section class="mail">
               <h1 id="mailbox-h1">Mailbox</h1>
               <ul class ="mail-ul" ng-repeat="mail in user.mailbox">
+<<<<<<< HEAD
+                <li id="mail-message">{{mail.mail}}</li>
+                <li id="mail-sender">Posted By:  {{mail.sender}}</li>
+=======
                 <li>{{mail.mail}}</li>
                 <li>{{mail.sender}}</li>
+>>>>>>> 49c60f792a958e561b11143e735397864aff8515
               </ul>
             </section>
             <!-- Incoming mail -->

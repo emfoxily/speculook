@@ -99,9 +99,9 @@
   <div id="communityContainer">
     <div class="communityBoard" ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
       <!--Show members names-->
-      <h4 class="memberDisplay">{{ user.username }}</h4>
+      <h4 class="memberDisplay" ng-if="ctrl.currentUser.username != user.username">{{ user.username }}</h4>
       <!--Show members photos -->
-      <div class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></div>
+      <div class="memberDisplay" ng-if="ctrl.currentUser.image != user.image"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></div>
     </div>
   </div>
   <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
@@ -236,8 +236,8 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
-        <img ng-model="image" ng-src="{{ message.userImage }}" alt="">
-        <span>{{ message.initials }}</span>
+        <img ng-src="{{ message.userImage }}" alt="image of {{ message.userWhoPosted }}">
+        {{ message.initials }}
         <p>{{ message.message }}</p></br>
         Posted by: {{ message.userWhoPosted }}</br>
         <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" ng-if="ctrl.currentUser.username === message.userWhoPosted">&#x1F5D1;</button>

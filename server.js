@@ -45,6 +45,8 @@ app.use('/users', usersController);
 app.use('/messages', messagesController);
 app.use('/speculook', sessionsController)
 
+const PORT = process.env.PORT || 3000
+
 const MONGODB_URI = 'mongodb://heroku_wpzg0fnz:h4k2urdrh6dqsfp9udg5790vt7@ds143573.mlab.com:43573/heroku_wpzg0fnz' || 'mongodb://localhost/' + 'speculook'
 
 const uri = 'mongodb://admins:lunafelixote5683@ds143573.mlab.com:43573/heroku_wpzg0fnz'
@@ -76,6 +78,6 @@ app.get('/seedAdmins', (req, res) => {
 });
 
 //Listener
-app.listen(3000, ()=>{
+app.listen(PORT, ()=>{
   console.log('Listening..');
 });

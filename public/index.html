@@ -18,7 +18,8 @@
       <!-- ==CurrentUser image (link to profile)== -->
       <img style="width: 4vw;
           border-radius: 5vw;
-          border: 5px solid #498096;" ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile();
+          border: 5px solid #498096;
+          cursor: pointer;" ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile();
           ctrl.IdofCurrentUser = ctrl.currentUser._id; ctrl.idOfCurrentUser = ctrl.currentUser._id" />
 
       Welcome, {{ ctrl.currentUser.name }}
@@ -204,7 +205,7 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
-        <img ng-model="image" ng-src="{{ message.userImage }}" alt="">
+        <img src="" alt="">
         <span>{{ message.initials }}</span>
         {{ message.message }}</br>
         Posted by: {{ message.userWhoPosted }}</br>

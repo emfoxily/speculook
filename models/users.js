@@ -29,6 +29,7 @@ const users = Schema({
     type: String,
     default: './images/speculoos.png'
   },
+  location: String,
   email: String,
   linkedIn: String,
   github: String,

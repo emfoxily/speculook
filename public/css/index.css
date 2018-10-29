@@ -223,23 +223,37 @@ header img {
 .iCanHelpWith {
   height: 50%;
 }
+.iCanHelpWith ul {
+  /* overflow: auto; */
+}
 .profileMailbox {
-  width: 40%;
+  /* margin-left: -4vw; */
+  width: 35%;
   height: 90%;
   padding-right: 2.5vw;
+}
+#mailbox-h1 {
+  width: 97%;
+  margin-left: .5vw;
 }
 .mail {
   height: 90%;
   width: 100%;
-  margin-left: -2vw;
+  margin-left: -4vw;
   margin-top: -.4vw;
+}
+.iCanHelpWithUl {
   overflow: auto;
 }
 .profileMailbox h1 {
   margin-right: -.55vw;
 }
-.profileMailbox li {
+.mail-ul {
+  list-style: none;
+}
+.mail-ul li {
   border: 1px solid #34383f;
+  background: white;
   border-radius: .2vw;
 }
 .profileMailbox ul {
@@ -247,10 +261,25 @@ header img {
 }
 .writeMessage {
   margin-top: 2vw;
-  margin-left: -4vw;
+  margin-left: -5.2vw;
 }
-.writeMessage input {
-  font-size: 2vw;
+.writeMessage textarea {
+  font-size: 1.5vw;
+  margin-top: -10vw;
+  /* margin-left: -2vw; */
+  min-width: 18vw;
+  min-height: 5vw;
+  max-height: 10vw;
+  max-width: 25vw;
+  margin-right: 10vw;
+}
+.writeMessage textarea:hover {
+  background: white;
+  color: #498096;
+}
+.writeMessage textarea:focus{
+  outline: none;
+  color: #498096;
 }
 .iCanHelpWith h1 {
   background: #b82727;
@@ -284,7 +313,7 @@ header img {
 }
 .user-edit-form {
   background: #6e1818;
-  border: 2px solid #6e1818;
+  border: 7px solid #6e1818;
   border-top: none;
   border-radius: 0 0 .5vw .5vw;
   color: white;
@@ -322,6 +351,7 @@ header img {
   font-size: 2vw;
   line-height: 120%;
   margin-top: 2vw;
+  cursor: pointer;
 }
 .user-edit-form input[type="submit"]:hover{
   background: #508CA4;
@@ -331,6 +361,18 @@ header img {
   color: white;
   transition: .5s;
 }
+textarea{
+  width: 30vw;
+  height: 8vw;
+  max-height: 15vw;
+  max-width: 50vw;
+  border-radius: .2vw;
+  margin: auto .5vw;
+  font-size: 1.5vw;
+  line-height: 105%;
+  outline: none;
+  border: none;
+}
 /* ================= Main Community Board ===================== */
 .communityHeader h1 {
   text-align: center;
@@ -339,8 +381,9 @@ header img {
 
 #communityContainer {
   display: flex;
-  flow-flow: row wrap;
-  width: 100vw;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 75%;
   margin: auto;
   margin-bottom: 60px;
 }
@@ -362,13 +405,13 @@ header img {
 }
 
 .memberDisplay img {
-    min-width: 12vw;
-    max-height: 12vw;
-    width: 30%;
-    padding: .6vw;
-    /* border: .2px solid #34383f; */
-    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
-    border-radius: 100%;
+  display: block;
+  width: 13vw;
+  height: 13vw;
+  padding: 2.5%;
+  border: .2px solid #34383f;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
 }
 
 /* ======================= Main Message Board ============ */

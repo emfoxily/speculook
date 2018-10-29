@@ -69,6 +69,7 @@ app.controller('MainController', ['$http', function($http){
       data: {
         username: this.username,
         password: this.password,
+        image: this.image
       }
     }).then((response) => {
       console.log(response);
@@ -92,7 +93,7 @@ app.controller('MainController', ['$http', function($http){
   this.logout = () => {
     $http({
       method: 'DELETE',
-      url: '/sessions'
+      url: '/speculook'
     }).then((response) => {
       console.log(response.data)
     }, (error) => {

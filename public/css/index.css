@@ -361,15 +361,15 @@ header img {
 
 .messageBoard input {
   margin: 0 0 .5em 0;
-  width: 100%;
+  width: 75.5vw;
   padding: 2%;
   font-size: 2vw;
-  border: 5px solid #6e1818;
+  border: .3vw solid #6e1818;
   border-radius: 1vw;
   outline: none;
   font-weight: 600;
   background-color: #b82727;
-  color: ghostwhite;
+  color: #6e1818;
   transition: .5s;
 }
 
@@ -379,7 +379,7 @@ header img {
 
 .messageBoard input:hover {
   background: #b82727;
-  border: 1vw solid ghostwhite;
+  border: .3vw solid ghostwhite;
   border-radius: 1vw;
   outline: none;
   color: ghostwhite;

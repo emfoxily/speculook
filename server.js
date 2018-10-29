@@ -43,7 +43,7 @@ const messagesController = require('./controllers/messages.js');
 //Call Controller
 app.use('/users', usersController);
 app.use('/messages', messagesController);
-app.use('/sessions', sessionsController)
+app.use('/speculook', sessionsController)
 
 //Mongoose Middleware
 mongoose.connect('mongodb://localhost:27017/speculook', { useNewUrlParser: true });

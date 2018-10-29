@@ -19,6 +19,7 @@ app.controller('MainController', ['$http', function($http){
         admin: this.admin
       }
     }).then(response=>{
+      controller.user = response.data
       console.log(response.data)
     });
   };
@@ -65,10 +66,11 @@ app.controller('MainController', ['$http', function($http){
   this.logIn = () => {
     $http({
       method: 'POST',
-      url: '/sessions',
+      url: '/speculook',
       data: {
         username: this.username,
         password: this.password,
+        image: this.image
       }
     }).then((response) => {
       console.log(response);
@@ -274,7 +276,6 @@ this.editUser = (id, mailboxMail) => {
       data: {
         message: this.message,
         userWhoPosted: this.username,
-        initials: this.initials,
         userImage: this.image
       }
     }).then(response=>{

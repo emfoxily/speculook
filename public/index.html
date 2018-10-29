@@ -99,9 +99,9 @@
   <div id="communityContainer">
     <div class="communityBoard" ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
       <!--Show members names-->
-      <h4 class="memberDisplay" ng-if="ctrl.currentUser.username != user.username">{{ user.username }}</h4>
+      <h4 class="memberDisplay">{{ user.name }}</h4>
       <!--Show members photos -->
-      <div class="memberDisplay" ng-if="ctrl.currentUser.image != user.image"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></div>
+      <div class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></div>
     </div>
   </div>
   <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
@@ -135,24 +135,26 @@
             </div>
             <div class="iCanHelpWith">
               <h1>I can help with:</h1>
+              <div class="iCanHelpWithUl">
               <ul ng-repeat="(key,value) in user.iCanHelp">
                 <li>{{key}}</li>
               </ul>
+            </div>
             </div>
           </section>
           <section class="profileMailbox">
             <section class="mail">
               <h1 id="mailbox-h1">Mailbox</h1>
               <ul class ="mail-ul" ng-repeat="mail in user.mailbox">
-                <li id="mail-message">{{mail.mail}}</li>
-                <li id="mail-sender">Posted By: {{mail.sender}}</li>
+                <li>{{mail.mail}}</li>
+                <li>{{mail.sender}}</li>
               </ul>
             </section>
             <!-- Incoming mail -->
             <section class="writeMessage">
               <form ng-submit="ctrl.pushMessage(ctrl.editData.mailbox.mail, user._id); ">
                 <textarea id="message-input"type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail"></textarea>
-                <input type="submit" name="" style="cursor: pointer" value="Post Mail">
+                <input type="submit" name="" style="cursor: pointer; background: transparent; font-size: 2.5vw; border: none;" value="✉️">
               </form>
             </section>
           </section>
@@ -234,8 +236,8 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
-        <img ng-src="{{ message.userImage }}" alt="image of {{ message.userWhoPosted }}">
-        {{ message.initials }}
+        <img ng-model="image" ng-src="{{ message.userImage }}" alt="">
+        <span>{{ message.initials }}</span>
         <p>{{ message.message }}</p></br>
         Posted by: {{ message.userWhoPosted }}</br>
         <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" ng-if="ctrl.currentUser.username === message.userWhoPosted">&#x1F5D1;</button>

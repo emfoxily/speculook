@@ -65,7 +65,7 @@ app.controller('MainController', ['$http', function($http){
   this.logIn = () => {
     $http({
       method: 'POST',
-      url: '/sessions',
+      url: '/speculook',
       data: {
         username: this.username,
         password: this.password,

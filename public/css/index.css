@@ -465,9 +465,9 @@ textarea{
   color: ghostwhite;
   width: 5.3vw;
   height: 5.3vw;
+  padding: .75vw;
   border-radius: 100%;
   float: left;
-  padding: .75vw;
   margin-top: -4vw;
 }
 

@@ -318,7 +318,7 @@ header img {
 /* ======================= Main Message Board ============ */
 .messageBoard h1 {
   text-align: center;
-  font-size: 34px;
+  font-size: 5vw;
   color: ghostwhite;
 }
 
@@ -328,21 +328,35 @@ header img {
 }
 
 .messageBoardPosts li {
-  border: 1px solid #508ca4;
+  border: .5vw solid #508ca4;
   border-radius: 1vw;
-  padding: 12px;
+  padding: 3vw;
+  margin-left: -3vw;
   list-style-type: none;
   background-color: #508ca4;
   color: ghostwhite;
-  width: 450px;
+  width: 80vw;
   text-align: right;
 }
 
 .messageBoardPosts button {
   background-color: #34383f;
+  display: block;
+  font-size: 3.5vw;
   color: ghostwhite;
-  font-family: 'Poppins';
-  border-radius: 25%;
+  width: 5.3vw;
+  height: 5.3vw;
+  border-radius: 100%;
+  float: left;
+  padding: .75vw;
+  margin-top: -4vw;
+}
+
+.messageBoardPosts p {
+  border-bottom: .5vw solid whitesmoke;
+  width: 80vw;
+  margin: auto;
+  overflow-wrap: break-word;
 }
 
 .messageBoard input {
@@ -365,7 +379,7 @@ header img {
 
 .messageBoard input:hover {
   background: #b82727;
-  border: 5px solid ghostwhite;
+  border: 1vw solid ghostwhite;
   border-radius: 1vw;
   outline: none;
   color: ghostwhite;
@@ -373,7 +387,7 @@ header img {
 }
 
 .messageBoard form {
-  width: 450px;
+  width: 80vw;
   margin: 0 auto;
 }
 
@@ -382,10 +396,9 @@ header img {
   flex-direction: column;
   width: 95vw;
   margin: auto;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 1vw;
   background-color: #498096;
-  border: 1px solid #498096;
+  border: .5vw solid #498096;
   border-radius: 1vw;
 }
 

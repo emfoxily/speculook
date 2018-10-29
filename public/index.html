@@ -206,9 +206,9 @@
       <li class="messageBoardPosts">
         <img ng-model="image" ng-src="{{ message.userImage }}" alt="">
         <span>{{ message.initials }}</span>
-        {{ message.message }}</br>
+        <p>{{ message.message }}</p></br>
         Posted by: {{ message.userWhoPosted }}</br>
-        <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" ng-if="ctrl.currentUser.username === message.userWhoPosted">Delete</button>
+        <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" ng-if="ctrl.currentUser.username === message.userWhoPosted">&#x1F5D1;</button>
       </li>
     </ul>
     <!--Submit message form-->

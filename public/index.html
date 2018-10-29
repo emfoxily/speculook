@@ -135,15 +135,17 @@
             </div>
             <div class="iCanHelpWith">
               <h1>I can help with:</h1>
+              <div class="iCanHelpWithUl">
               <ul ng-repeat="(key,value) in user.iCanHelp">
                 <li>{{key}}</li>
               </ul>
             </div>
+            </div>
           </section>
           <section class="profileMailbox">
             <section class="mail">
-              <h1>Mailbox</h1>
-              <ul ng-repeat="mail in user.mailbox">
+              <h1 id="mailbox-h1">Mailbox</h1>
+              <ul class ="mail-ul" ng-repeat="mail in user.mailbox">
                 <li>{{mail.mail}}</li>
                 <li>{{mail.sender}}</li>
               </ul>
@@ -151,7 +153,7 @@
             <!-- Incoming mail -->
             <section class="writeMessage">
               <form ng-submit="ctrl.pushMessage(ctrl.editData.mailbox.mail, user._id); ">
-                <input type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail">
+                <textarea id="message-input"type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail"></textarea>
                 <input type="submit" name="" style="cursor: pointer" value="Post Mail">
               </form>
             </section>

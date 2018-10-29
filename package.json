@@ -1,6 +1,9 @@
 {
   "name": "speculook",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.9.0"
+  },
   "description": "testing hello from Laura",
   "main": "server.js",
   "dependencies": {

@@ -13,7 +13,7 @@ const messages = Schema({
   initials: {
     type: String
   },
-  image: {
+  userImage: {
     type: String,
     // default: './images/speculoos.png'
   }

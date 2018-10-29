@@ -276,7 +276,7 @@ this.editUser = (id, mailboxMail) => {
         message: this.message,
         userWhoPosted: this.username,
         initials: this.initials,
-        image: this.image
+        userImage: this.image
       }
     }).then(response=>{
       controller.getMessage();

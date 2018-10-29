@@ -130,7 +130,7 @@ header img {
   position: absolute;
   background: rgb(80, 140, 164, .9);
   width: 100%;
-  height: 200%;
+  height: 500%;
   margin: auto;
   top: 0;
   left: 0;
@@ -214,28 +214,18 @@ header img {
 }
 .interests {
   list-style: none;
-  padding-left: 2vw;
-  padding-right: 2vw;
-}
-.interests li {
-    width: 88%;
-    margin-top: -2vw;
-    margin-left: 3.5vw;
-
 }
 .aboutMe {
   height: 50%;
   width: 100%;
   margin-right: -.9vw;
-  margin-top: 2vw;
-  overflow: auto;
 }
 .iCanHelpWith {
   height: 50%;
-  width: 110%;
-    overflow: auto;
 }
-
+.iCanHelpWith ul {
+  /* overflow: auto; */
+}
 .profileMailbox {
   /* margin-left: -4vw; */
   width: 35%;
@@ -243,8 +233,8 @@ header img {
   padding-right: 2.5vw;
 }
 #mailbox-h1 {
-  width: 110%;
-  margin-left: -1.15vw;
+  width: 97%;
+  margin-left: .5vw;
 }
 .mail {
   height: 90%;
@@ -252,34 +242,23 @@ header img {
   margin-left: -4vw;
   margin-top: -.4vw;
 }
+.iCanHelpWithUl {
+  overflow: auto;
+}
 .profileMailbox h1 {
   margin-right: -.55vw;
 }
 .mail-ul {
   list-style: none;
-    width: 90%;
 }
 .mail-ul li {
-  width: 90%;
   border: 1px solid #34383f;
   background: white;
+  border-radius: .2vw;
 }
 .profileMailbox ul {
-  margin-left: -4vw;
-    width: 120%;
+  margin-left: -2vw;
 }
-#mail-message {
-  border-radius: .2vw .2vw 0 0;
-}
-#mail-sender {
-  border-top: none;
-  background: #498096;
-  color: white;
-  border-radius: 0 0 .2vw .2vw;
-  text-align: center;
-  font-size: 1vw;
-}
-
 .writeMessage {
   margin-top: 2vw;
   margin-left: -6.5vw;
@@ -287,6 +266,7 @@ header img {
 .writeMessage textarea {
   font-size: 1.5vw;
   margin-top: -10vw;
+  /* margin-left: -2vw; */
   min-width: 18vw;
   min-height: 5vw;
   max-height: 10vw;
@@ -303,7 +283,7 @@ header img {
 }
 .iCanHelpWith h1 {
   background: #b82727;
-  width: 100%;
+  width: 120%;
   margin-left: -2vw;
 }
 .profileContainer h1 {
@@ -473,22 +453,9 @@ textarea{
 
 .messageBoardPosts p {
   border-bottom: .5vw solid whitesmoke;
-  padding-bottom: 3vw;
   width: 80vw;
   margin: auto;
   overflow-wrap: break-word;
-}
-
-.messageBoardPosts img {
-  display: block;
-  width: 5.3vw;
-  height: 5.3vw;
-  padding: .75vw;
-  float: left;
-  margin-top: -2vw;
-  border: .2px solid #34383f;
-  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
-  border-radius: 100%;
 }
 
 .messageBoard input {

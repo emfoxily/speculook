@@ -325,12 +325,8 @@ header img {
   justify-content: center;
 }
 
-.messageBoardPosts ul {
-
-}
-
 .messageBoardPosts li {
-  border: 5px solid #b82727;
+  border: 1px solid #508ca4;
   border-radius: 1vw;
   padding: 12px;
   list-style-type: none;
@@ -349,15 +345,20 @@ header img {
 
 .messageBoard input {
   margin: 0 0 .5em 0;
-  width: 30vw;
+  width: 100%;
   padding: 2%;
   font-size: 2vw;
-  border: 5px solid #34383f;
+  border: 5px solid #6e1818;
   border-radius: 1vw;
   outline: none;
   font-weight: 600;
-  color: #34383f;
-  transition: .5s
+  background-color: #b82727;
+  color: ghostwhite;
+  transition: .5s;
+}
+
+.messageBoard input::placeholder {
+  color: #6e1818;
 }
 
 .messageBoard input:hover {
@@ -369,9 +370,21 @@ header img {
   transition: .5s;
 }
 
+.messageBoard form {
+  width: 30vw;
+  margin: 0 auto;
+}
+
 #messageBoard {
   display: flex;
   flex-direction: column;
   width: 100vw;
   margin: auto;
+  background-color: #498096;
+  border: 1px solid #498096;
+  border-radius: 1vw;
+}
+
+footer {
+  text-align: center;
 }

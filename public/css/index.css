@@ -293,6 +293,7 @@ header img {
   flow-flow: row wrap;
   width: 100vw;
   margin: auto;
+  margin-bottom: 60px;
 }
 
 .communityBoard {
@@ -310,7 +311,7 @@ header img {
     width: 30%;
     padding: 2.5%;
     border: .2px solid #34383f;
-    box-shadow: 3px -1px 56px 2px rgba(0, 0, 0, 0.54);
+    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
     border-radius: 100%;
 }
 
@@ -318,6 +319,7 @@ header img {
 .messageBoard h1 {
   text-align: center;
   font-size: 34px;
+  color: ghostwhite;
 }
 
 .messageBoard {
@@ -371,15 +373,17 @@ header img {
 }
 
 .messageBoard form {
-  width: 30vw;
+  width: 450px;
   margin: 0 auto;
 }
 
 #messageBoard {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 95vw;
   margin: auto;
+  margin-left: 20px;
+  margin-right: 20px;
   background-color: #498096;
   border: 1px solid #498096;
   border-radius: 1vw;

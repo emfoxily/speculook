@@ -220,14 +220,14 @@ this.editUser = (id, mailboxMail) => {
       facebook: this.editData.facebook,
       interests: this.editData.interests,
       iCanHelp: {
-              CSS: this.editData.CSS,
-              HTML: this.editData.HTML,
-              JavaScript: this.editData.JavaScript,
-              jQuery: this.editData.jQuery,
-              Angular: this.editData.Angular,
-              CLI: this.editData.CLI,
-              React: this.editData.React,
-              Ruby: this.editData.Ruby
+              CSS: this.editData.iCanHelp.CSS,
+              HTML: this.editData.iCanHelp.HTML,
+              JavaScript: this.editData.iCanHelp.JavaScript,
+              jQuery: this.editData.iCanHelp.jQuery,
+              Angular: this.editData.iCanHelp.Angular,
+              CLI: this.editData.iCanHelp.CLI,
+              React: this.editData.iCanHelp.React,
+              Ruby: this.editData.iCanHelp.Ruby
             }
     }
   })

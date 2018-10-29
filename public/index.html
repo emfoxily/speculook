@@ -149,7 +149,7 @@
             </section>
               <!-- Incoming mail -->
             <section class="writeMessage">
-            <form ng-submit="ctrl.editUser(user._id)">
+            <form ng-submit="ctrl.pushMessage(ctrl.editData.mailbox.mail, user._id); ">
               <input type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail">
               <input type="submit" name="" style="cursor: pointer" value="Post Mail">
             </form>

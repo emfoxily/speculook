@@ -288,28 +288,27 @@ header img {
   font-size: 34px;
 }
 
-.communityBoard {
+#communityContainer {
   display: flex;
+  flow-flow: row wrap;
   width: 100vw;
-<<<<<<< HEAD
-  list-style: none;
-=======
   margin: auto;
   margin-bottom: 60px;
->>>>>>> 605d58f48d3a4a39863b747cf9712d1f33668192
 }
 
-.communityBoard ul[class = "memberDisplay"] {
+.communityBoard {
+  text-align: center;
+}
+
+.memberDisplay h4 {
+  font-size: 20px;
+  display: inline-block;
   list-style-type: none;
   text-align: center;
 }
 
-.communityBoard li[class = "memberDisplay"]{
-  font-size: 20px;
-}
-
 .memberDisplay img {
-    width: 20%;
+    width: 30%;
     padding: 2.5%;
     border: .2px solid #34383f;
     box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
@@ -323,16 +322,13 @@ header img {
   color: ghostwhite;
 }
 
-.messageBoardPosts ul {
-  text-align: center;
+.messageBoard {
+  align-items: center;
+  justify-content: center;
 }
 
 .messageBoardPosts li {
-<<<<<<< HEAD
-  border: 5px solid #b82727;
-=======
   border: .5vw solid #508ca4;
->>>>>>> 605d58f48d3a4a39863b747cf9712d1f33668192
   border-radius: 1vw;
   padding: 3vw;
   margin-left: -3vw;
@@ -365,27 +361,30 @@ header img {
 
 .messageBoard input {
   margin: 0 0 .5em 0;
-  width: 35vw;
+  width: 75.5vw;
   padding: 2%;
   font-size: 2vw;
-  border: 5px solid #34383f;
+  border: .3vw solid #6e1818;
   border-radius: 1vw;
   outline: none;
   font-weight: 600;
-  color: #34383f;
-  transition: .5s
+  background-color: #b82727;
+  color: #6e1818;
+  transition: .5s;
+}
+
+.messageBoard input::placeholder {
+  color: #6e1818;
 }
 
 .messageBoard input:hover {
   background: #b82727;
-  border: 1vw solid ghostwhite;
+  border: .3vw solid ghostwhite;
   border-radius: 1vw;
   outline: none;
   color: ghostwhite;
   transition: .5s;
 }
-<<<<<<< HEAD
-=======
 
 .messageBoard form {
   width: 80vw;
@@ -406,4 +405,3 @@ header img {
 footer {
   text-align: center;
 }
->>>>>>> 605d58f48d3a4a39863b747cf9712d1f33668192

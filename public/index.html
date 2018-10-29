@@ -18,8 +18,7 @@
       <!-- ==CurrentUser image (link to profile)== -->
       <img style="width: 4vw;
           border-radius: 5vw;
-          border: 5px solid #498096;
-          cursor: pointer;" ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile();
+          border: 5px solid #498096;" ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile();
           ctrl.IdofCurrentUser = ctrl.currentUser._id; ctrl.idOfCurrentUser = ctrl.currentUser._id" />
 
       Welcome, {{ ctrl.currentUser.name }}
@@ -205,7 +204,7 @@
     <!--Display posted messages-->
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
-        <img src="" alt="">
+        <img ng-model="image" ng-src="{{ message.userImage }}" alt="">
         <span>{{ message.initials }}</span>
         <p>{{ message.message }}</p></br>
         Posted by: {{ message.userWhoPosted }}</br>
@@ -214,8 +213,8 @@
     </ul>
     <!--Submit message form-->
       <form ng-submit="ctrl.postMessage()">
-        <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
-        <input type="submit" style="cursor: pointer" value="Post Your Message" class="post"/>
+        <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" style="color: ghostwhite"/>
+        <input type="submit" style="cursor: pointer; width: 79.2vw" value="Post Your Message" class="post"/>
       </form>
   </div>
   <footer>

@@ -207,9 +207,9 @@
       <li class="messageBoardPosts">
         <img src="" alt="">
         <span>{{ message.initials }}</span>
-        {{ message.message }}</br>
+        <p>{{ message.message }}</p></br>
         Posted by: {{ message.userWhoPosted }}</br>
-        <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" >Delete</button>
+        <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" ng-if="ctrl.currentUser.username === message.userWhoPosted">&#x1F5D1;</button>
       </li>
     </ul>
     <!--Submit message form-->
@@ -220,7 +220,7 @@
   </div>
   <footer>
     <p>
-      &copy 2018 Alyssa Kieffer, Emily Reno, Laura Levenhagen
+      &copy 2018 Alyssa Kieffer, Emily Reno & Laura Levenhagen
     </p>
   </footer>
 

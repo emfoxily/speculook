@@ -291,7 +291,12 @@ header img {
 .communityBoard {
   display: flex;
   width: 100vw;
+<<<<<<< HEAD
   list-style: none;
+=======
+  margin: auto;
+  margin-bottom: 60px;
+>>>>>>> 605d58f48d3a4a39863b747cf9712d1f33668192
 }
 
 .communityBoard ul[class = "memberDisplay"] {
@@ -307,14 +312,15 @@ header img {
     width: 20%;
     padding: 2.5%;
     border: .2px solid #34383f;
-    box-shadow: 3px -1px 56px 2px rgba(0, 0, 0, 0.54);
+    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
     border-radius: 100%;
 }
 
 /* ======================= Main Message Board ============ */
 .messageBoard h1 {
   text-align: center;
-  font-size: 34px;
+  font-size: 5vw;
+  color: ghostwhite;
 }
 
 .messageBoardPosts ul {
@@ -322,21 +328,39 @@ header img {
 }
 
 .messageBoardPosts li {
+<<<<<<< HEAD
   border: 5px solid #b82727;
+=======
+  border: .5vw solid #508ca4;
+>>>>>>> 605d58f48d3a4a39863b747cf9712d1f33668192
   border-radius: 1vw;
-  padding: 12px;
+  padding: 3vw;
+  margin-left: -3vw;
   list-style-type: none;
   background-color: #508ca4;
   color: ghostwhite;
-  width: 450px;
+  width: 80vw;
   text-align: right;
 }
 
 .messageBoardPosts button {
   background-color: #34383f;
+  display: block;
+  font-size: 3.5vw;
   color: ghostwhite;
-  font-family: 'Poppins';
-  border-radius: 25%;
+  width: 5.3vw;
+  height: 5.3vw;
+  border-radius: 100%;
+  float: left;
+  padding: .75vw;
+  margin-top: -4vw;
+}
+
+.messageBoardPosts p {
+  border-bottom: .5vw solid whitesmoke;
+  width: 80vw;
+  margin: auto;
+  overflow-wrap: break-word;
 }
 
 .messageBoard input {
@@ -354,9 +378,32 @@ header img {
 
 .messageBoard input:hover {
   background: #b82727;
-  border: 5px solid ghostwhite;
+  border: 1vw solid ghostwhite;
   border-radius: 1vw;
   outline: none;
   color: ghostwhite;
   transition: .5s;
 }
+<<<<<<< HEAD
+=======
+
+.messageBoard form {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#messageBoard {
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  margin: auto;
+  margin-left: 1vw;
+  background-color: #498096;
+  border: .5vw solid #498096;
+  border-radius: 1vw;
+}
+
+footer {
+  text-align: center;
+}
+>>>>>>> 605d58f48d3a4a39863b747cf9712d1f33668192

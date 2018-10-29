@@ -307,10 +307,17 @@ header img {
   text-align: center;
 }
 
+.memberDisplay div {
+  width: 20vw;
+  height: 20vw;
+}
+
 .memberDisplay img {
+    min-width: 12vw;
+    min-height: 12vw;
     width: 30%;
     padding: 2.5%;
-    border: .2px solid #34383f;
+    /* border: .2px solid #34383f; */
     box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
     border-radius: 100%;
 }

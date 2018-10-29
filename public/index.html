@@ -135,24 +135,26 @@
             </div>
             <div class="iCanHelpWith">
               <h1>I can help with:</h1>
+              <div class="iCanHelpWithUl">
               <ul ng-repeat="(key,value) in user.iCanHelp">
                 <li>{{key}}</li>
               </ul>
+            </div>
             </div>
           </section>
           <section class="profileMailbox">
             <section class="mail">
               <h1 id="mailbox-h1">Mailbox</h1>
               <ul class ="mail-ul" ng-repeat="mail in user.mailbox">
-                <li id="mail-message">{{mail.mail}}</li>
-                <li id="mail-sender">Posted By: {{mail.sender}}</li>
+                <li>{{mail.mail}}</li>
+                <li>{{mail.sender}}</li>
               </ul>
             </section>
             <!-- Incoming mail -->
             <section class="writeMessage">
               <form ng-submit="ctrl.pushMessage(ctrl.editData.mailbox.mail, user._id); ">
                 <textarea id="message-input"type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail"></textarea>
-                <input type="submit" name="" style="cursor: pointer" value="Post Mail">
+                <input type="submit" name="" style="cursor: pointer; background: transparent; font-size: 2.5vw; border: none;" value="✉️">
               </form>
             </section>
           </section>

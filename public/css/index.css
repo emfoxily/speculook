@@ -402,8 +402,9 @@ textarea{
 
 #communityContainer {
   display: flex;
-  flow-flow: row wrap;
-  width: 100vw;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 75%;
   margin: auto;
   margin-bottom: 60px;
 }
@@ -425,13 +426,13 @@ textarea{
 }
 
 .memberDisplay img {
-    min-width: 12vw;
-    max-height: 12vw;
-    width: 30%;
-    padding: .6vw;
-    /* border: .2px solid #34383f; */
-    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
-    border-radius: 100%;
+  display: block;
+  width: 13vw;
+  height: 13vw;
+  padding: 2.5%;
+  border: .2px solid #34383f;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
 }
 
 /* ======================= Main Message Board ============ */

@@ -284,7 +284,7 @@ header img {
 }
 .user-edit-form {
   background: #6e1818;
-  border: 2px solid #6e1818;
+  border: 7px solid #6e1818;
   border-top: none;
   border-radius: 0 0 .5vw .5vw;
   color: white;
@@ -330,6 +330,18 @@ header img {
   outline: none;
   color: white;
   transition: .5s;
+}
+textarea{
+  width: 30vw;
+  height: 8vw;
+  max-height: 15vw;
+  max-width: 50vw;
+  border-radius: .2vw;
+  margin: auto .5vw;
+  font-size: 1.5vw;
+  line-height: 105%;
+  outline: none;
+  border: none;
 }
 /* ================= Main Community Board ===================== */
 .communityHeader h1 {

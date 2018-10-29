@@ -374,7 +374,7 @@ textarea{
 }
 
 .memberDisplay img {
-    max-width: 12vw;
+    min-width: 12vw;
     max-height: 12vw;
     width: 30%;
     padding: .6vw;

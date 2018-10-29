@@ -101,7 +101,7 @@
         <!--Show members names-->
         <h4 class="memberDisplay">{{ user.username }}</h4>
         <!--Show members photos -->
-        <h4 class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></h4>
+        <div class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></div>
   </div>
   </container>
     <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">

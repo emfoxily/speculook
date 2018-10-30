@@ -127,6 +127,9 @@ header img {
 
 /* ======================== PROFILE MODAL ============================ */
 .profileModal {
+  font-size: 2vw;
+}
+.profileModal {
   position: absolute;
   background: rgb(80, 140, 164, .9);
   width: 100%;
@@ -147,7 +150,7 @@ header img {
 .profileContainer {
   margin: auto;
   display: block;
-  height: 70vw;
+  height: 72vw;
   width: 60vw;
   background: #f5f5f5;
   color: #34383f;
@@ -194,7 +197,7 @@ header img {
 }
 .basicInfo ul {
   list-style: none;
-  text-align: center;
+  /* text-align: center; */
   line-height: 150%;
 }
 .iCanHelpWith ul{
@@ -203,14 +206,16 @@ header img {
 }
 .basicInfoAndIcanHelp a {
   color: #b82727;
+  text-align: left;
 }
 .basicInfoAndIcanHelp {
   width: 40%;
   height: 90%;
-  vertical-align: center;
+
 }
 .basicInfo {
   margin-bottom: 3.5vw;
+  font-size: 1.7vw;
 }
 .interests {
   list-style: none;
@@ -228,47 +233,59 @@ header img {
   width: 100%;
   margin-right: -.9vw;
   margin-top: 2vw;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.aboutMe li{
+  font-size: 1.4vw;
+  margin-left: 3vw;
+}
+.aboutMe h2 {
+  margin-top: -.5vw;
+  margin-right: -.7vw;
+  margin-bottom: -2.5vw;
 }
 .iCanHelpWith {
-  height: 50%;
+  margin-top: -2vw;
+  height: 40%;
   width: 110%;
-    overflow: auto;
+  overflow: auto;
+  font-size: 1.5vw;
 }
 
 .profileMailbox {
-
   width: 45%;
   height: 90%;
   padding-right: 1vw;
 }
 #mailbox-h1 {
   width: 92%;
-  margin-left: 3vw;
+  margin-left: 3.1vw;
 
 }
 .mail {
+  font-size: 1.5vw;
   height: 70%;
-  width: 90%;
-  margin-left: -4vw;
+  width: 100%;
+  margin-left: -4.5vw;
   margin-top: -.4vw;
   overflow-y: scroll;
  overflow-x: hidden;
  padding-right: 2vw;
 }
-.profileMailbox h1 {
-  margin-right: -.55vw;
-}
+
 .mail-ul {
   list-style: none;
+
 }
 .mail-ul li {
+
   width: 90%;
   border: 1px solid #34383f;
   background: white;
 }
 .profileMailbox ul {
-  /* margin-left: -4vw; */
+  margin-left: -.01vw;
   width: 100%;
 }
 #mail-message {

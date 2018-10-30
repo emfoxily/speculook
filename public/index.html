@@ -152,8 +152,8 @@
             </section>
             <!-- Incoming mail -->
             <section class="writeMessage">
-              <form ng-submit="ctrl.pushMessage(ctrl.editData.mailbox.mail, user._id); ">
-                <textarea id="message-input"type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail"></textarea>
+              <form id="message-input-form"ng-submit="ctrl.pushMessage(ctrl.editData.mailbox.mail, user._id); ">
+                <textarea type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail"></textarea>
                 <input type="submit" name="" style="cursor: pointer; background: transparent; font-size: 2.5vw; border: none;" value="✉️">
               </form>
             </section>

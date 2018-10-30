@@ -60,6 +60,7 @@ By creating the Message Board feature, we were able to accomplish a stretch goal
 <p>
 One main goal that was not achieved was removing the Current User from the Community Members display. By putting an ng-if statement into the individual items being displayed (name and image) I was able to remove the Current User...but only until the users database was dropped. After going to TA Hours about the issue, we realized that this type of thing was difficult to achieve in Angular, and should be filtered in the Javascript functions. When doing that, the ability to click on your own profile and edit details was eliminated. In order to incorporate this function, we would have to change the entire way our code is utilizing the edit function.
 </p>
+
 ##### Message Board
 <p>
 In an attempt to have an image or initials posted alongside the username, we realized that the only things being pulled from the Schema were the username and password. We were not able to pull additional data, therefore we set this up with a default picture for styling purposes as a work around.

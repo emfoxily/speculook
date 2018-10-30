@@ -40,6 +40,8 @@
 <p>
 In order to create the Community Members display, an ng-repeat was used to run through the Users array and display each user's image and name. The image was established with an ng-click function so that it could be clicked and sent to that specific user's profile.
 </p>
+
+
 ##### Message Board
 <p>
 By creating the Message Board feature, we were able to accomplish a stretch goal of getting two Models talking, along with utilizing the Delete portion of CRUD. I first created a Message Schema and Controller. The Schema pulls the username from the User Model and posts it, along with the written message. I used the same idea from the Community Members display, and utilized the ng-repeat function to iterate through the messages array and display each message and username of who posted. In order to get the delete button to appear for only the current user, an ng-if statement was used. 

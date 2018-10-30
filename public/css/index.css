@@ -279,7 +279,7 @@ header img {
   text-align: center;
   font-size: 1vw;
 }
-#message-input-form {
+.message-input-form {
   margin-left: -1vw;
 }
 .writeMessage {

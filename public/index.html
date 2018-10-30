@@ -137,7 +137,7 @@
               <h1>I can help with:</h1>
               <div class="iCanHelpWithUl">
               <ul ng-repeat="(key,value) in user.iCanHelp">
-                <li>{{key}}</li>
+                <li ng-if="value">{{key}}</li>
               </ul>
             </div>
             </div>
@@ -152,7 +152,7 @@
             </section>
             <!-- Incoming mail -->
             <section class="writeMessage">
-              <form id="message-input-form"ng-submit="ctrl.pushMessage(ctrl.editData.mailbox.mail, user._id); ">
+              <form class="message-input-form"ng-submit="ctrl.addMail(user, ctrl.editData.mailbox.mail, ctrl.currentUser.name); ">
                 <textarea type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail"></textarea>
                 <input type="submit" name="" style="cursor: pointer; background: transparent; font-size: 2.5vw; border: none;" value="✉️">
               </form>

@@ -42,17 +42,21 @@
 </p>
 
 ### Laura
-#### Profile / Profile Edit
+##### Profile / Profile Edit
 <p>
   My first task was to structure the html for the individual profiles as well as create the necessary functions in app.js for editing your own profile. I referenced the wireframe Emily had created and that we had all agreed on, which was very helpful. I also edited the user model to include more information for the profile.
+
   I had a fun time researching how to edit overflow options with the scrollbar to keep the profile looking nice even when the sections grew with more information.
+
   I also made the 'edit profile' button only visible to the current user, on their own profile so that no one can edit anyone else's information.
 </p>
-#### Mailbox
+
+##### Mailbox
 <p>
   The Mailbox was definitely a struggle for me, since each person's profile had to access only that person's mail. I added a mailbox key to the user model(an array of objects with each object providing a mail key and a sender key) and used angularJS to access the user's mail with an ng-repeat (mail in user.mailbox). I think this was the task that taught me the most about accessing objects within arrays within objects, as well as the process of creating additional 'PUT' routes for the same model (ie: '/users/:id/messages').
 </p>
-#### consoleLog Function
+
+##### consoleLog Function
 <p>
 One thing I was proud of in this project was my idea to make a consoleLog() function in the app.js that could be called in the index.html whenever we wanted to make sure we were calling the correct key/value. This ended up being useful throughout the project, and it is a technique I know I will use again.
 </p>
@@ -79,7 +83,7 @@ By creating the Message Board feature, we were able to accomplish a stretch goal
 
 ### Laura
 
-#### MAILBOX
+##### MAILBOX
 <p>
 Alyssa and Emily know, I went pretty crazy trying to figure out that mailbox! I spend several nights trying all different sorts of ways to make it work, but I always seemed to have issues. I knew that with each of my ideas, I was so close to figuring it out, but I couldn't figure out which idea would get me to my goal. I ended up having to reach out during TA hours, and Dan helped me focus on the correct theory and make it work. I learned so much in the process though, so I don't regret any of it.
 </p>

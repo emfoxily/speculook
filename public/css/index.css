@@ -237,27 +237,30 @@ header img {
 }
 
 .profileMailbox {
-  /* margin-left: -4vw; */
-  width: 35%;
+
+  width: 45%;
   height: 90%;
-  padding-right: 2.5vw;
+  padding-right: 1vw;
 }
 #mailbox-h1 {
-  width: 110%;
-  margin-left: -1.15vw;
+  width: 92%;
+  margin-left: 3vw;
+
 }
 .mail {
-  height: 90%;
-  width: 100%;
+  height: 70%;
+  width: 90%;
   margin-left: -4vw;
   margin-top: -.4vw;
+  overflow-y: scroll;
+ overflow-x: hidden;
+ padding-right: 2vw;
 }
 .profileMailbox h1 {
   margin-right: -.55vw;
 }
 .mail-ul {
   list-style: none;
-    width: 90%;
 }
 .mail-ul li {
   width: 90%;
@@ -265,8 +268,8 @@ header img {
   background: white;
 }
 .profileMailbox ul {
-  margin-left: -4vw;
-    width: 120%;
+  /* margin-left: -4vw; */
+  width: 100%;
 }
 #mail-message {
   border-radius: .2vw .2vw 0 0;
@@ -280,15 +283,14 @@ header img {
   font-size: 1vw;
 }
 .message-input-form {
-  margin-left: -1vw;
+  margin-left: 2.7vw;
 }
 .writeMessage {
   margin-top: 2vw;
-  margin-left: -5.2vw;
+  margin-left: -5.4vw;
 }
 .writeMessage textarea {
   font-size: 1.5vw;
-  margin-top: -10vw;
   min-width: 18vw;
   min-height: 5vw;
   max-height: 10vw;
@@ -302,6 +304,10 @@ header img {
 .writeMessage textarea:focus{
   outline: none;
   color: #498096;
+}
+#mail-icon {
+  margin-left: -2.3vw;
+
 }
 .iCanHelpWith h1 {
   background: #b82727;

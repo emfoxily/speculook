@@ -28,7 +28,17 @@
 
 ## Approach Taken
 ### Emily
+##### Login/Authorization Flow
 <p>
+  The first thing I tackled in the login/authorization process was the user schema. I started out with the basics (username, password, etc) because we weren't sure of what all would be needed in the end, so it was a good foundation. I did have to refer to class notes as I did this, but I learned a lot more about it than I anticipated and I'm grateful. In the user schema, there is also an admin key and I made it so that not just anyone could be an admin. I accomplished this by creating a user seed for Laura, Alyssa, and myself. At this moment in time, there isn't much difference from admins and regular users, but as a group, we plan on adding more to this app in the future because we've grown equally passionate about it. We plan to create options so that admins can upgrade regular users to admins and vice versa.
+</p>
+
+
+##### Navigation & Modal Functionality
+<p>
+  The navigation was probably one of the easier things to be done in the app. I incorporated a welcome message that checks for a current user and displays their name upon login. It also displays the user's image.
+  
+  For the modals, I had done some research prior to creating modals, but was overwhelmed by all the code and examples I found that I ended up finding it easier to utilize ng-show on divs. It's also how I achieved the login screen. Upon login, the div disappears. We then ended up recycling the function I wrote for the login modal on other parts of the app. It proved to be rather efficient.
 </p>
 
 ### Laura
@@ -50,7 +60,9 @@ By creating the Message Board feature, we were able to accomplish a stretch goal
 
 ## Issues
 ### Emily
+##### Login/Authorization Flow
 <p>
+  The main issue I ran into was keeping a session logged in. I researched ways to keep a session logged in even on refresh and all I could find was related to installing something for Angular. I wasn't entirely comfortable with trying it in fear of breaking something, so for now, users have to login again if they refresh. It shouldn't be too much of an issue since everything in the website is on one page.
 </p>
 
 ### Laura

@@ -474,20 +474,25 @@ textarea{
 }
 
 .messageBoardPosts p {
-  border-bottom: .5vw solid whitesmoke;
-  padding-bottom: 3vw;
-  width: 80vw;
+  background: whitesmoke;
+  font-size: 1.5vw;
+  text-align: left;
+  color: #6e1818;
+  border-radius: 1vw;
+  padding: 3em 1em;
+  width: 77vw;
   margin: auto;
   overflow-wrap: break-word;
 }
 
 .messageBoardPosts img {
+  background: whitesmoke;
   display: block;
   width: 5.3vw;
   height: 5.3vw;
   padding: .75vw;
   float: left;
-  margin-top: -2vw;
+  margin: -4.2vw;
   border: .2px solid #34383f;
   box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
   border-radius: 100%;

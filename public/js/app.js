@@ -34,21 +34,6 @@ app.controller('MainController', ['$http', function($http){
     });
   };
 
-  //Update Function
-  this.editUser = function(user){
-    $http({
-      method: 'PUT',
-      url: '/users/' + user._id,
-      data: {
-        username: this.updateUsername,
-        password: this.updatedPassword,
-        admin: this.updatedAdmin
-      }
-    }).then(function(response){
-      controller.getUsers();
-    });
-  };
-
   //Delete Function
   this.deleteUser = function(user){
     $http({
@@ -68,8 +53,7 @@ app.controller('MainController', ['$http', function($http){
       url: '/speculook',
       data: {
         username: this.username,
-        password: this.password,
-        image: this.image
+        password: this.password
       }
     }).then((response) => {
       console.log(response);

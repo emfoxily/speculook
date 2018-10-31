@@ -255,14 +255,14 @@ this.addMail = (user, message, sender)=> {
   };
 
   this.postMessage = function(){
+    console.log(this.currentUser)
     $http({
       method: 'POST',
       url: '/messages',
       data: {
         message: this.message,
         userWhoPosted: this.username,
-        initials: this.initials,
-        userImage: this.image
+        userImage: this.currentUser.image
       }
     }).then(response=>{
       controller.getMessage();

@@ -83,7 +83,7 @@ By creating the Message Board feature, we were able to accomplish a stretch goal
 
 ### Laura
 
-##### MAILBOX
+##### Mailbox
 <p>
 Alyssa and Emily know, I went pretty crazy trying to figure out that mailbox! I spend several nights trying all different sorts of ways to make it work, but I always seemed to have issues. I knew that with each of my ideas, I was so close to figuring it out, but I couldn't figure out which idea would get me to my goal. I ended up having to reach out during TA hours, and Dan helped me focus on the correct theory and make it work. I learned so much in the process though, so I don't regret any of it.
 </p>
@@ -96,7 +96,7 @@ One main goal that was not achieved was removing the Current User from the Commu
 
 ##### Message Board
 <p>
-In an attempt to have an image or initials posted alongside the username, we realized that the only things being pulled from the Schema were the username and password. We were not able to pull additional data, therefore we set this up with a default picture for styling purposes as a work around.
+The biggest issue that arose with the Message Board was surprisingly the image being displayed of the user who posted. I tried many work arounds and for some reason the image was inaccessible, only the username and password were being shown when console logging any user information. After working with Dan, I realized that I first needed to access the Current User before accessing the image for posting. It was the best feeling of success and accomplishment!
 </p>
 
 

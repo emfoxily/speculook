@@ -127,6 +127,9 @@ header img {
 
 /* ======================== PROFILE MODAL ============================ */
 .profileModal {
+  font-size: 2vw;
+}
+.profileModal {
   position: absolute;
   background: rgb(80, 140, 164, .9);
   width: 100%;
@@ -147,7 +150,7 @@ header img {
 .profileContainer {
   margin: auto;
   display: block;
-  height: 65vw;
+  height: 72vw;
   width: 60vw;
   background: #f5f5f5;
   color: #34383f;
@@ -194,7 +197,7 @@ header img {
 }
 .basicInfo ul {
   list-style: none;
-  text-align: center;
+  /* text-align: center; */
   line-height: 150%;
 }
 .iCanHelpWith ul{
@@ -203,58 +206,129 @@ header img {
 }
 .basicInfoAndIcanHelp a {
   color: #b82727;
+  text-align: left;
 }
 .basicInfoAndIcanHelp {
   width: 40%;
   height: 90%;
-  vertical-align: center;
+
 }
 .basicInfo {
   margin-bottom: 3.5vw;
+  font-size: 1.7vw;
 }
 .interests {
   list-style: none;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+.interests li {
+    width: 88%;
+    margin-top: -2vw;
+    margin-left: 3.5vw;
+
 }
 .aboutMe {
   height: 50%;
   width: 100%;
   margin-right: -.9vw;
+  margin-top: 2vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.aboutMe li{
+  font-size: 1.4vw;
+  margin-left: 3vw;
+}
+.aboutMe h2 {
+  margin-top: -.5vw;
+  margin-right: -.7vw;
+  margin-bottom: -2.5vw;
 }
 .iCanHelpWith {
-  height: 50%;
+  margin-top: -2vw;
+  height: 40%;
+  width: 110%;
+  overflow: auto;
+  font-size: 1.5vw;
 }
+
 .profileMailbox {
-  width: 40%;
+  width: 45%;
   height: 90%;
-  padding-right: 2.5vw;
+  padding-right: 1vw;
+}
+#mailbox-h1 {
+  width: 92%;
+  margin-left: 3.1vw;
+
 }
 .mail {
-  height: 90%;
+  font-size: 1.5vw;
+  height: 70%;
   width: 100%;
-  margin-left: -2vw;
+  margin-left: -4.5vw;
   margin-top: -.4vw;
-  overflow: auto;
+  overflow-y: scroll;
+ overflow-x: hidden;
+ padding-right: 2vw;
 }
-.profileMailbox h1 {
-  margin-right: -.55vw;
+
+.mail-ul {
+  list-style: none;
+
 }
-.profileMailbox li {
+.mail-ul li {
+
+  width: 90%;
   border: 1px solid #34383f;
-  border-radius: .2vw;
+  background: white;
 }
 .profileMailbox ul {
-  margin-left: -2vw;
+  margin-left: -.01vw;
+  width: 100%;
+}
+#mail-message {
+  border-radius: .2vw .2vw 0 0;
+}
+#mail-sender {
+  border-top: none;
+  background: #498096;
+  color: white;
+  border-radius: 0 0 .2vw .2vw;
+  text-align: center;
+  font-size: 1vw;
+}
+.message-input-form {
+  margin-left: 2.7vw;
 }
 .writeMessage {
   margin-top: 2vw;
-  margin-left: -4vw;
+  margin-left: -5.4vw;
 }
-.writeMessage input {
-  font-size: 2vw;
+.writeMessage textarea {
+  font-size: 1.5vw;
+  min-width: 18vw;
+  min-height: 5vw;
+  max-height: 10vw;
+  max-width: 25vw;
+  margin-right: 10vw;
+}
+.writeMessage textarea:hover {
+  background: white;
+  color: #498096;
+}
+.writeMessage textarea:focus{
+  outline: none;
+  color: #498096;
+}
+#mail-icon {
+  margin-left: -2.3vw;
+
 }
 .iCanHelpWith h1 {
   background: #b82727;
-  width: 120%;
+  width: 100%;
   margin-left: -2vw;
 }
 .profileContainer h1 {
@@ -282,6 +356,68 @@ header img {
   color: #f5f5f5;
   font-size: 2vw;
 }
+.user-edit-form {
+  background: #6e1818;
+  border: 7px solid #6e1818;
+  border-top: none;
+  border-radius: 0 0 .5vw .5vw;
+  color: white;
+  padding-bottom: 2vw;
+}
+.user-edit-form h4 {
+  font-size: 1.5vw;
+}
+.user-edit-form input {
+  color: black;
+  background: #f5f5f5;
+  border-radius: .2vw;
+  margin: auto .5vw;
+  font-size: 1.5vw;
+  line-height: 105%;
+  outline: none;
+  border: none;
+}
+.user-edit-form input:click{
+  border: none;
+}
+.user-edit-form input:hover{
+  border: 2px solid #508CA4;
+}
+.edit-inputs {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.user-edit-form input[type="submit"]{
+  color:  #508CA4;;
+  background: #f5f5f5;
+  border-radius: 1vw;
+  font-size: 2vw;
+  line-height: 120%;
+  margin-top: 2vw;
+  cursor: pointer;
+}
+.user-edit-form input[type="submit"]:hover{
+  background: #508CA4;
+  border: 2px solid #498096;
+  border-radius: 1vw;
+  outline: none;
+  color: white;
+  transition: .5s;
+}
+textarea{
+  width: 30vw;
+  height: 8vw;
+  max-height: 15vw;
+  max-width: 50vw;
+  border-radius: .2vw;
+  margin: auto .5vw;
+  font-size: 1.5vw;
+  line-height: 105%;
+  outline: none;
+  border: none;
+}
 /* ================= Main Community Board ===================== */
 .communityHeader h1 {
   text-align: center;
@@ -290,8 +426,9 @@ header img {
 
 #communityContainer {
   display: flex;
-  flow-flow: row wrap;
-  width: 100vw;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 75%;
   margin: auto;
   margin-bottom: 60px;
 }
@@ -307,12 +444,19 @@ header img {
   text-align: center;
 }
 
+.memberDisplay div {
+  width: 20vw;
+  height: 20vw;
+}
+
 .memberDisplay img {
-    width: 30%;
-    padding: 2.5%;
-    border: .2px solid #34383f;
-    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
-    border-radius: 100%;
+  display: block;
+  width: 13vw;
+  height: 13vw;
+  padding: 2.5%;
+  border: .2px solid #34383f;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
 }
 
 /* ======================= Main Message Board ============ */
@@ -344,32 +488,53 @@ header img {
   display: block;
   font-size: 3.5vw;
   color: ghostwhite;
-  width: 5.3vw;
-  height: 5.3vw;
-  border-radius: 100%;
-  float: left;
+  width: 4.9vw;
+  height: 4.9vw;
   padding: .75vw;
-  margin-top: -4vw;
+  float: left;
+  position: static;
+  margin-top: -2vw;
+  border: .2px solid #34383f;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
 }
 
 .messageBoardPosts p {
-  border-bottom: .5vw solid whitesmoke;
-  width: 80vw;
+  background: whitesmoke;
+  font-size: 1.5vw;
+  text-align: left;
+  color: #6e1818;
+  border-radius: 1vw;
+  padding: 3em 1em;
+  width: 77vw;
   margin: auto;
   overflow-wrap: break-word;
 }
 
+.messageBoardPosts img {
+  background: whitesmoke;
+  display: block;
+  width: 5.3vw;
+  height: 5.3vw;
+  padding: .75vw;
+  float: left;
+  margin: -4.2vw;
+  border: .2px solid #34383f;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+}
+
 .messageBoard input {
   margin: 0 0 .5em 0;
-  width: 100%;
+  width: 75.5vw;
   padding: 2%;
   font-size: 2vw;
-  border: 5px solid #6e1818;
+  border: .3vw solid #6e1818;
   border-radius: 1vw;
   outline: none;
   font-weight: 600;
   background-color: #b82727;
-  color: ghostwhite;
+  color: #6e1818;
   transition: .5s;
 }
 
@@ -379,7 +544,7 @@ header img {
 
 .messageBoard input:hover {
   background: #b82727;
-  border: 1vw solid ghostwhite;
+  border: .3vw solid ghostwhite;
   border-radius: 1vw;
   outline: none;
   color: ghostwhite;

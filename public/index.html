@@ -18,7 +18,8 @@
       <!-- ==CurrentUser image (link to profile)== -->
       <img style="width: 4vw;
           border-radius: 5vw;
-          border: 5px solid #498096;" ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile();
+          border: 5px solid #498096;
+          cursor: pointer" ng-if="ctrl.currentUser" src="{{ctrl.currentUser.image}}" alt="your image" ng-click="ctrl.showHideProfile();
           ctrl.IdofCurrentUser = ctrl.currentUser._id; ctrl.idOfCurrentUser = ctrl.currentUser._id" />
 
       Welcome, {{ ctrl.currentUser.name }}
@@ -95,104 +96,135 @@
   <div class="communityHeader">
     <h1 ng-show="ctrl.currentUser">Community Members</h1>
   </div>
-  <container id="communityContainer">
-  <div class="communityBoard" ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
-        <!--Show members names-->
-        <h4 class="memberDisplay">{{ user.username }}</h4>
-        <!--Show members photos -->
-        <h4 class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></h4>
+  <div id="communityContainer">
+    <div class="communityBoard" ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
+      <!--Show members names-->
+      <h4 class="memberDisplay">{{ user.name }}</h4>
+      <!--Show members photos -->
+      <div class="memberDisplay"><img src="{{ user.image }}" alt="image of {{ user.name }}" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = $index; ctrl.idOfCurrentUser = ctrl.currentUser._id" style="cursor: pointer"></div>
+    </div>
   </div>
-  </container>
-    <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
-      <div class="profileModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser || ctrl.IdofCurrentUser === user._id">
-        <button class="closeProfileButton" type="button" name="close" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = null; ctrl.IdofCurrentUser = null" style="cursor: pointer">X</button>
-        <div class="profileContainer">
-          <div class="profileContainerTop">
-            <img class="userImage" src="{{ user.image }}" alt="image of {{ user.username }}" />
-            <section class="interestsAndSkills">
-              <div class="aboutMe">
-                <h2>About Me:</h2>
-                <ul class="interests">
-                  <li>{{ user.interests }}</li>
-                </ul>
-              </div>
-            </section>
-          </div>
-          <div class="profileContainerBottom">
-            <section class="basicInfoAndIcanHelp">
-              <div class="basicInfo">
-                <h1 class="userName">{{ user.name }}</h1>
-                <h4>Location: {{ user.location }}</h4>
-                <h4>Email: {{ user.email }}</h4>
-                <!-- Member blurb -->
-                <!-- social media -->
-                <ul>
-                  <li><a href="{{ user.linkedIn }}">LinkedIn</a></li>
-                  <li><a href="{{ user.github }}">Github</a></li>
-                  <li><a href="{{ user.facebook }}">Facebook</a></li>
-                </ul>
-              </div>
-              <div class="iCanHelpWith">
-                <h1>I can help with:</h1>
-                <ul ng-repeat="(key,value) in user.iCanHelp">
-                  <li>{{key}}</li>
-                </ul>
-              </div>
-            </section>
-            <section class="profileMailbox">
-              <section class="mail">
-              <h1>Mailbox</h1>
-              <ul ng-repeat="mail in user.mailbox">
-                <li>{{mail.mail}}</li>
-                <li>{{mail.sender}}</li>
+  <div ng-repeat="user in ctrl.users | orderBy: 'name'" ng-show="ctrl.currentUser">
+    <div class="profileModal" ng-show="ctrl.userProfile; $index === ctrl.indexOfClickedUser || ctrl.IdofCurrentUser === user._id">
+      <button class="closeProfileButton" type="button" name="close" ng-click="ctrl.showHideProfile(); ctrl.indexOfClickedUser = null; ctrl.IdofCurrentUser = null" style="cursor: pointer">X</button>
+      <div class="profileContainer">
+        <div class="profileContainerTop">
+          <img class="userImage" src="{{ user.image }}" alt="image of {{ user.username }}" />
+          <section class="interestsAndSkills">
+            <div class="aboutMe">
+              <h2>About Me:</h2>
+              <ul class="interests">
+                <li>{{ user.interests }}</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="profileContainerBottom">
+          <section class="basicInfoAndIcanHelp">
+            <div class="basicInfo">
+              <h1 class="userName">{{ user.name }}</h1>
+              <h4>Location: {{ user.location }}</h4>
+              <h4>Email: {{ user.email }}</h4>
+              <!-- Member blurb -->
+              <!-- social media -->
+              <ul style="margin-left:-2.2vw">
+                <li><a href="{{ user.linkedIn }}">LinkedIn</a></li>
+                <li><a href="{{ user.github }}">Github</a></li>
+                <li><a href="{{ user.facebook }}">Facebook</a></li>
+              </ul>
+            </div>
+            <div class="iCanHelpWith">
+              <h1>I can help with:</h1>
+              <div class="iCanHelpWithUl">
+              <ul ng-repeat="(key,value) in user.iCanHelp">
+                <li ng-if="value">{{key}}</li>
+              </ul>
+            </div>
+            </div>
+          </section>
+          <section class="profileMailbox">
+            <section class="mail">
+              <h1 id="mailbox-h1">Mailbox</h1>
+              <ul class ="mail-ul" ng-repeat="mail in user.mailbox">
+                <li id="mail-message">{{mail.mail}}</li>
+                <li id="mail-sender">Posted By:  {{mail.sender}}</li>
               </ul>
             </section>
-              <!-- Incoming mail -->
+            <!-- Incoming mail -->
             <section class="writeMessage">
-            <form ng-submit="ctrl.pushMessage(ctrl.editData.mailbox.mail, user._id); ">
-              <input type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail">
-              <input type="submit" name="" style="cursor: pointer" value="Post Mail">
-            </form>
-          </section>
+              <form class="message-input-form"ng-submit="ctrl.addMail(user, ctrl.editData.mailbox.mail, ctrl.currentUser.name); ">
+                <textarea type="text" placeholder="Your Message Here" ng-model="ctrl.editData.mailbox.mail"></textarea>
+                <input id="mail-icon" type="submit" name="" style="cursor: pointer; background: transparent; font-size: 2.5vw; border: none;" value="✉️">
+              </form>
             </section>
-          </div>
-          <div class="editProfileDiv">
-            <button class="editProfileButton" ng-click="ctrl.showEditUserForm(user, $index); ctrl.consoleLog(ctrl.idOfCurrentUser)" ng-show="ctrl.idOfCurrentUser === user._id" style="cursor: pointer"
-
-            >Edit Profile</button>
-          </div>
-
-
-
-          <!-- ====== EDIT USER MODAL===== -->
-          <div class="user-edit-form" ng-if="ctrl.editIndex === $index">
-            <form ng-submit="ctrl.editUser(user._id)">
-              <input type="text" placeholder="Name" ng-model="ctrl.editData.name">
-              <input type="text" placeholder="Username" ng-model="ctrl.editData.username">
-              <input type="text" placeholder="Password" ng-model="ctrl.editData.password">
-              <input type="text" placeholder="Initials" ng-model="ctrl.editData.intials">
-              <input type="text" placeholder="Image URL" ng-model="ctrl.editData.image">
-              <input type="text" placeholder="Location" ng-model="ctrl.editData.location">
-              <input type="text" placeholder="Email" ng-model="ctrl.editData.email">
-              <input type="text" placeholder="LinkedIn" ng-model="ctrl.editData.linkedIn">
-              <input type="text" placeholder="Github" ng-model="ctrl.editData.github">
-              <input type="text" placeholder="Facebook" ng-model="ctrl.editData.facebook">
-              <input type="text" placeholder="About me/ Outside Interests" ng-model="ctrl.editData.interests">
-
-              <h5> I can help with:</h5>
-              <input type="checkbox" name="CSS" ng-model="ctrl.editData.iCanHelp.CSS"><span>CSS</span><br />
-              <input type="checkbox" name="HTML" ng-model="ctrl.editData.iCanHelp.HTML"><span>HTML</span><br />
-              <input type="checkbox" name="JavaScript" ng-model="ctrl.editData.iCanHelp.JavaScript"><span>JavaScript</span><br />
-              <input type="checkbox" name="jQuery" ng-model="ctrl.editData.iCanHelp.jQuery"><span>jQuery</span><br />
-              <input type="checkbox" name="AngularJS" ng-model="ctrl.editData.iCanHelp.Angular"><span>AngularJS</span><br />
-              <input type="checkbox" name="Command Line Interface" ng-model="ctrl.editData.iCanHelp.CLI"><span>Command Line Interface</span><br />
-              <input type="checkbox" name="React" ng-model="ctrl.editData.iCanHelp.React"><span>React</span><br />
-              <input type="checkbox" name="Ruby" ng-model="ctrl.editData.iCanHelp.Ruby"><span>Ruby</span><br />
-              <input type="submit" name="" value="Submit Changes">
-            </form>
-          </div>
+          </section>
         </div>
+        <div class="editProfileDiv">
+          <button class="editProfileButton" ng-click="ctrl.showEditUserForm(user, $index); ctrl.consoleLog(ctrl.idOfCurrentUser)" ng-show="ctrl.idOfCurrentUser === user._id" style="cursor: pointer">Edit Profile</button>
+        </div>
+
+
+
+        <!-- ====== EDIT USER MODAL===== -->
+        <div class="user-edit-form" ng-if="ctrl.editIndex === $index">
+          <form ng-submit="ctrl.editUser(user._id)">
+            <div class="edit-inputs" <div>
+              <div>
+              <h4>Name:</h4>
+              <input type="text" placeholder="Name" ng-model="ctrl.editData.name">
+            </div>
+            <div>
+              <h4>Username:</h4>
+              <input type="text" placeholder="Username" ng-model="ctrl.editData.username">
+            </div>
+            <div>
+              <h4>Initials:</h4>
+              <input type="text" placeholder="Initials" ng-model="ctrl.editData.intials">
+            </div>
+            <div>
+              <h4>Image URL:</h4>
+              <input type="text" placeholder="Image URL" ng-model="ctrl.editData.image">
+            </div>
+            <div>
+              <h4>Location:</h4>
+              <input type="text" placeholder="Location" ng-model="ctrl.editData.location">
+            </div>
+            <div>
+              <h4>Email:</h4>
+              <input type="text" placeholder="Email" ng-model="ctrl.editData.email">
+            </div>
+            <div>
+              <h4>LinkedIn:</h4>
+              <input type="text" placeholder="LinkedIn" ng-model="ctrl.editData.linkedIn">
+            </div>
+            <div>
+              <h4>Github:</h4>
+              <input type="text" placeholder="Github" ng-model="ctrl.editData.github">
+            </div>
+            <div>
+              <h4>Facebook:</h4>
+              <input type="text" placeholder="Facebook" ng-model="ctrl.editData.facebook">
+            </div>
+            <div>
+              <h4>About Me:</h4>
+              <textarea id="about-me-text" type="text" placeholder="About me/ Outside Interests" ng-model="ctrl.editData.interests"></textarea>
+            </div>
+        </div>
+        <h4>I Can Help With:</h4>
+        <input type="checkbox" name="CSS" ng-model="ctrl.editData.iCanHelp.CSS"><span>CSS</span><br />
+        <input type="checkbox" name="HTML" ng-model="ctrl.editData.iCanHelp.HTML"><span>HTML</span><br />
+        <input type="checkbox" name="JavaScript" ng-model="ctrl.editData.iCanHelp.JavaScript"><span>JavaScript</span><br />
+        <input type="checkbox" name="jQuery" ng-model="ctrl.editData.iCanHelp.jQuery"><span>jQuery</span><br />
+        <input type="checkbox" name="AngularJS" ng-model="ctrl.editData.iCanHelp.Angular"><span>AngularJS</span><br />
+        <input type="checkbox" name="Command Line Interface" ng-model="ctrl.editData.iCanHelp.CLI"><span>Command Line Interface</span><br />
+        <input type="checkbox" name="React" ng-model="ctrl.editData.iCanHelp.React"><span>React</span><br />
+        <input type="checkbox" name="Ruby" ng-model="ctrl.editData.iCanHelp.Ruby"><span>Ruby</span><br />
+        <input type="submit" name="" value="Submit Changes"><br/>
+        <span> <h6 style="margin-top: 1vw; margin-left: 1vw; font-size: .7vw; width: 40%;">** If you changed your avatar and want to see the changes in the navigation bar, you'll need to log out and log back in **</h6></span>
+        </form>
       </div>
+    </div>
+  </div>
   </div>
 
 
@@ -205,17 +237,16 @@
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
         <img ng-model="image" ng-src="{{ message.userImage }}" alt="">
-        <span>{{ message.initials }}</span>
         <p>{{ message.message }}</p></br>
         Posted by: {{ message.userWhoPosted }}</br>
         <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" ng-if="ctrl.currentUser.username === message.userWhoPosted">&#x1F5D1;</button>
       </li>
     </ul>
     <!--Submit message form-->
-      <form ng-submit="ctrl.postMessage()">
-        <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" />
-        <input type="submit" style="cursor: pointer" value="Post Your Message" class="post"/>
-      </form>
+    <form ng-submit="ctrl.postMessage()">
+      <input type="text" ng-model="ctrl.message" placeholder="Your Message Here" style="color: ghostwhite" />
+      <input type="submit" style="cursor: pointer; width: 79.2vw" value="Post Your Message" class="post" />
+    </form>
   </div>
   <footer>
     <p>

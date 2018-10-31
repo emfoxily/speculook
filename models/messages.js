@@ -15,7 +15,7 @@ const messages = Schema({
   },
   userImage: {
     type: String,
-    // default: './images/speculoos.png'
+    default: './images/speculoos.png'
   }
 });
 

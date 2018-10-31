@@ -8,7 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
   <script src="./js/app.js" charset="utf-8"></script>
   <link rel="stylesheet" href="./css/index.css">
-
+  <link rel="icon" href="../images/favicon.png">
 </head>
 
 <body ng-controller="MainController as ctrl">
@@ -237,6 +237,7 @@
     <ul ng-repeat="message in ctrl.messages" class="messageBoardPosts">
       <li class="messageBoardPosts">
         <img ng-model="image" ng-src="{{ message.userImage }}" alt="">
+        <span>{{ message.initials }}</span>
         <p>{{ message.message }}</p></br>
         Posted by: {{ message.userWhoPosted }}</br>
         <button type="button" ng-click="ctrl.deleteMessage(message)" style="cursor: pointer" ng-if="ctrl.currentUser.username === message.userWhoPosted">&#x1F5D1;</button>
